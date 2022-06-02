@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react'
+import s from './app.module.scss'
+import { connect, useDispatch } from 'react-redux'
+import Header from './header/header'
+import NavBar from './navBar/navBar'
+import Profile from './profile/profile'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+type propsType = {
+  messages: any
+
 }
 
-export default App;
+const App: React.FC<propsType> = ({messages}) => {
+  let dispatch = useDispatch()
+  return (
+    <div className={s.app}>
+      <Header/>
+        <div className={s.container}>
+          <NavBar/>
+          <Profile/>
+        </div>
+    </div>
+  )
+}
+
+let mapStateToProps = (state: any) => {
+  return {
+    messages: state.profile.myMessage
+  }
+}
+
+export default connect(mapStateToProps, {})(App);
