@@ -10,6 +10,7 @@ const Login = () => {
     const submit = (values: any, setSubmitting: any) => {
         // @ts-ignore
         dispatch(logInTC(values.email, values.password, values.rememberMe, null))
+        setSubmitting(false)
     }
     return(
         <div className={s.login}>

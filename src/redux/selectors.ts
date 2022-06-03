@@ -8,4 +8,7 @@ export const getIsAuthSelector = (state: appType) => {
 }
 export const getLoginSelector = (state: appType) => {
     return state.auth.login
+}
+export const getUsersSelector = (state: appType) => {
+    return state.users.users
 } 

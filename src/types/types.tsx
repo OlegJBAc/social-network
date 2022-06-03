@@ -18,3 +18,14 @@ export type profileType = {
         large: string
     }
 }
+
+export type userType = {
+    id: number
+    name: string
+    status: string
+    photos: {
+        small: string
+        large: string
+    }
+    followed: boolean
+}
