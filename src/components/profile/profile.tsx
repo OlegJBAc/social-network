@@ -1,8 +1,9 @@
 import React, { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import Loader from "../commons/loader"
-import { getProfileTC } from "../redux/profile-reducer"
-import { getProfileSelector } from "../redux/selectors"
+import authRedirectHoc from "../../commons/hocs/hoc"
+import Loader from "../../commons/loader"
+import { getProfileTC } from "../../redux/profile-reducer"
+import { getProfileSelector } from "../../redux/selectors"
 import s from './profile.module.scss'
 import ProfileBody from "./profileBody/profileBody"
 import ProfileFace from "./profileFace/profileFace"
@@ -26,4 +27,4 @@ const Profile = () => {
     )
 }
 
-export default Profile
+export default authRedirectHoc(Profile)

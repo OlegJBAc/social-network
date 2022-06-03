@@ -1,0 +1,27 @@
+.header{
+    background: rgb(147, 255, 255);
+    display: flex;
+    img{
+        height: 50px;
+        width: 50px;
+        background: black;
+        border-radius: 50%;
+        margin: 0px 0px 0px 250px;
+    }
+    &__login{
+        margin: 10px 0px 0px 913px;
+    }
+    &__authorized{
+        span{
+            font-size: 1.3em;
+        }
+        button{
+            font-size: 0.8em;
+            margin: 0px 0px 0px 50px;
+        }
+    }
+    &__notauthorized{
+        font-size: 1.3em;
+        margin: 0px 0px 0px 23px;
+    }
+}

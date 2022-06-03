@@ -1,25 +1,41 @@
 import React, { useEffect } from 'react'
 import s from './app.module.scss'
 import { connect, useDispatch } from 'react-redux'
-import Header from './header/header'
-import NavBar from './navBar/navBar'
-import Profile from './profile/profile'
+import Header from './components/header/header'
+import NavBar from './components/navBar/navBar'
+import Profile from './components/profile/profile'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Dialogs from './components/dialogs/dialogs'
+import Users from './components/users/users'
+import { getAuthDataTC } from './redux/auth-reducer'
+import Login from './components/login/login'
 
 type propsType = {
-  messages: any
 
 }
 
-const App: React.FC<propsType> = ({messages}) => {
-  let dispatch = useDispatch()
+const App: React.FC<propsType> = () => {
+  const dispatch = useDispatch()
+  useEffect(() => {
+    // @ts-ignore
+    dispatch(getAuthDataTC())
+  }, [])
   return (
-    <div className={s.app}>
-      <Header/>
-        <div className={s.container}>
-          <NavBar/>
-          <Profile/>
-        </div>
-    </div>
+    <BrowserRouter>
+      <main className={s.app}>
+        <Header/>
+          <div className={s.container}>
+            <NavBar/>
+            <Routes>
+              {/* @ts-ignore */}
+              <Route path='/profile' element={<Profile/>}/>
+              <Route path='/dialogs' element={<Dialogs/>}/>
+              <Route path='/users' element={<Users/>}/>
+              <Route path='/login' element={<Login/>}/>
+            </Routes>
+          </div>
+      </main>
+    </BrowserRouter>
   )
 }
 

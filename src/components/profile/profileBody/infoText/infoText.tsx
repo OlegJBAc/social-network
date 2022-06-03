@@ -1,7 +1,8 @@
 import React, { useState } from "react"
 import { useSelector } from "react-redux"
 import { v1 } from "uuid"
-import { getProfileSelector } from "../../../redux/selectors"
+import { getProfileSelector } from "../../../../redux/selectors"
+import { profileType } from "../../../../types/types"
 import s from './infoText.module.scss'
 
 
@@ -11,8 +12,8 @@ type propsType = {
 
 const InfoText: React.FC<propsType> = ({setEditMode}) => {
     const [showContacts, setShowContacts] = useState(true)
-    const profile = useSelector(getProfileSelector)
-    const infoHead = Object.keys(profile)
+    const profile = useSelector(getProfileSelector) as any
+    const infoHead = Object.keys(profile) as string[]
     const infoContacts = Object.keys(profile.contacts)
     return(
         <div className={s.info__text}>

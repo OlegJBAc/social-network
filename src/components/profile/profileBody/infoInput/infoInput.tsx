@@ -1,10 +1,10 @@
 import React, { useState } from "react"
 import { Formik, Form, Field } from "formik"
 import { useDispatch, useSelector } from "react-redux"
-import { getProfileSelector } from "../../../redux/selectors"
+import { getProfileSelector } from "../../../../redux/selectors"
 import s from './infoInput.module.scss'
 import { v1 } from "uuid"
-import { updateProfileTC } from "../../../redux/profile-reducer"
+import { updateProfileTC } from "../../../../redux/profile-reducer"
 
 
 type propsType = {
@@ -14,7 +14,7 @@ type propsType = {
 const InfoInput: React.FC<propsType> = ({setEditMode}) => {
     const dispatch = useDispatch()
     const [showContacts, setShowContacts] = useState(true)
-    const profile = useSelector(getProfileSelector)
+    const profile = useSelector(getProfileSelector) as any
     const infoHeadMapped = Object.keys(profile).map(item => {
         if(!['userId', 'contacts', 'photos'].includes(item)){
             return <div key={v1()} className={s.info__item}>
