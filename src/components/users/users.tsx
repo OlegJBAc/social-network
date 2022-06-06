@@ -5,6 +5,7 @@ import { getUsersSelector } from "../../redux/selectors"
 import { getUsersTC } from "../../redux/users-reducer"
 import s from './users.module.scss'
 import UserItem from "./userItem/userItem"
+import Paginator from "./paginator/paginator"
 
 
 const Users = () => {
@@ -19,6 +20,7 @@ const Users = () => {
     }
     return(
         <div className={s.users}>
+            <Paginator/>
             <div className={s.users__wrap}>
                 <UserItem users={users}/>
             </div>

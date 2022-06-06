@@ -1,0 +1,19 @@
+.chat{
+    width: 88%;
+    background: rgb(159, 255, 237);
+    padding: 10px;
+    &__body{
+        height: 500px;
+        overflow-y: scroll;
+    }
+    &__message{
+        margin: 0px 0px 10px 0px;
+    }
+    &__input{
+        textarea{
+            height: 100px;
+            width: 250px;
+            border-radius: 10px;
+        }
+    }
+}

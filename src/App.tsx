@@ -9,6 +9,7 @@ import Dialogs from './components/dialogs/dialogs'
 import Users from './components/users/users'
 import { getAuthDataTC } from './redux/auth-reducer'
 import Login from './components/login/login'
+import Chat from './components/chat/chat'
 
 type propsType = {
 
@@ -31,6 +32,7 @@ const App: React.FC<propsType> = () => {
               <Route path='/profile' element={<Profile/>}/>
               <Route path='/dialogs' element={<Dialogs/>}/>
               <Route path='/users' element={<Users/>}/>
+              <Route path='/chat' element={<Chat/>}/>
               <Route path='/login' element={<Login/>}/>
             </Routes>
           </div>

@@ -11,4 +11,16 @@ export const getLoginSelector = (state: appType) => {
 }
 export const getUsersSelector = (state: appType) => {
     return state.users.users
+}
+export const getCurrentPageSelector = (state: appType) => {
+    return state.users.currentPage
+}
+export const getPageSizeSelector = (state: appType) => {
+    return state.users.pageSize
+}
+export const getTotalUsersCountSelector = (state: appType) => {
+    return state.users.totalUsersCount
+}
+export const getChatMessagesSelector = (state: appType) => {
+    return state.chat.messages
 } 

@@ -3,12 +3,14 @@ import profileReducer from "./profile-reducer"
 import thunk from 'redux-thunk'
 import authReducer from "./auth-reducer"
 import usersReducer from "./users-reducer"
+import chatReducer from "./chat-reducer"
 
 
 let rootReducer = combineReducers({
     auth: authReducer,
     profile: profileReducer,
-    users: usersReducer
+    users: usersReducer,
+    chat: chatReducer
 })
 
 export type appType = ReturnType<typeof rootReducer>
