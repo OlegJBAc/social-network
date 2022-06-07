@@ -4,17 +4,33 @@ import { getMyUserIdSelector } from "../../../../redux/selectors"
 import s from './message.module.scss'
 
 
-const Message: React.FC<any> = ({message}) => {
+const Message: React.FC<any> = ({message, 
+                                selectedMessages, 
+                                setSelectedMessages, 
+                                selectingMode, 
+                                setSelectingMode}) => {
     let myUserId = useSelector(getMyUserIdSelector)
-    // recipientId: 19901
-    // senderId: 19897
+
+    const onRightClick = (e: any) => {
+        e.preventDefault()
+        setSelectingMode(true)
+    }
+    const selectMessage = (e: any) => {
+        console.log(selectedMessages)
+        if(!selectedMessages.includes(message.id)){
+            setSelectedMessages((selectedMessagesArr: Array<string>) => [...selectedMessagesArr, message.id])
+        }
+    }
+
     return(
-        <div className={s.message}>
+        <div onContextMenu={onRightClick}
+             onDoubleClick={selectingMode ? selectMessage : (e: any) => e.preventDefault()}
+             className={selectedMessages.includes(message.id) ? s.message__selected : s.message}>
             <div className={message.senderId === myUserId ? s.message__my : s.message__friend}>
                 <span>{message.body}</span>
             </div>
         </div>
-    )  
+    )
 }
 
 export default Message
