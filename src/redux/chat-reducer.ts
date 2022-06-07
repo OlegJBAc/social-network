@@ -45,6 +45,7 @@ export const startListeningMessagesTC = () => (dispatch: Dispatch) => {
 } 
 export const stopListeningMessagesTC = () => (dispatch: Dispatch) => {
     chatAPI.unsubscribe('messages-received', newMessagesHandlerCreator(dispatch))
+    chatAPI.destroyChannel()
     dispatch(actions.cleanMessages())
 } 
 

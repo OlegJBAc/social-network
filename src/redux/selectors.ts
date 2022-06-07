@@ -24,3 +24,9 @@ export const getTotalUsersCountSelector = (state: appType) => {
 export const getChatMessagesSelector = (state: appType) => {
     return state.chat.messages
 } 
+export const getDialogsMessagesSelector = (state: appType) => {
+    return state.dialogs.messages
+}
+export const getMyUserIdSelector = (state: appType) => {
+    return state.auth.id
+}

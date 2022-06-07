@@ -5,6 +5,11 @@
     &__body{
         height: 500px;
         overflow-y: scroll;
+        img{
+            height: 60px;
+            width: 60px;
+            border-radius: 50%;
+        }
     }
     &__message{
         margin: 0px 0px 10px 0px;

@@ -8,11 +8,24 @@ let observers = {
 const messageHandler = (data: any) => {
     observers['messages-received'].forEach(obs => obs(JSON.parse(data.data)))
 }
+const reconnectHandler = () => {
+    setTimeout(() => {
+        chatAPI.createChannel()
+        console.log("RECONNECT")
+    }, 5000) 
+}
 
 export const chatAPI = {
     createChannel(){
+        this.destroyChannel()
         ws = new WebSocket('wss://social-network.samuraijs.com/handlers/ChatHandler.ashx')
         ws.addEventListener('message', messageHandler)
+        ws.addEventListener('close', reconnectHandler)
+    },
+    destroyChannel(){
+        ws?.removeEventListener('message', messageHandler)
+        ws?.removeEventListener('close', reconnectHandler)
+        ws?.close()
     },
     subscribe(event: eventType, observer: observerMessageType){
         observers[event].push(observer)
@@ -24,8 +37,6 @@ export const chatAPI = {
         observers[event] = observers[event].filter(obs => obs !== observer)
         observers[event] = []
         observers[event] = []
-        ws?.removeEventListener('message', messageHandler)
-        ws?.close()
     },
     sendMessage(message: string){
         ws.send(message)
