@@ -16,12 +16,10 @@ const Message: React.FC<any> = ({message,
         setSelectingMode(true)
     }
     const selectMessage = (e: any) => {
-        console.log(selectedMessages)
         if(!selectedMessages.includes(message.id)){
             setSelectedMessages((selectedMessagesArr: Array<string>) => [...selectedMessagesArr, message.id])
         }
     }
-
     return(
         <div onContextMenu={onRightClick}
              onDoubleClick={selectingMode ? selectMessage : (e: any) => e.preventDefault()}

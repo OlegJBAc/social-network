@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { Formik, Form, Field } from "formik"
 import { useDispatch, useSelector } from "react-redux"
-import { getProfileSelector } from "../../../../redux/selectors"
+import { getMyUserIdSelector, getProfileSelector } from "../../../../redux/selectors"
 import s from './infoInput.module.scss'
 import { v1 } from "uuid"
 import { updateProfileTC } from "../../../../redux/profile-reducer"
@@ -9,12 +9,13 @@ import { updateProfileTC } from "../../../../redux/profile-reducer"
 
 type propsType = {
     setEditMode: (editMode: boolean) => void
+    profile: any
 }
 
-const InfoInput: React.FC<propsType> = ({setEditMode}) => {
+const InfoInput: React.FC<propsType> = ({setEditMode, profile}) => {
     const dispatch = useDispatch()
     const [showContacts, setShowContacts] = useState(true)
-    const profile = useSelector(getProfileSelector) as any
+    let userId = useSelector(getMyUserIdSelector)
     const infoHeadMapped = Object.keys(profile).map(item => {
         if(!['userId', 'contacts', 'photos'].includes(item)){
             return <div key={v1()} className={s.info__item}>
@@ -31,7 +32,7 @@ const InfoInput: React.FC<propsType> = ({setEditMode}) => {
     
     const submit = (values: any, { setSubmitting }: any) => {
         // @ts-ignore
-        dispatch(updateProfileTC(values))
+        dispatch(updateProfileTC(values, userId))
         setSubmitting(false)
         setEditMode(false)
     }

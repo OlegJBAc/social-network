@@ -5,6 +5,7 @@ import user_main from '../../../user_main.webp'
 import { userType } from "../../../types/types"
 import { followTC, unfollowTC } from '../../../redux/users-reducer'
 import { v1 } from 'uuid'
+import { Link, NavLink } from "react-router-dom"
 
 
 type propsType = {
@@ -18,11 +19,15 @@ const UserItem: React.FC<propsType> = ({users}) => {
             {users.map(user => {
                 return <div key={v1()} className={s.user}>
                     <div className={s.user__img}>
-                        <img src={user.photos.small ? user.photos.small : user_main}/>
+                        <Link to={`/profile/id=${user.id}`}>
+                            <img src={user.photos.small ? user.photos.small : user_main}/>
+                        </Link>
                     </div>
-                    <div className={s.user__name}>
-                        {user.name}
-                    </div>
+                    <Link to={`/profile/id=${user.id}`}>
+                        <div className={s.user__name}>
+                            {user.name}
+                        </div>
+                    </Link>
                     <div className={s.user__following}>
                         {user.followed
                         // @ts-ignore

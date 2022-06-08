@@ -15,7 +15,7 @@ const profileReducer = (state=initialState, action: actionsType): typeof initial
             return {...state, profile: {...action.profile}}
         case 'SET_PROFILE_PHOTO':
             // @ts-ignore
-            return {...state, profile: {...action.profile, photos: action.photos} as profileType}
+            return {...state, profile: {...state.profile, photos: action.photos} as profileType}
             
         default: 
             return state
@@ -24,29 +24,30 @@ const profileReducer = (state=initialState, action: actionsType): typeof initial
 
 export const actions = {
     setProfile: (profile: profileType) => ({type: 'SET_PROFILE_DATA', profile} as const),
-    setProfilePhoto: (photo: File) => ({type: 'SET_PROFILE_PHOTO', photo} as const),
+    setProfilePhoto: (photos: File) => ({type: 'SET_PROFILE_PHOTO', photos} as const),
 }
 
 export const getProfileTC = (userId: number) => async (dispatch: Dispatch) => {
+    console.log(userId)
     let response = await profileAPI.getProfile(userId)
     dispatch(actions.setProfile(response.data))
 }
 
-export const updateProfileTC = (profile: any) => async (dispatch: Dispatch) => {
+export const updateProfileTC = (profile: any, myId: number) => async (dispatch: Dispatch) => {
     let response = await profileAPI.updateProfile(profile)
     if(response.data.resultCode === 0){
         // @ts-ignore
-        dispatch(getProfileTC(19901))
+        dispatch(getProfileTC(myId))
     }
 }
 
-export const updateProfilePhotoTC = (photo: File) => async (dispatch: Dispatch) => {
+export const updateProfilePhotoTC = (photo: File, myId: number) => async (dispatch: Dispatch) => {
     let response = await profileAPI.updateProfilePhoto(photo)
     if(response.data.resultCode === 0){
-        dispatch(actions.setProfilePhoto(photo))
+        dispatch(actions.setProfilePhoto(response.data.data.photos))
         console.log(response)
     }else{
-        console.log(response + 'FAIL BRO')
+        console.error(response + 'FAIL BRO')
     }
 }
 

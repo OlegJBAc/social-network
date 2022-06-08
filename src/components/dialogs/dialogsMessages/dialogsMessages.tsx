@@ -39,11 +39,9 @@ const DialogsMessages = React.memo(() => {
                         {/* @ts-ignore */}
                         <button onClick={() => {
                             {/* @ts-ignore */}
-                            dispatch(deleteMessagesTC(selectedMessages, 19901)).then((data) => {
-                                console.log(data)
+                            dispatch(deleteMessagesTC(selectedMessages, 19901)).then(() => {
                                 setSelectingMode(false)
                             })
-
                             }}>Delete</button>
                         <button onClick={() => setSelectingMode(false)}>Cancel</button>
                     </div>

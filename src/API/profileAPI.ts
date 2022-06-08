@@ -2,6 +2,7 @@ import { instance } from "./API"
 
 export const profileAPI = {
     getProfile(userId: number){
+        console.log(userId)
         return instance.get(`/profile/${userId}`)
     },
     updateProfile(profile: any){

@@ -5,6 +5,7 @@ import { getChatMessagesSelector } from "../../redux/selectors"
 import s from './chat.module.scss'
 import { v1 } from 'uuid'
 import user_main from '../../user_main.webp'
+import { Link } from "react-router-dom"
 
 const Chat = () => {
     const dispatch = useDispatch()
@@ -43,10 +44,14 @@ const Chat = () => {
                     return(
                         <div key={v1()} className={s.chat__message}>
                             <div>
-                                <img src={message.photo ? message.photo : user_main}/>
+                                <Link to={`/profile/id=${message.userId}`}>
+                                    <img src={message.photo ? message.photo : user_main}/>
+                                </Link>
                             </div>
                             <div>
-                                {message.userName}
+                                <Link to={`/profile/id=${message.userId}`}>
+                                    {message.userName}
+                                </Link>
                             </div>
                             <div>
                                 {message.message}

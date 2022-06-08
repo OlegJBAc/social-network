@@ -8,13 +8,13 @@ import s from './infoText.module.scss'
 
 type propsType = {
     setEditMode: (editMode: boolean) => void
+    profile: any
 }
 
-const InfoText: React.FC<propsType> = ({setEditMode}) => {
+const InfoText: React.FC<propsType> = ({setEditMode, profile}) => {
     const [showContacts, setShowContacts] = useState(true)
-    const profile = useSelector(getProfileSelector) as any
-    const infoHead = Object.keys(profile) as string[]
-    const infoContacts = Object.keys(profile.contacts)
+    let infoHead = Object.keys(profile) as string[]
+    let infoContacts = Object.keys(profile.contacts)
     return(
         <div className={s.info__text}>
             {infoHead.map(item => {

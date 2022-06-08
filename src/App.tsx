@@ -4,7 +4,7 @@ import { connect, useDispatch } from 'react-redux'
 import Header from './components/header/header'
 import NavBar from './components/navBar/navBar'
 import Profile from './components/profile/profile'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import Dialogs from './components/dialogs/dialogs'
 import Users from './components/users/users'
 import { getAuthDataTC } from './redux/auth-reducer'
@@ -28,8 +28,11 @@ const App: React.FC<propsType> = () => {
           <div className={s.container}>
             <NavBar/>
             <Routes>
+              <Route path={'/'} element={ <Navigate to={'/profile'}/> }/>
               {/* @ts-ignore */}
-              <Route path='/profile' element={<Profile/>}/>
+              <Route path='/profile' element={<Profile/>}>
+                <Route path=':id' element={<Profile/>}/>
+              </Route>
               <Route path='/dialogs' element={<Dialogs/>}/>
               <Route path='/users' element={<Users/>}/>
               <Route path='/chat' element={<Chat/>}/>
