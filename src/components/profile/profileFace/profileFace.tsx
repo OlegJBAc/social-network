@@ -1,16 +1,21 @@
 import React from "react"
 import s from './profileFace.module.scss'
 import user_main from '../../../user_main.webp'
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
 import { updateProfilePhotoTC } from "../../../redux/profile-reducer"
-import { getMyUserIdSelector, getProfileSelector } from "../../../redux/selectors"
+import { profileType } from "../../../types/types"
+import { Link, Navigate } from "react-router-dom"
 
-const ProfileFace: React.FC<any> = ({profile}) => {
+type propsType = {
+    profile: profileType | null
+    isOwner: boolean | null
+    currentUserId: number | null
+}
+const ProfileFace: React.FC<propsType> = ({profile, isOwner, currentUserId}) => {
     const dispatch = useDispatch()
-    let userId = useSelector(getMyUserIdSelector)
     const updatePhoto = (e: any) => {
         // @ts-ignore
-        dispatch(updateProfilePhotoTC(e.target.files[0], userId))
+        dispatch(updateProfilePhotoTC(e.target.files[0]))
     }
 
     return(
@@ -18,7 +23,14 @@ const ProfileFace: React.FC<any> = ({profile}) => {
             <div className={s.avatar}>
                 <img src={profile?.photos.large ? profile?.photos.large : user_main}/>
             </div>
-            <input onChange={updatePhoto} type="file"/>
+            {isOwner
+                ? <input onChange={updatePhoto} type="file"/>
+                : <Link to={`/dialogs/id=${currentUserId}`}>
+                    <div className={s.profile__dialogs}>
+                        <span>SendMessage</span>
+                    </div>
+                </Link>
+            }
         </div>
     )
 }

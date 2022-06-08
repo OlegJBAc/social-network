@@ -33,7 +33,9 @@ const App: React.FC<propsType> = () => {
               <Route path='/profile' element={<Profile/>}>
                 <Route path=':id' element={<Profile/>}/>
               </Route>
-              <Route path='/dialogs' element={<Dialogs/>}/>
+              <Route path='/dialogs' element={<Dialogs/>}>
+                <Route path=':id' element={<Dialogs/>}/>
+              </Route>
               <Route path='/users' element={<Users/>}/>
               <Route path='/chat' element={<Chat/>}/>
               <Route path='/login' element={<Login/>}/>

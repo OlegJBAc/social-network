@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { useLocation } from "react-router-dom"
 import authRedirectHoc from "../../commons/hocs/hoc"
@@ -11,32 +11,40 @@ import ProfileFace from "./profileFace/profileFace"
 import * as queryString from 'query-string'
 
 
-const Profile = () => {
+const Profile = React.memo(() => {
     const dispatch = useDispatch()
     const history = useLocation()
     let profile = useSelector(getProfileSelector)
     let userId = useSelector(getMyUserIdSelector)
-
+    const [isOwner, setIsOwner] = useState<boolean | null>(null)
+    const [currentUserId, setCurrentUserId] = useState(userId)
     useEffect(() => {
         const parsed = queryString.parse(history.pathname)
-        if(parsed['/profile/id']){
+        if(Number(parsed['/profile/id']) === userId){
+            setIsOwner(true)
+            setCurrentUserId(userId)
+        }
+        if(parsed['/profile/id'] && Number(parsed['/profile/id']) !== userId){
+            setIsOwner(false)
+            setCurrentUserId(Number(parsed['/profile/id']))
             // @ts-ignore
             dispatch(getProfileTC(Number(parsed['/profile/id'])))
         }else{
             // @ts-ignore
             dispatch(getProfileTC(userId))
+            setCurrentUserId(userId)
+            setIsOwner(true)
         }
     }, [history.pathname])
-    // @ts-ignore
     if(!profile){
         return <Loader/>
     }
     return(
         <div className={s.profile}>
-            <ProfileFace profile={profile}/>
-            <ProfileBody profile={profile}/>
+            <ProfileFace currentUserId={currentUserId} isOwner={isOwner} profile={profile}/>
+            <ProfileBody isOwner={isOwner} profile={profile}/>
         </div>
     )
-}
+})
 
 export default authRedirectHoc(Profile)

@@ -15,8 +15,7 @@ const profileReducer = (state=initialState, action: actionsType): typeof initial
             return {...state, profile: {...action.profile}}
         case 'SET_PROFILE_PHOTO':
             // @ts-ignore
-            return {...state, profile: {...state.profile, photos: action.photos} as profileType}
-            
+            return {...state, profile: {...state.profile, photos: action.photos} as profileType}  
         default: 
             return state
     }
@@ -28,7 +27,6 @@ export const actions = {
 }
 
 export const getProfileTC = (userId: number) => async (dispatch: Dispatch) => {
-    console.log(userId)
     let response = await profileAPI.getProfile(userId)
     dispatch(actions.setProfile(response.data))
 }
@@ -41,11 +39,10 @@ export const updateProfileTC = (profile: any, myId: number) => async (dispatch: 
     }
 }
 
-export const updateProfilePhotoTC = (photo: File, myId: number) => async (dispatch: Dispatch) => {
+export const updateProfilePhotoTC = (photo: File) => async (dispatch: Dispatch) => {
     let response = await profileAPI.updateProfilePhoto(photo)
     if(response.data.resultCode === 0){
         dispatch(actions.setProfilePhoto(response.data.data.photos))
-        console.log(response)
     }else{
         console.error(response + 'FAIL BRO')
     }

@@ -9,9 +9,10 @@ import s from './infoText.module.scss'
 type propsType = {
     setEditMode: (editMode: boolean) => void
     profile: any
+    isOwner: boolean | null
 }
 
-const InfoText: React.FC<propsType> = ({setEditMode, profile}) => {
+const InfoText: React.FC<propsType> = ({setEditMode, profile, isOwner}) => {
     const [showContacts, setShowContacts] = useState(true)
     let infoHead = Object.keys(profile) as string[]
     let infoContacts = Object.keys(profile.contacts)
@@ -43,7 +44,10 @@ const InfoText: React.FC<propsType> = ({setEditMode, profile}) => {
                     </div>
                 })}
             </div>
-            <button onClick={() => setEditMode(true)}>EditMode</button>
+            {isOwner
+                ? <button onClick={() => setEditMode(true)}>EditMode</button>
+                : false
+            }
         </div>
     )
 }

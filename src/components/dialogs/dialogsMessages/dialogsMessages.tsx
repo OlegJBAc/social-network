@@ -7,7 +7,11 @@ import s from './dialogsMessages.module.scss'
 import Message from "./message/message"
 
 
-const DialogsMessages = React.memo(() => {
+type propsType = {
+    userId: number
+}
+
+const DialogsMessages: React.FC<propsType> = React.memo(({userId}) => {
     const dispatch = useDispatch()
     let messages = useSelector(getDialogsMessagesSelector)
     const [isAutoScroll, setIsAutoScroll] = useState(true)
@@ -39,7 +43,7 @@ const DialogsMessages = React.memo(() => {
                         {/* @ts-ignore */}
                         <button onClick={() => {
                             {/* @ts-ignore */}
-                            dispatch(deleteMessagesTC(selectedMessages, 19901)).then(() => {
+                            dispatch(deleteMessagesTC(selectedMessages, userId)).then(() => {
                                 setSelectingMode(false)
                             })
                             }}>Delete</button>

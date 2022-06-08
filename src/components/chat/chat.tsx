@@ -51,6 +51,7 @@ const Chat = () => {
                             <div>
                                 <Link to={`/profile/id=${message.userId}`}>
                                     {message.userName}
+                                
                                 </Link>
                             </div>
                             <div>
@@ -79,8 +80,6 @@ const AddMessage = () => {
         </div>
     )
 }
-
-
 
 
 export default Chat
