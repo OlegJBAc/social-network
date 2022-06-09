@@ -16,6 +16,7 @@ const InfoText: React.FC<propsType> = ({setEditMode, profile, isOwner}) => {
     const [showContacts, setShowContacts] = useState(true)
     let infoHead = Object.keys(profile) as string[]
     let infoContacts = Object.keys(profile.contacts)
+    let counter = 0
     return(
         <div className={s.info__text}>
             {infoHead.map(item => {
@@ -38,11 +39,19 @@ const InfoText: React.FC<propsType> = ({setEditMode, profile, isOwner}) => {
             </div>
             <div className={showContacts ? s.info__showed : s.info__hidden}>
                 {infoContacts.map(contact => {
-                    return <div key={v1()} className={s.info__item}>
+                    if(profile.contacts[contact] !== null && profile.contacts[contact] !== ''){
+                        ++counter
+                        return <div key={v1()} className={s.info__item}>
                                 <span className={s.info__key}>{contact + ':'}</span>
                                 <span className={s.info__value}>{profile.contacts[contact]}</span>
-                    </div>
-                })}
+                        </div>
+                    }})}
+                {counter === 0
+                    ?  <div className={s.info__zero}>
+                            <span>This user didn't give some info about contacts.</span>
+                        </div>
+                    : false
+                }
             </div>
             {isOwner
                 ? <button onClick={() => setEditMode(true)}>EditMode</button>

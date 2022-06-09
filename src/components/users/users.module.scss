@@ -1,8 +1,19 @@
 .users{
+    box-sizing: border-box;
     background: rgb(195, 203, 251);
     width: 88%;
     padding: 10px;
-    &__wrap{
-        margin: 0px 0px 0px 15px;
+    &__classic{
+        margin: 0px 0px 0px 0px;
+    }
+    &__flexible{
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    &__view{
+        display: flex;
+        justify-content: end;
+        padding: 0px 35px 0px 0px;
     }
 }

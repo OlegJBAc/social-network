@@ -1,7 +1,16 @@
 .navBar{
-    width: 22%;
+    min-width: 22%;
     background: rgb(188, 255, 255);
     font-size: 1.3em;
     line-height: 170%;
-    list-style: none;
+    ul{
+        list-style: none;
+        padding: 0px 20px 0px 20px;
+        a{
+            text-decoration: none;
+            color: black;
+        }
+
+    }
+
 }

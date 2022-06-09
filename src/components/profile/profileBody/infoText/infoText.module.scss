@@ -13,6 +13,14 @@
     .info__hidden{
         display: none;
     }
+    .info__zero{
+        display: flex;
+        justify-content: center;
+        font-size: 1.3em;
+        margin: 17px 0px 0px 0px;
+        font-weight: 500;
+        font-style: oblique;
+    }
     .show__buttonWrap{
         display: flex;
         flex-direction: row;

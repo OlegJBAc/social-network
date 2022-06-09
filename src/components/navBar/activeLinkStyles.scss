@@ -1,3 +1,9 @@
 .active{
     color: rgb(255, 149, 0);
+    li{
+        padding: 0px 0px 0px 10px;
+        background: white;
+        border-radius: 15px;
+        transition-duration: 1s;
+    }
 }

@@ -1,15 +1,14 @@
 .header{
-    background: rgb(147, 255, 255);
+    background: rgb(255, 255, 255);
     display: flex;
     img{
-        height: 50px;
-        width: 50px;
-        background: black;
+        height: 60px;
+        width: 60px;
         border-radius: 50%;
-        margin: 0px 0px 0px 250px;
+        margin: 0px 0px 0px 233px;
     }
     &__login{
-        margin: 10px 0px 0px 895px;
+        margin: 10px 0px 0px 894px;
     }
     &__authorized{
         span{

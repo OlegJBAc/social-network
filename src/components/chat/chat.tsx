@@ -48,14 +48,16 @@ const Chat = () => {
                                     <img src={message.photo ? message.photo : user_main}/>
                                 </Link>
                             </div>
-                            <div>
-                                <Link to={`/profile/id=${message.userId}`}>
-                                    {message.userName}
-                                
-                                </Link>
-                            </div>
-                            <div>
-                                {message.message}
+                            <div className={s.chat__info}>
+                                <div className={s.chat__name}>
+                                    <Link to={`/profile/id=${message.userId}`}>
+                                        {message.userName}
+                                    
+                                    </Link>
+                                </div>
+                                <div className={s.chat__text}>
+                                    {message.message}
+                                </div>
                             </div>
                         </div>
                     )
@@ -72,7 +74,6 @@ const AddMessage = () => {
     const newSymbol = (e: any) => {
         setCurrentValue(e.currentTarget.value)
     }
-
     return(
         <div className={s.chat__input}>
             <textarea onChange={newSymbol} value={currentValue}/>
