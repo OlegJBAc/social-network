@@ -45,6 +45,11 @@ const UserItem: React.FC<propsType> = ({users, flexible}) => {
                                         <span>Follow</span>
                                     </button>
                                 }
+                                <Link to={`/dialogs/id=${user.id}`}>
+                                    <button id={flexible ? s.flexible__write : s.classic__write}>
+                                        <span>Write message</span>
+                                    </button>
+                                </Link>
                             </div>
                         </div>
                     </div>

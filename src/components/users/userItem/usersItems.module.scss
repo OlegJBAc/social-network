@@ -22,9 +22,16 @@
     .classic__nameWrapper{
         padding: 0px 0px 0px 20px;
     }
+    #classic__write{
+        background: rgb(28, 250, 165);
+        color: black;
+        font-weight: 600;
+        margin-left: 20px;
+    }
 }
 .user__flexible{
-    width: 25%;
+    width: 30%;
+    height: 180px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -45,7 +52,7 @@
         }
     }
     .flexible__name{
-        margin: 0px 0px 10px 0px;
+        margin: 0px 0px 25px 0px;
         font-style: italic;
         font-size: 1.20em;
     }
@@ -57,11 +64,20 @@
     }
     .flexible__following{
         button{
-            width: 100px;
+            width: 80px;
         }
+    }
+    #flexible__write{
+        background: rgb(28, 250, 165);
+        color: black;
+        font-weight: 600;
+        width: auto;
+        margin: 0px 0px 0px 0px;
     }
 }
 .user__unfollow{
     background: rgb(52, 253, 159);
     color: black;
+    font-weight: 600;
+    padding: 0px;
 }

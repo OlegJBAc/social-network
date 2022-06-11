@@ -1,6 +1,7 @@
 .users{
     box-sizing: border-box;
     background: rgb(195, 203, 251);
+    // background: #4d5061;
     width: 88%;
     padding: 10px;
     &__classic{
@@ -13,7 +14,7 @@
     }
     &__view{
         display: flex;
-        justify-content: end;
-        padding: 0px 35px 0px 0px;
+        justify-content: space-between;
+        padding: 10px 12px 0px 12px;
     }
 }

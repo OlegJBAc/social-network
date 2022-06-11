@@ -6,12 +6,13 @@ import { getUsersTC } from "../../redux/users-reducer"
 import s from './users.module.scss'
 import UserItem from "./userItem/usersItems"
 import Paginator from "./paginator/paginator"
+import UsersFilter from "./usersFilter/usersFilter"
 
 
 const Users = () => {
     const dispatch = useDispatch()
     let users = useSelector(getUsersSelector)
-    const [flexible, setFlexible] = useState(false)
+    const [flexible, setFlexible] = useState(true)
     useEffect(() => {
         // @ts-ignore
         dispatch(getUsersTC(100, 1))
@@ -23,6 +24,7 @@ const Users = () => {
         <div className={s.users}>
             <Paginator/>
             <div className={s.users__view}>
+                <UsersFilter/>
                 {flexible
                     ? <button onClick={() => setFlexible(false)}>ClassicView</button>
                     : <button onClick={() => setFlexible(true)}>FlexibleView</button>

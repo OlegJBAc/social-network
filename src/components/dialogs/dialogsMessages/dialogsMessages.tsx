@@ -16,7 +16,7 @@ const DialogsMessages: React.FC<propsType> = React.memo(({userId}) => {
     let messages = useSelector(getDialogsMessagesSelector)
     const [isAutoScroll, setIsAutoScroll] = useState(true)
     const [selectingMode, setSelectingMode] = useState(false)
-    const [selectedMessages, setSelectedMessages] = useState([])
+    const [selectedMessages, setSelectedMessages] = useState<string[]>([])
 
     const messagesAnchorRef = useRef<HTMLDivElement>(null)
     const scrollHandler = (e: React.UIEvent<HTMLDivElement, UIEvent>) => {
@@ -52,7 +52,6 @@ const DialogsMessages: React.FC<propsType> = React.memo(({userId}) => {
                 
                 : false
             }
-            {/* @ts-ignore */}
             {messages.map(message => <Message key={v1()}
                                               message={message}
                                               selectedMessages={selectedMessages}

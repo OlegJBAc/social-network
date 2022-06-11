@@ -74,10 +74,15 @@ const AddMessage = () => {
     const newSymbol = (e: any) => {
         setCurrentValue(e.currentTarget.value)
     }
+
+    const sendMessageWrapper = (e: any) => {
+        sendMessage(e)
+    }
+
     return(
         <div className={s.chat__input}>
             <textarea onChange={newSymbol} value={currentValue}/>
-            <button onClick={() => sendMessage(currentValue)}>SendMessage</button>
+            <button onClick={() => sendMessageWrapper(currentValue)}>SendMessage</button>
         </div>
     )
 }

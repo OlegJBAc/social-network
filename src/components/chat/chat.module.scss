@@ -36,6 +36,7 @@
     &__text{
         font-size: 1em;
         padding-bottom: 12px;
+        word-break: break-all;
     }
     &__input{
         textarea{

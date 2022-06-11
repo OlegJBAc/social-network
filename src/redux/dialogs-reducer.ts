@@ -1,11 +1,12 @@
 import { Dispatch } from "redux"
 import { dialogsAPI } from "../API/dialogsAPI"
+import { messageType } from "../types/types"
 import { inferActionsType } from "./store"
 
 
 
 const initialState = {
-    messages: [] as any
+    messages: [] as messageType[]
 }
 
 
@@ -22,8 +23,8 @@ const dialogsReducer = (state=initialState, action: actionsType): typeof initial
 }
 
 const actions = {
-    getMessages: (messages: any) => ({type: 'GET_MESSAGES', messages} as const ),
-    messagesWithSended: (message: string) => ({type: 'MESSAGES_WITH_SENDED', message} as const),
+    getMessages: (messages: messageType[]) => ({type: 'GET_MESSAGES', messages} as const ),
+    messagesWithSended: (message: messageType) => ({type: 'MESSAGES_WITH_SENDED', message} as const),
 }
 
 export const getMessagesTC = (userId: number, page: number, count: number) => async (dispatch: Dispatch) => {
@@ -34,7 +35,7 @@ export const sendMessageTC = (userId: number, body: string) => async (dispatch: 
     let response = await dialogsAPI.sendMessage(userId, body)
     dispatch(actions.messagesWithSended(response.data.data.message))
 }
-export const deleteMessagesTC = (messages: Array<any>, userId: number) => async (dispatch: Dispatch) => {
+export const deleteMessagesTC = (messages: Array<string>, userId: number) => async (dispatch: Dispatch) => {
     let counter = 0
     const deleteFunc = () => {
         dialogsAPI.deleteMessage(messages[counter]).then(() => {

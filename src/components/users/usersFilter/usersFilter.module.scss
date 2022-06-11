@@ -1,0 +1,79 @@
+.filter{
+    &__term{
+        height: 29px;
+        background: #4d5061;
+        border: none;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 1.0);
+        font-size: 1rem;
+        padding: 0.05rem 2rem 0rem 0.4rem;
+        border-bottom-left-radius: 10px;
+        border-top-left-radius: 10px;
+        color: white;
+    }
+    &__selectWrap{
+        position: relative;
+        display: inline-block;
+    }
+    &__select{
+        height: 30px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 1.0);
+        font-size: 1rem;
+        padding: 0rem 2rem 0rem 0.4rem;
+        background: #4d5061;
+        color: white;
+        border: 0;
+        border-bottom-right-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+    &__arrow{
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding-left: 7px;
+        display: block;
+        background: #3b3e49;
+        height: 100%;
+        width: 1.5rem;
+        pointer-events: none;
+
+    }
+    &__arrow::before,
+    &__arrow::after{
+        --size: 0.4em;
+        content: '';
+        position: absolute;
+        width: 0px;
+        height: 0px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        top: 30%;
+
+    }
+    &__arrow::before{
+        border-left: var(--size) solid transparent;
+        border-right: var(--size) solid transparent;
+        border-bottom: var(--size) solid #8f92a7;
+    }
+    &__arrow::after{
+        border-left: var(--size) solid transparent;
+        border-right: var(--size) solid transparent;
+        border-top: var(--size) solid #8f92a7;
+        top: 70%;
+    }
+    &__button{
+        height: 30px;
+        margin: 0px 0px 5px 0px;
+        padding: 3px 15px 0px 12px;
+        border-radius: 0px;
+        background: #4d5061;
+        font-weight: 600;
+        font-style: italic;
+        width: auto;
+        border-bottom-right-radius: 10px;
+        border-top-right-radius: 10px;
+        box-shadow:inset -2px 0px 3px 0px rgba(255,255,255,.5),
+        7px 7px 20px 0px rgba(0,0,0,.1),
+        7px 7px 5px 0px rgba(0,0,0,.1);
+    }
+}

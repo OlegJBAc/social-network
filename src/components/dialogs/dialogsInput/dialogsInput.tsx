@@ -10,11 +10,30 @@ type propsType = {
 const DialogsInput: React.FC<propsType> = React.memo(({userId}) => {
     const [currentValue, setCurrentValue] = useState('')
     const dispatch = useDispatch()
+    const newSymbol = (e: any) => {
+        setCurrentValue(e.currentTarget.value)
+    }
+    const sendMessageWrapper = () => {
+        {/* @ts-ignore */}
+        dispatch(sendMessageTC(userId, currentValue))
+        setCurrentValue('')
+    }
+    const checkingForKeys = (e: any) => {
+        if(e.code === 'Enter'){
+            e.preventDefault()
+            sendMessageWrapper()
+        }
+    }
+    function auto_grow(element: any) {
+        console.log(element.target.style)
+        element.target.style.height += "5px";
+        element.target.style.height = (element.scrollHeight) + "px";
+    }
     return(
         <div className={s.dialogs__input}>
-            <textarea onChange={(e: any) => setCurrentValue(e.currentTarget.value)} value={currentValue}/>
             {/* @ts-ignore */}
-            <button onClick={() => dispatch(sendMessageTC(userId, currentValue))}>SendMessage</button>
+            <textarea onInput={auto_grow} onKeyDown={checkingForKeys} onChange={newSymbol} value={currentValue}/>
+            <button onClick={sendMessageWrapper}>SendMessage</button>
         </div>
     )
 })

@@ -13,7 +13,7 @@ type propsType = {
 }
 
 const InfoText: React.FC<propsType> = ({setEditMode, profile, isOwner}) => {
-    const [showContacts, setShowContacts] = useState(true)
+    const [showContacts, setShowContacts] = useState(false)
     let infoHead = Object.keys(profile) as string[]
     let infoContacts = Object.keys(profile.contacts)
     let counter = 0

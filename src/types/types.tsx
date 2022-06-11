@@ -29,3 +29,14 @@ export type userType = {
     }
     followed: boolean
 }
+
+export type messageType = {
+    addedAt: string
+    body: string
+    id: string
+    recipientId: number
+    senderId: number
+    senderName: string
+    translatedBody: null | boolean
+    viewed: boolean
+}
