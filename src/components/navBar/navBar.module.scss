@@ -1,16 +1,16 @@
 .navBar{
-    min-width: 22%;
+    width: 20%;
     background: gainsboro;
-    font-size: 1.3em;
+    font-size: 125%;
     line-height: 170%;
     img{
-        height: 18px;
-        width: 18px;
+        height: auto;
+        width: 12.1%;
         padding-top: 2px;
     }
     ul{
         list-style: none;
-        padding: 0px 20px 0px 20px;
+        padding: 0px 20px 0px 0px;
         a{
             text-decoration: none;
             color: rgb(27, 9, 60);
@@ -18,16 +18,16 @@
         li{
             display: flex;
             align-items: center;
-            border-radius: 15px;
+            border-radius: 0.9rem;
             img{
                 margin-right: 10px;
             }
             padding-left: 10px;
-            margin-bottom: 10px;
+            margin-bottom: 5%;
         }
         li:hover{
             transition-duration: 0.3s;
-            background: rgb(246, 243, 243);
+            background: rgba(255, 255, 255, 0.633);
         }
     }
 

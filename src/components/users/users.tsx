@@ -15,7 +15,7 @@ const Users = () => {
     const [flexible, setFlexible] = useState(true)
     useEffect(() => {
         // @ts-ignore
-        dispatch(getUsersTC(100, 1))
+        dispatch(getUsersTC(9, 1))
     }, [])
     if(!users){
         return <Loader/>

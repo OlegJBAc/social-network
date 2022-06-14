@@ -1,16 +1,22 @@
 .header{
     background: rgb(255, 255, 255);
-    display: flex;
     img{
-        height: 60px;
-        width: 60px;
+        margin: 0.5%;
+        height: 80%;
+        width: 3.5%;
         border-radius: 50%;
-        margin: 0px 0px 0px 233px;
     }
-    &__login{
-        margin: 10px 0px 0px 894px;
+    &__content{
+        height: 50px;
+        width: 70%;
+        margin: 0px auto;
+        display: flex;
+        justify-content: space-between;
     }
+    
     &__authorized{
+        display: flex;
+        margin: 5% 0% 0% 0%;
         span{
             font-size: 1.3em;
         }

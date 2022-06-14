@@ -13,7 +13,7 @@ type propsType = {
 }
 
 const InfoText: React.FC<propsType> = ({setEditMode, profile, isOwner}) => {
-    const [showContacts, setShowContacts] = useState(false)
+    const [showContacts, setShowContacts] = useState(isOwner ? false : true)
     let infoHead = Object.keys(profile) as string[]
     let infoContacts = Object.keys(profile.contacts)
     let counter = 0
@@ -47,7 +47,7 @@ const InfoText: React.FC<propsType> = ({setEditMode, profile, isOwner}) => {
                         </div>
                     }})}
                 {counter === 0
-                    ?  <div className={s.info__zero}>
+                    ? <div className={s.info__zero}>
                             <span>This user didn't give some info about contacts.</span>
                         </div>
                     : false
