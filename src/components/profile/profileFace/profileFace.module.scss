@@ -27,4 +27,36 @@
         border-radius: 20px;
         margin-top: 10px;
     }
+    .input__wrapper{
+        position: relative;
+        height: 100px;
+    }
+    input[type="file"]{
+       display: none;
+    }
+    label{
+        box-shadow: 6px 3px 7px rgb(187, 183, 183);
+        color: rgb(0, 0, 0);
+        height: 30px;
+        width: 100%;
+        border-radius: 20px;
+        font-size: 1.2rem;
+        background: rgb(234, 226, 226);
+        position: absolute;
+        margin: 20px auto;
+        padding: 5px 0px 7px 0px;
+        font-weight: 500;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    label:hover{
+        transition-duration: 1s;
+        font-size: 1.3rem;
+        cursor: pointer;
+    }
 }

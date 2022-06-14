@@ -1,8 +1,10 @@
 .login{
     box-sizing: border-box;
     width: 88%;
-    background: rgb(107, 235, 255);
+    background: rgb(255, 255, 255);
     padding: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
     &__email{
         margin: 10px 0px;
         input{

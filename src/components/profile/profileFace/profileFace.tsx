@@ -4,7 +4,8 @@ import user_main from '../../../user_main.webp'
 import { useDispatch } from "react-redux"
 import { updateProfilePhotoTC } from "../../../redux/profile-reducer"
 import { profileType } from "../../../types/types"
-import { Link, Navigate } from "react-router-dom"
+import { Link } from "react-router-dom"
+import './profileFaceStyles.scss'
 
 type propsType = {
     profile: profileType | null
@@ -24,7 +25,10 @@ const ProfileFace: React.FC<propsType> = ({profile, isOwner, currentUserId}) => 
                 <img src={profile?.photos.large ? profile?.photos.large : user_main}/>
             </div>
             {isOwner
-                ? <input onChange={updatePhoto} type="file"/>
+                ? <div className={s.input__wrapper}>
+                    <input id='input__file' onChange={updatePhoto} type="file" accept="image/*"/>
+                    <label htmlFor='input__file'>Choose a photo</label>
+                </div>
                 : <Link to={`/dialogs/id=${currentUserId}`}>
                     <div className={s.profile__dialogs}>
                         <span>SendMessage</span>

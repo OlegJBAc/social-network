@@ -36,31 +36,38 @@ const DialogsMessages: React.FC<propsType> = React.memo(({userId}) => {
     
 
     return(
-        <div className={s.dialogs__messages} onScroll={scrollHandler}>
-            {selectingMode 
-                ? 
-                    <div className={s.selecting}>
-                        {/* @ts-ignore */}
-                        <button onClick={() => {
-                            {/* @ts-ignore */}
-                            dispatch(deleteMessagesTC(selectedMessages, userId)).then(() => {
-                                setSelectingMode(false)
-                            })
-                            }}>Delete</button>
-                        <button onClick={() => setSelectingMode(false)}>Cancel</button>
-                    </div>
-                
-                : false
+        <>
+            {messages.length === 0
+                ? <div className={s.dialogs__messagesZero}>
+                    <span>There are no messages here yet</span>
+                </div>
+                : <div className={s.dialogs__messages} onScroll={scrollHandler}>
+                    {selectingMode 
+                        ? 
+                            <div className={s.selecting}>
+                                {/* @ts-ignore */}
+                                <button onClick={() => {
+                                    {/* @ts-ignore */}
+                                    dispatch(deleteMessagesTC(selectedMessages, userId)).then(() => {
+                                        setSelectingMode(false)
+                                    })
+                                    }}>Delete</button>
+                                <button onClick={() => setSelectingMode(false)}>Cancel</button>
+                            </div>
+                        
+                        : false
+                    }
+                    {messages.map(message => <Message key={v1()}
+                                                    message={message}
+                                                    selectedMessages={selectedMessages}
+                                                    setSelectedMessages={setSelectedMessages}
+                                                    selectingMode={selectingMode}
+                                                    setSelectingMode={setSelectingMode}
+                                                />)}
+                    <div ref={messagesAnchorRef}></div>
+                </div>
             }
-            {messages.map(message => <Message key={v1()}
-                                              message={message}
-                                              selectedMessages={selectedMessages}
-                                              setSelectedMessages={setSelectedMessages}
-                                              selectingMode={selectingMode}
-                                              setSelectingMode={setSelectingMode}
-                                        />)}
-            <div ref={messagesAnchorRef}></div>
-        </div>
+        </>
     )
 })
 

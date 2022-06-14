@@ -53,10 +53,12 @@ const InfoText: React.FC<propsType> = ({setEditMode, profile, isOwner}) => {
                     : false
                 }
             </div>
-            {isOwner
-                ? <button onClick={() => setEditMode(true)}>EditMode</button>
-                : false
-            }
+            <div className={s.info__buttonarea}>
+                {isOwner
+                    ? <button onClick={() => setEditMode(true)}>EditMode</button>
+                    : false
+                }
+            </div>
         </div>
     )
 }

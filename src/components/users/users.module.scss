@@ -1,9 +1,11 @@
 .users{
     box-sizing: border-box;
-    background: rgb(195, 203, 251);
+    background: rgb(255, 255, 255);
     // background: #4d5061;
     width: 88%;
     padding: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
     &__classic{
         margin: 0px 0px 0px 0px;
     }

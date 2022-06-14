@@ -21,7 +21,7 @@ const UsersFilter = () => {
                     <Field className={s.filter__term} type='text' name='term'/>
                     <div className={s.filter__selectWrap}>
                         <Field className={s.filter__select} as='select' name='friend'>
-                            <option value={'true'}><div><span>friend</span></div></option>
+                            <option value={'true'}>friend</option>
                             <option value={'false'}>not friend</option>
                             <option value={'null'}>all</option>
                         </Field>
