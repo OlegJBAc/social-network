@@ -2,10 +2,10 @@ import React from "react"
 import { NavLink } from "react-router-dom"
 import s from './navBar.module.scss'
 import './activeLinkStyles.scss'
-import profile_logo from '../../profile_logo.png'
-import dialogs_logo from '../../dialogs_logo.png'
-import users_logo from '../../users_logo.png'
-import chat_logo from '../../chat_logo.webp'
+import profile_logo from '../../commons/imgs/navBar/profile_logo.png'
+import dialogs_logo from '../../commons/imgs/navBar/dialogs_logo.png'
+import users_logo from '../../commons/imgs/navBar/users_logo.png'
+import chat_logo from '../../commons/imgs/navBar/chat_logo.webp'
 
 
 const NavBar: React.FC = () => {

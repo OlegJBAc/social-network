@@ -41,10 +41,18 @@
         word-break: break-all;
     }
     &__input{
-        textarea{
-            height: 100px;
-            width: 250px;
-            border-radius: 10px;
+            textarea{
+                color: black;
+                font-size: 1rem;
+                box-sizing: border-box;
+                min-height: 70px;
+                max-height: 150px;
+                width: 90%;
+                padding: 10px;
+                border-radius: 20px;
+                border: none;
+                background: rgba(103, 179, 249, 0.225);
+                overflow-y: auto;
         }
     }
 }

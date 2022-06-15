@@ -4,8 +4,10 @@ import { startListeningMessagesTC, sendMessage, stopListeningMessagesTC } from "
 import { getChatMessagesSelector } from "../../redux/selectors"
 import s from './chat.module.scss'
 import { v1 } from 'uuid'
-import user_main from '../../user_main.webp'
+import user_main from '../../commons/imgs/users/user_main.webp'
 import { Link } from "react-router-dom"
+import authRedirectHoc from "../../commons/hocs/hoc"
+
 
 const Chat = () => {
     const dispatch = useDispatch()
@@ -18,7 +20,7 @@ const Chat = () => {
             dispatch(stopListeningMessagesTC())
         }
     }, [])
-    
+
     const messagesAnchorRef = useRef<HTMLDivElement>(null)
     const [isAutoScroll, setIsAutoScroll] = useState(true)
 
@@ -37,6 +39,7 @@ const Chat = () => {
             messagesAnchorRef.current?.scrollIntoView({behavior: 'smooth'})
         }
     }, [messages])
+
     return(
         <div className={s.chat}>
             <div className={s.chat__body} onScroll={scrollHandler}>
@@ -71,21 +74,51 @@ const Chat = () => {
 
 const AddMessage = () => {
     const [currentValue, setCurrentValue] = useState('')
+    const dispatch = useDispatch()
+    const myTextareaRef: any = useRef('')
     const newSymbol = (e: any) => {
         setCurrentValue(e.currentTarget.value)
     }
 
-    const sendMessageWrapper = (e: any) => {
-        sendMessage(e)
+    const checkingForKeys = (e: any) => {
+        if(e.code === 'Enter'){
+            e.preventDefault()
+            sendMessageWrapper()
+        }
     }
+    useEffect(() => {
+        function OnInput(){
+            //@ts-ignore
+            this.style.height = 'auto'
+            //@ts-ignore
+            this.style.height = (this.scrollHeight) + 'px'
+        }
 
+            for (let i = 0; i < 1; i++) {
+                myTextareaRef.current.setAttribute('style', 'height:')
+                myTextareaRef.current.addEventListener("input", OnInput, false)
+            }
+        
+        return () => {
+            if(myTextareaRef.current){
+                myTextareaRef.current.removeEventListener("input", OnInput, false)
+            }
+        }
+    }, [])
+    const sendMessageWrapper = () => {
+        {/* @ts-ignore */}
+        sendMessage(currentValue)
+        setCurrentValue('')
+        myTextareaRef.current.style.height = '45px'
+    }
     return(
         <div className={s.chat__input}>
-            <textarea onChange={newSymbol} value={currentValue}/>
-            <button onClick={() => sendMessageWrapper(currentValue)}>SendMessage</button>
+            <textarea ref={myTextareaRef} onKeyDown={checkingForKeys}
+             onChange={newSymbol} value={currentValue} placeholder={'write a message...'}/>
+            <button onClick={sendMessageWrapper}>SendMessage</button>
         </div>
     )
 }
 
 
-export default Chat
+export default authRedirectHoc(Chat)

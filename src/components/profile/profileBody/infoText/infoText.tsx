@@ -10,9 +10,11 @@ type propsType = {
     setEditMode: (editMode: boolean) => void
     profile: any
     isOwner: boolean | null
+    updatedProfile: boolean
+    setUpdatedProfile: any
 }
 
-const InfoText: React.FC<propsType> = ({setEditMode, profile, isOwner}) => {
+const InfoText: React.FC<propsType> = ({setEditMode, profile, isOwner, updatedProfile, setUpdatedProfile}) => {
     const [showContacts, setShowContacts] = useState(isOwner ? false : true)
     let infoHead = Object.keys(profile) as string[]
     let infoContacts = Object.keys(profile.contacts)
@@ -55,7 +57,9 @@ const InfoText: React.FC<propsType> = ({setEditMode, profile, isOwner}) => {
             </div>
             <div className={s.info__buttonarea}>
                 {isOwner
-                    ? <button onClick={() => setEditMode(true)}>EditMode</button>
+                    ? <button onClick={() => {
+                        setEditMode(true)
+                        setUpdatedProfile(true)}}>EditMode</button>
                     : false
                 }
             </div>

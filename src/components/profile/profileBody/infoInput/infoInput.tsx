@@ -10,11 +10,16 @@ import { updateProfileTC } from "../../../../redux/profile-reducer"
 type propsType = {
     setEditMode: (editMode: boolean) => void
     profile: any
+    isOwner: boolean | null
+    editMode: boolean
+    updatedProfile: boolean
+    setUpdatedProfile: any
 }
 
-const InfoInput: React.FC<propsType> = ({setEditMode, profile}) => {
+const InfoInput: React.FC<propsType> = ({setEditMode, profile, isOwner, editMode, 
+                                        updatedProfile, setUpdatedProfile}) => {
     const dispatch = useDispatch()
-    const [showContacts, setShowContacts] = useState(true)
+    const [showContacts, setShowContacts] = useState(isOwner && editMode && updatedProfile ? true : false)
     let userId = useSelector(getMyUserIdSelector)
     const infoHeadMapped = Object.keys(profile).map(item => {
         if(!['userId', 'contacts', 'photos'].includes(item)){
@@ -35,6 +40,7 @@ const InfoInput: React.FC<propsType> = ({setEditMode, profile}) => {
         dispatch(updateProfileTC(values, userId))
         setSubmitting(false)
         setEditMode(false)
+        setUpdatedProfile(true)
     }
 
     return(

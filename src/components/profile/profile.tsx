@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { useLocation } from "react-router-dom"
 import authRedirectHoc from "../../commons/hocs/hoc"
-import Loader from "../../commons/loader"
+import Loader from "../../commons/loader/loader"
 import { getProfileTC } from "../../redux/profile-reducer"
 import { getMyUserIdSelector, getProfileSelector } from "../../redux/selectors"
 import s from './profile.module.scss'

@@ -7,6 +7,8 @@ import DialogsInput from "./dialogsInput/dialogsInput"
 import DialogsMessages from "./dialogsMessages/dialogsMessages"
 import * as queryString from 'query-string'
 import { useLocation } from "react-router-dom"
+import authRedirectHoc from "../../commons/hocs/hoc"
+
 
 const Dialogs = React.memo(() => {
     const dispatch = useDispatch()
@@ -41,4 +43,4 @@ const Dialogs = React.memo(() => {
 })
 
 
-export default Dialogs
+export default authRedirectHoc(Dialogs)

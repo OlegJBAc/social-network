@@ -1,6 +1,6 @@
 import React from "react"
 import s from './profileFace.module.scss'
-import user_main from '../../../user_main.webp'
+import user_main from '../../../commons/imgs/users/user_main.webp'
 import { useDispatch } from "react-redux"
 import { updateProfilePhotoTC } from "../../../redux/profile-reducer"
 import { profileType } from "../../../types/types"

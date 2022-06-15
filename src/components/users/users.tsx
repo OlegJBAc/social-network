@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import Loader from "../../commons/loader"
+import Loader from "../../commons/loader/loader"
 import { getUsersSelector } from "../../redux/selectors"
 import { getUsersTC } from "../../redux/users-reducer"
 import s from './users.module.scss'
 import UserItem from "./userItem/usersItems"
 import Paginator from "./paginator/paginator"
 import UsersFilter from "./usersFilter/usersFilter"
+import authRedirectHoc from "../../commons/hocs/hoc"
 
 
 const Users = () => {
@@ -37,4 +38,4 @@ const Users = () => {
     )
 }
 
-export default Users
+export default authRedirectHoc(Users)

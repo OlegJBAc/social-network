@@ -1,7 +1,9 @@
 import { Field, Form, Formik } from "formik"
 import React from "react"
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
+import { Navigate } from "react-router-dom"
 import { logInTC } from "../../redux/auth-reducer"
+import { getIsAuthSelector } from "../../redux/selectors"
 import s from './login.module.scss'
 
 
@@ -11,6 +13,11 @@ const Login = () => {
         // @ts-ignore
         dispatch(logInTC(values.email, values.password, values.rememberMe, null))
         setSubmitting(false)
+    }
+
+    let isAuth = useSelector(getIsAuthSelector)
+    if(isAuth){
+        return <Navigate to='/Profile'/>
     }
     return(
         <div className={s.login}>

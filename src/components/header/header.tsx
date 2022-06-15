@@ -1,6 +1,6 @@
 import React from "react"
 import s from './header.module.scss'
-import logo from './../../logo.jpg'
+import logo from '../../commons/imgs/common/logo.jpg'
 import { useDispatch, useSelector } from "react-redux"
 import { getIsAuthSelector, getLoginSelector } from "../../redux/selectors"
 import { logOutTC } from "../../redux/auth-reducer"

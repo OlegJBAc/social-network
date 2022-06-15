@@ -1,7 +1,7 @@
 import React from "react"
 import { useDispatch, useSelector } from "react-redux"
 import s from './usersItems.module.scss'
-import user_main from '../../../user_main.webp'
+import user_main from '../../../commons/imgs/users/user_main.webp'
 import { userType } from "../../../types/types"
 import { followTC, unfollowTC } from '../../../redux/users-reducer'
 import { v1 } from 'uuid'
