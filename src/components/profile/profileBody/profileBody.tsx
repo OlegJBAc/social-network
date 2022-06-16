@@ -3,6 +3,7 @@ import { profileType } from "../../../types/types"
 import InfoInput from "./infoInput/infoInput"
 import InfoText from "./infoText/infoText"
 import s from './profileBody.module.scss'
+import ProfileDataPosts from "./profileDataPosts/profileDataPosts"
 
 type propsType = {
     profile: profileType | null
@@ -23,6 +24,7 @@ const ProfileBody: React.FC<propsType> = ({profile, isOwner}) => {
                         updatedProfile={updatedProfile} setUpdatedProfile={setUpdatedProfile}/>
                 }
             </div>
+            <ProfileDataPosts/>
         </div>
     )
 }

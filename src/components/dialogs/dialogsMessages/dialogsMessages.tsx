@@ -52,7 +52,10 @@ const DialogsMessages: React.FC<propsType> = React.memo(({userId}) => {
                                         setSelectingMode(false)
                                     })
                                     }}>Delete</button>
-                                <button onClick={() => setSelectingMode(false)}>Cancel</button>
+                                <button onClick={() => {
+                                    setSelectingMode(false)
+                                    setSelectedMessages([])
+                                    }}>Cancel</button>
                             </div>
                         
                         : false

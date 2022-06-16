@@ -30,3 +30,9 @@ export const getDialogsMessagesSelector = (state: appType) => {
 export const getMyUserIdSelector = (state: appType) => {
     return state.auth.id
 }
+export const getLikedPostsSelector = (state: appType) => {
+    return state.profile.likedPosts
+}
+export const getPostsProfileSelector = (state: appType) => {
+    return state.profile.posts
+}

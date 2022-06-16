@@ -6,7 +6,16 @@ import { inferActionsType } from "./store"
 
 
 const initialState = {
-    profile: null as profileType | null
+    posts: [
+        {post: 'Hello World!!!', id: 1, likeCount: 3},
+        {post: 'Here will be my posts', id: 2, likeCount: 0},
+        {post: 'It\'s first post, just for more posts)', id: 3, likeCount: 11}
+    ] as postType[],
+    profile: null as profileType | null,
+    likedPosts: [1] as any,
+    status: '' as string,
+    isFollowed: false as boolean,
+    profileReady: false
 }
 
 const profileReducer = (state=initialState, action: actionsType): typeof initialState => {
@@ -16,6 +25,20 @@ const profileReducer = (state=initialState, action: actionsType): typeof initial
         case 'SET_PROFILE_PHOTO':
             // @ts-ignore
             return {...state, profile: {...state.profile, photos: action.photos} as profileType}  
+        case 'ADD_POST_LIKE':
+            return {...state, posts: state.posts.map(post => {
+                if(post.id === action.postId){               
+                    return {...post, likeCount: post.likeCount + 1}
+                }else{
+                    return {...post}
+                }
+            })}
+        case 'ADD_LIKED_POST':
+                return {...state, likedPosts: [
+                    ...state.likedPosts.push(action.idPost)
+                ]}
+        case 'ADD_MESSAGE':
+            return {...state, posts: [...state.posts, action.post]}
         default: 
             return state
     }
@@ -23,7 +46,10 @@ const profileReducer = (state=initialState, action: actionsType): typeof initial
 
 export const actions = {
     setProfile: (profile: profileType) => ({type: 'SET_PROFILE_DATA', profile} as const),
+    addMessage: (post: postType) => ({type: 'ADD_MESSAGE', post} as const),
     setProfilePhoto: (photos: File) => ({type: 'SET_PROFILE_PHOTO', photos} as const),
+    addLikedPost: (idPost: number) => ({type: 'ADD_LIKED_POST', idPost} as const),
+    addPostLike: (postId: number) => ({type: 'ADD_POST_LIKE', postId} as const),
 }
 
 export const getProfileTC = (userId: number) => async (dispatch: Dispatch) => {
@@ -50,5 +76,9 @@ export const updateProfilePhotoTC = (photo: File) => async (dispatch: Dispatch) 
 
 export default profileReducer
 
-
+type postType = {
+    post: string
+    likeCount: number
+    id: number
+}
 type actionsType = inferActionsType<typeof actions>

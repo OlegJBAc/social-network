@@ -1,17 +1,34 @@
 .dialogs__input{
-    textarea{
-        color: black;
-        font-size: 1rem;
-        box-sizing: border-box;
-        min-height: 70px;
-        max-height: 150px;
-        width: 90%;
-        padding: 10px;
-        border-radius: 20px;
-        border: none;
-        background: rgba(103, 179, 249, 0.225);
-        overflow-y: auto;
-    }
+    display: flex;
+    align-items: flex-end;
+        button{
+            display: block;
+            height: 100%;
+            margin-left: 5px;
+            margin-bottom: 8px;
+            background: white;
+            border: none;
+            box-shadow: none;
+            border-radius: none;
+            svg{
+                color: rgb(167, 167, 230);
+                width: 43px;
+                height: 43px;
+            }
+        }
+            textarea{
+                color: black;
+                font-size: 1rem;
+                box-sizing: border-box;
+                min-height: 70px;
+                max-height: 150px;
+                width: 90%;
+                padding: 10px;
+                border-radius: 20px;
+                border: none;
+                background: rgba(103, 179, 249, 0.225);
+                overflow-y: auto;
+        }
     // textarea{
     //     width: 90%;
     //     direction:rtl;

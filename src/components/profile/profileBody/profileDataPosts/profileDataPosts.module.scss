@@ -1,0 +1,84 @@
+.profile__textarea{
+    background: rgb(255, 255, 255);
+    display: flex;
+    align-items: flex-end;
+    border-radius: 10px;
+    margin: 10px 0px 0px 0px;
+    textarea{
+        background: rgb(255, 246, 246);
+        border: 1px solid black;
+        border-radius: 8px;
+        height: 100px;
+        width: 250px;
+    }
+    button{
+        border-radius: 10px;
+        height: 30px;
+        width: 52px;
+        padding: 0px 0px;
+    }
+}
+.profile__posts{
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+    margin: 10px 0px 0px 0px;
+    ul{
+        line-height: 170%;
+        list-style: none;
+        margin: 0px 0px 0px 0px;
+        padding: 0px;
+    }
+    li{
+        padding: 0px 0px 0px 0px;
+        margin: 0px 0px 10px 0px;
+        max-width: 100%;
+    }
+    &Photo{
+        display: flex;
+        span{
+            padding-left: 15px;
+            font-weight: 600;
+        }
+    }
+    &Photo img{
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+    }
+    &Post{
+        border-left: 4px solid rgb(5, 219, 55);
+        span{
+            padding-left: 10px;
+        }
+    }
+    &Like{
+        display: inline-block;
+        padding-top: 3px;
+        border-radius: 15px;
+        button{
+            display: flex;
+            align-items: center;
+            background: rgba(245, 176, 176, 0.903);
+            color: rgb(53, 51, 51);
+            border: none;
+            border-radius: none;
+            font-size: 0.85em;
+            box-shadow: none;
+        }
+    }
+    &Unlike{
+        display: inline-block;
+        padding-top: 3px;
+        border-radius: 15px;
+        button{
+            display: flex;
+            align-items: center;
+            background: rgba(221, 217, 217, 0.903);
+            color: black;
+            border: none;
+            border-radius: none;
+            font-size: 0.85em;
+            box-shadow: none;
+        }
+    }
+}
