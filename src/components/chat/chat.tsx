@@ -106,10 +106,12 @@ const AddMessage = () => {
         }
     }, [])
     const sendMessageWrapper = () => {
-        {/* @ts-ignore */}
-        sendMessage(currentValue)
-        setCurrentValue('')
-        myTextareaRef.current.style.height = '45px'
+        if(currentValue !== ''){
+            {/* @ts-ignore */}
+            sendMessage(currentValue)
+            setCurrentValue('')
+            myTextareaRef.current.style.height = '45px'
+        }
     }
     return(
         <div className={s.chat__input}>

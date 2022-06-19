@@ -24,7 +24,15 @@ const ProfileBody: React.FC<propsType> = ({profile, isOwner}) => {
                         updatedProfile={updatedProfile} setUpdatedProfile={setUpdatedProfile}/>
                 }
             </div>
-            <ProfileDataPosts/>
+            {isOwner
+                ? <>
+                    <div className={s.profile__posts_wrapper}>
+                        <span>Posts Area</span>
+                    </div>
+                    <ProfileDataPosts/>
+                </>
+                : false
+            }
         </div>
     )
 }

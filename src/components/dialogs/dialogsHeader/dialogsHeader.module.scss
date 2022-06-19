@@ -1,0 +1,45 @@
+.header{
+    display: flex;
+    padding: 0px 10px 15px 0px;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid gray;
+    &__name{
+            a{
+                text-decoration: none;
+                color: black;
+            }
+        span{
+            text-decoration: none;
+            color: black;
+        }
+        font-size: 1.3em;
+    }
+    &__name span:hover{
+
+        border-bottom: 2px solid gray;
+    }
+    &__back{
+        display: flex;
+        align-items: center;
+        font-size: 1.05em;
+        cursor: pointer;
+        span{
+            margin-left: 15px;
+        }
+        svg{
+            padding: 0;
+        }
+        svg:hover{
+            color: blue;
+        }
+    }
+    &__back span:hover{
+        border-bottom: 1px solid gray;
+    }
+    img{
+        height: 55px;
+        width: 55px;
+        border-radius: 50%;
+    }
+}

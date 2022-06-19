@@ -34,11 +34,14 @@ const profileReducer = (state=initialState, action: actionsType): typeof initial
                 }
             })}
         case 'ADD_LIKED_POST':
-                return {...state, likedPosts: [
-                    ...state.likedPosts.push(action.idPost)
-                ]}
+            return {...state, likedPosts: [...state.likedPosts, action.idPost]}
         case 'ADD_MESSAGE':
             return {...state, posts: [...state.posts, action.post]}
+        case 'DELETE_POST_LIKE':
+                let stateCopy = JSON.parse(JSON.stringify(state))
+                stateCopy.posts[action.deleteId - 1].likeCount--
+                stateCopy.likedPosts.splice(state.likedPosts.indexOf(action.deleteId), 1)
+                return stateCopy
         default: 
             return state
     }
@@ -50,6 +53,7 @@ export const actions = {
     setProfilePhoto: (photos: File) => ({type: 'SET_PROFILE_PHOTO', photos} as const),
     addLikedPost: (idPost: number) => ({type: 'ADD_LIKED_POST', idPost} as const),
     addPostLike: (postId: number) => ({type: 'ADD_POST_LIKE', postId} as const),
+    deletePostLike: (deleteId: number) => ({type: 'DELETE_POST_LIKE', deleteId} as const)
 }
 
 export const getProfileTC = (userId: number) => async (dispatch: Dispatch) => {

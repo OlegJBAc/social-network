@@ -16,7 +16,6 @@ const Login = () => {
         setSubmitting(false)
     }
     let maxLength30 = maxLengthVC(30)
-    console.log(maxLength30)
     let isAuth = useSelector(getIsAuthSelector)
     if(isAuth){
         return <Navigate to='/Profile'/>

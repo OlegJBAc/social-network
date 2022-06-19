@@ -16,8 +16,11 @@ const ProfileDataPosts: React.FC = React.memo(() => {
     return <div className={styles.profile__posts}>
         <Formik initialValues={{fieldPosts: ''}}
         onSubmit={(values: {fieldPosts: string}, { setSubmitting }) => {
-            dispatch(actions.addMessage({post: values.fieldPosts, likeCount: 0, id: posts.length + 2}))
-            values.fieldPosts = ''
+            if(values.fieldPosts !== ''){
+                dispatch(actions.addMessage({post: values.fieldPosts, id: posts.length + 1, likeCount: 0}))
+                values.fieldPosts = ''
+                setSubmitting(false)
+            }
             setSubmitting(false)
         }}>
         {({ isSubmitting }) => (

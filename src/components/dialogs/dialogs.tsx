@@ -8,6 +8,7 @@ import DialogsMessages from "./dialogsMessages/dialogsMessages"
 import * as queryString from 'query-string'
 import { useLocation } from "react-router-dom"
 import authRedirectHoc from "../../commons/hocs/hoc"
+import DialogsHeader from "./dialogsHeader/dialogsHeader"
 
 
 const Dialogs = React.memo(() => {
@@ -34,6 +35,7 @@ const Dialogs = React.memo(() => {
                     <span>Sorry, but you can't send message to yourself^_^</span>
                 </div>
                 : <>
+                    <DialogsHeader/>
                     <DialogsMessages userId={userId}/>
                     <DialogsInput userId={userId}/>
                 </>

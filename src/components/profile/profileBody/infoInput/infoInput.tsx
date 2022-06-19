@@ -58,7 +58,7 @@ const InfoInput: React.FC<propsType> = ({setEditMode, profile, isOwner, editMode
                     <div className={showContacts ? s.info__showed : s.info__hidden}>
                         {infoContactsMapped}
                     </div>
-                    <button type="submit" disabled={isSubmitting}>SaveInfo</button>
+                    <button className={s.info__save} type="submit" disabled={isSubmitting}>SaveInfo</button>
                 </Form>
             )}
           </Formik>
