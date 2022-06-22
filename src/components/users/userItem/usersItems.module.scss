@@ -16,6 +16,11 @@
             border-radius: 50%;
         }
     }
+    .classic__following{
+        button{
+            min-width: 80px;
+        }
+    }
     .classic__name{
         font-size: 1.20em;
         font-style: italic;

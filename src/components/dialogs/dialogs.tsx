@@ -9,6 +9,7 @@ import * as queryString from 'query-string'
 import { useLocation } from "react-router-dom"
 import authRedirectHoc from "../../commons/hocs/hoc"
 import DialogsHeader from "./dialogsHeader/dialogsHeader"
+import { getProfileTC } from "../../redux/profile-reducer"
 
 
 const Dialogs = React.memo(() => {
@@ -27,7 +28,11 @@ const Dialogs = React.memo(() => {
             dispatch(getMessagesTC(userId, 1, 20))
         }
     }, [userId])
-
+    useEffect(() => {
+        if(userId !== 0){
+            dispatch(getProfileTC(userId))
+        }
+    }, [userId])
     return(
         <div className={userId === 0 ? s.dialogs__myself : s.dialogs}>
             {userId === 0

@@ -12,6 +12,7 @@ const ProfileDataPostItem: React.FC<any> = React.memo(({post, index}) => {
     let profile = useSelector(getProfileSelector)
     let likedPosts = useSelector(getLikedPostsSelector)
     const dispatch = useDispatch()
+    
     return <>
             <li className={styles.profile__postsPhoto}>
                 <img src={profile?.photos.small ? profile?.photos.small : user_small}/>

@@ -1,7 +1,7 @@
-import { Dispatch } from "redux"
+import { AnyAction, Dispatch } from "redux"
 import { profileAPI } from "../API/profileAPI"
 import { profileType } from "../types/types"
-import { inferActionsType } from "./store"
+import { inferActionsType, ThunkType } from "./store"
 
 
 
@@ -56,7 +56,7 @@ export const actions = {
     deletePostLike: (deleteId: number) => ({type: 'DELETE_POST_LIKE', deleteId} as const)
 }
 
-export const getProfileTC = (userId: number) => async (dispatch: Dispatch) => {
+export const getProfileTC = (userId: number): any => async (dispatch: Dispatch<AnyAction>) => {
     let response = await profileAPI.getProfile(userId)
     dispatch(actions.setProfile(response.data))
 }
@@ -69,7 +69,7 @@ export const updateProfileTC = (profile: any, myId: number) => async (dispatch: 
     }
 }
 
-export const updateProfilePhotoTC = (photo: File) => async (dispatch: Dispatch) => {
+export const updateProfilePhotoTC = (photo: File): ThunkType => async (dispatch: Dispatch) => {
     let response = await profileAPI.updateProfilePhoto(photo)
     if(response.data.resultCode === 0){
         dispatch(actions.setProfilePhoto(response.data.data.photos))

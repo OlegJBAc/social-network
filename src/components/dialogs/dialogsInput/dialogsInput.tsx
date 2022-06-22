@@ -28,12 +28,10 @@ const DialogsInput: React.FC<propsType> = React.memo(({userId}) => {
             //@ts-ignore
             this.style.height = (this.scrollHeight) + 'px'
         }
-
-            for (let i = 0; i < 1; i++) {
-                myTextareaRef.current.setAttribute('style', 'height:')
-                myTextareaRef.current.addEventListener("input", OnInput, false)
-            }
-        
+        for (let i = 0; i < 1; i++) {
+            myTextareaRef.current.setAttribute('style', 'height:')
+            myTextareaRef.current.addEventListener("input", OnInput, false)
+        }
         return () => {
             if(myTextareaRef.current){
                 myTextareaRef.current.removeEventListener("input", OnInput, false)

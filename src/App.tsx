@@ -11,6 +11,7 @@ import { getAuthDataTC } from './redux/auth-reducer'
 import Login from './components/login/login'
 import Chat from './components/chat/chat'
 
+
 type propsType = {
 
 }
@@ -22,7 +23,7 @@ const App: React.FC<propsType> = () => {
     dispatch(getAuthDataTC())
   }, [])
   return (
-    <HashRouter basename={process.env.PUBLIC_URL}>
+    <HashRouter>
       <main className={s.app}>
         <Header/>
           <div className={s.container}>
