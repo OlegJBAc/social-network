@@ -11,3 +11,6 @@ export const authAPI = {
         return instance.delete('/auth/login')
     }
 }
+
+// okarakulinjb@mail.ru
+// 12345

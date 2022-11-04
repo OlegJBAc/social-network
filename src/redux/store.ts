@@ -5,14 +5,16 @@ import authReducer from "./auth-reducer"
 import usersReducer from "./users-reducer"
 import chatReducer from "./chat-reducer"
 import dialogsReducer from "./dialogs-reducer"
+import appReducer from "./app-reducer"
 
 
 let rootReducer = combineReducers({
+    app: appReducer,
     auth: authReducer,
     profile: profileReducer,
     users: usersReducer,
     chat: chatReducer,
-    dialogs: dialogsReducer
+    dialogs: dialogsReducer,
 })
 let store = createStore(rootReducer, applyMiddleware(thunk))
 

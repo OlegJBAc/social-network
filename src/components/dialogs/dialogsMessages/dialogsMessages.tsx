@@ -11,7 +11,7 @@ type propsType = {
     userId: number
 }
 
-const DialogsMessages: React.FC<propsType> = React.memo(({userId}) => {
+const DialogsMessages: React.FC<propsType> = React.memo(({ userId }) => {
     const dispatch = useDispatch()
     let messages = useSelector(getDialogsMessagesSelector)
     const [isAutoScroll, setIsAutoScroll] = useState(true)
@@ -61,6 +61,7 @@ const DialogsMessages: React.FC<propsType> = React.memo(({userId}) => {
                         : false
                     }
                     {messages.map(message => <Message key={v1()}
+                                                    userId={userId}
                                                     message={message}
                                                     selectedMessages={selectedMessages}
                                                     setSelectedMessages={setSelectedMessages}

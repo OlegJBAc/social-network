@@ -7,6 +7,7 @@ import s from './message.module.scss'
 
 type propsType = {
     message: messageType
+    userId: number
     selectedMessages: string[]
     setSelectedMessages: (messagesId: string[] | ((selectedMessagesArr: string[]) => any)) => void
     selectingMode: boolean
@@ -14,10 +15,11 @@ type propsType = {
 }
 
 const Message: React.FC<propsType> = ({message, 
-                                selectedMessages, 
-                                setSelectedMessages, 
-                                selectingMode, 
-                                setSelectingMode}) => {
+                                       userId,
+                                       selectedMessages, 
+                                       setSelectedMessages, 
+                                       selectingMode, 
+                                       setSelectingMode}) => {
     let myUserId = useSelector(getMyUserIdSelector)
     console.log(message)
     const onRightClick = (e: any) => {

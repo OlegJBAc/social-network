@@ -24,7 +24,7 @@ const actions = {
         return {type: 'SET_AUTH_DATA', data: {email, id, login, isAuth}} as const},
 }
 
- 
+
 export const getAuthDataTC = () => async (dispatch: any) => {
     const response = await authAPI.me()
     if(response.data.resultCode === 0){

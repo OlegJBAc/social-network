@@ -9,7 +9,6 @@ const initialState = {
     messages: [] as messageType[]
 }
 
-
 const dialogsReducer = (state=initialState, action: actionsType): typeof initialState => {
     switch(action.type){
         case 'GET_MESSAGES':
@@ -29,8 +28,9 @@ const actions = {
 
 export const getMessagesTC = (userId: number, page: number, count: number) => async (dispatch: Dispatch) => {
     let response = await dialogsAPI.getMessages(userId, page, count)
-    dispatch(actions.getMessages(response.data.items))
+        dispatch(actions.getMessages(response.data.items))
 }
+
 export const sendMessageTC = (userId: number, body: string) => async (dispatch: Dispatch) => {
     let response = await dialogsAPI.sendMessage(userId, body)
     dispatch(actions.messagesWithSended(response.data.data.message))

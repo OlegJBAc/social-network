@@ -27,7 +27,6 @@ export const actions = {
     cleanMessages: () => ({type: 'CLEAN_MESSAGES'} as const)
 }
 
-
 let _newMessageHandler: ((messages: messageType[]) => void) | null = null
 let newMessagesHandlerCreator = (dispatch: Dispatch) => {
     if(_newMessageHandler === null){
@@ -48,8 +47,6 @@ export const stopListeningMessagesTC = () => (dispatch: Dispatch) => {
     chatAPI.destroyChannel()
     dispatch(actions.cleanMessages())
 } 
-
-
 export const sendMessage = (message: string) => {
     chatAPI.sendMessage(message)
 }

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import s from './app.module.scss'
-import { connect, useDispatch } from 'react-redux'
+import { connect, useDispatch, useSelector } from 'react-redux'
 import Header from './components/header/header'
 import NavBar from './components/navBar/navBar'
 import Profile from './components/profile/profile'
@@ -10,6 +10,8 @@ import Users from './components/users/users'
 import { getAuthDataTC } from './redux/auth-reducer'
 import Login from './components/login/login'
 import Chat from './components/chat/chat'
+import { getAppInitializedSelector } from './redux/selectors'
+import { actions } from './redux/app-reducer'
 
 
 type propsType = {
@@ -18,10 +20,31 @@ type propsType = {
 
 const App: React.FC<propsType> = () => {
   const dispatch = useDispatch()
+  const appInitialized = useSelector(getAppInitializedSelector)
+
   useEffect(() => {
+    if(!appInitialized){
+      window.addEventListener('resize', () => {
+        if(window.innerWidth > 768){
+          dispatch(actions.setIsMobileScreen(false))
+        }else{
+          dispatch(actions.setIsMobileScreen(true))
+        }
+      })
+      dispatch(actions.setAppInitialized(true))
+    }
+  }, [appInitialized])
+
+  useEffect(() => {
+    if(window.innerWidth > 768){
+      dispatch(actions.setIsMobileScreen(false))
+    }else{
+      dispatch(actions.setIsMobileScreen(true))
+    }
     // @ts-ignore
     dispatch(getAuthDataTC())
   }, [])
+
   return (
     <HashRouter>
       <main className={s.app}>

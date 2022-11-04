@@ -36,3 +36,9 @@ export const getLikedPostsSelector = (state: appType) => {
 export const getPostsProfileSelector = (state: appType) => {
     return state.profile.posts
 }
+export const getAppInitializedSelector = (state: appType) => {
+    return state.app.appInitialized
+}
+export const getIsMobileScreenSelector = (state: appType) => {
+    return state.app.isMobileScreen
+}
