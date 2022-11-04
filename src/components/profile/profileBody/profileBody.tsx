@@ -1,4 +1,6 @@
 import React, { useState } from "react"
+import { useSelector } from "react-redux"
+import { getIsMobileScreenSelector } from "../../../redux/selectors"
 import { profileType } from "../../../types/types"
 import InfoInput from "./infoInput/infoInput"
 import InfoText from "./infoText/infoText"
@@ -13,8 +15,10 @@ type propsType = {
 const ProfileBody: React.FC<propsType> = ({profile, isOwner}) => {
     const [editMode, setEditMode] = useState(false)
     const [updatedProfile, setUpdatedProfile] = useState(false)
+    const isMobileScreen = useSelector(getIsMobileScreenSelector)
+
     return(
-        <div className={s.profile__body}>
+        <div className={isMobileScreen ? s.profile__body_mobile : s.profile__body}>
             <div className={s.info}>
                 {editMode
                     ? <InfoInput updatedProfile={updatedProfile} editMode={editMode} isOwner={isOwner}
@@ -26,7 +30,7 @@ const ProfileBody: React.FC<propsType> = ({profile, isOwner}) => {
             </div>
             {isOwner
                 ? <>
-                    <div className={s.profile__posts_wrapper}>
+                    <div className={isMobileScreen ? s.profile__posts_wrapper_mobile : s.profile__posts_wrapper}>
                         <span>Posts Area</span>
                     </div>
                     <ProfileDataPosts/>

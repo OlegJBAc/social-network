@@ -30,5 +30,34 @@
             background: rgba(255, 255, 255, 0.633);
         }
     }
-
+    &__mobile{
+        width: 100%;
+        background: gainsboro;
+        ul{
+            display: flex;
+            justify-content: space-around;
+            padding: 0;
+            margin: 0;
+            box-shadow: inset 0px 0px 10px black;
+            a{
+                display: block;
+                width: 25%;
+                color: black;
+                text-decoration: none;
+            }
+            li{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                list-style: none;
+                font-size: 0.9em;
+                padding: 1em 0;
+                img{
+                    width: 35px;
+                    height: 35px;
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
 }

@@ -41,7 +41,7 @@ const ProfileDataPosts: React.FC = React.memo(() => {
     }
     return <div className={styles.profile__posts}>
         <Formik initialValues={{fieldPosts: ''}}
-        onSubmit={submit}>
+                onSubmit={submit}>
         {({ isSubmitting }) => (
             <Form className={styles.profile__textarea}>
             <Field type="text" component='textarea' name="fieldPosts"

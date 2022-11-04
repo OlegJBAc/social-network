@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { getMessagesTC } from "../../redux/dialogs-reducer"
-import { getMyUserIdSelector } from "../../redux/selectors"
+import { getIsMobileScreenSelector, getMyUserIdSelector } from "../../redux/selectors"
 import s from './dialogs.module.scss'
 import DialogsInput from "./dialogsInput/dialogsInput"
 import DialogsMessages from "./dialogsMessages/dialogsMessages"
@@ -16,6 +16,9 @@ const Dialogs = React.memo(() => {
     const dispatch = useDispatch()
     const history = useLocation()
     const [userId, setUserId] = useState(0)
+
+    const isMobileScreen = useSelector(getIsMobileScreenSelector)
+
     useEffect(() => {
         const parsed = queryString.parse(history.pathname)
         if(Number(parsed['/dialogs/id'])){

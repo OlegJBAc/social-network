@@ -23,3 +23,18 @@
         }
     }
 }
+
+@media screen and (max-width: 768px){
+    .dialogs{
+        margin: 0 auto;
+        span{
+            font-size: 1.5rem;
+        }
+        &__myself{
+            margin: 0.8em auto 0 auto;
+            span{
+                font-size: 1.5rem;
+            }
+        }
+    }
+}

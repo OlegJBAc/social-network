@@ -12,6 +12,7 @@ import Login from './components/login/login'
 import Chat from './components/chat/chat'
 import { getAppInitializedSelector } from './redux/selectors'
 import { actions } from './redux/app-reducer'
+import MainLayout from './components/mainLayout/mainLayout'
 
 
 type propsType = {
@@ -47,12 +48,10 @@ const App: React.FC<propsType> = () => {
 
   return (
     <HashRouter>
-      <main className={s.app}>
-        <Header/>
-          <div className={s.container}>
-            <NavBar/>
-            <Routes>
-              <Route path={'/'} element={ <Navigate to={'/profile'}/> }/>
+      {appInitialized
+        ? <Routes>
+            <Route path='/' element={<MainLayout/>}>
+              <Route path={'/'} element={<Navigate to={'/profile'}/> }/>
               {/* @ts-ignore */}
               <Route path='/profile' element={<Profile/>}>
                 <Route path=':id' element={<Profile/>}/>
@@ -62,10 +61,11 @@ const App: React.FC<propsType> = () => {
               </Route>
               <Route path='/users' element={<Users/>}/>
               <Route path='/chat' element={<Chat/>}/>
-              <Route path='/login' element={<Login/>}/>
-            </Routes>
-          </div>
-      </main>
+            </Route>
+            <Route path='/login' element={<Login/>}/>
+          </Routes>
+        : <></>
+      }
     </HashRouter>
   )
 }

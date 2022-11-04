@@ -5,10 +5,24 @@
     border-radius: 1rem;
     padding: 2%;
     font-size: 1.1em;
+    &_mobile{
+        box-sizing: border-box;
+        width: 88%;
+        background: white;
+        border-radius: 1rem;
+        padding: 2%;
+        font-size: 0.9em;
+    }
 }
 .profile__posts_wrapper{
     font-size: 1.4rem;
     margin: 20px 0px;
     padding-bottom: 10px;
     border-bottom: 1px solid gray;
+    &_mobile{
+        font-size: 1.1rem;
+        margin: 20px 0px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid gray;
+    }
 }

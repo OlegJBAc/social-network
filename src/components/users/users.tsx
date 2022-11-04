@@ -14,6 +14,7 @@ const Users = () => {
     const dispatch = useDispatch()
     let users = useSelector(getUsersSelector)
     const [flexible, setFlexible] = useState(true)
+    
     useEffect(() => {
         // @ts-ignore
         dispatch(getUsersTC(9, 1))

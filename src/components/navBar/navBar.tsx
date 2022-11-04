@@ -6,36 +6,27 @@ import profile_logo from '../../commons/imgs/navBar/profile_logo.png'
 import dialogs_logo from '../../commons/imgs/navBar/dialogs_logo.png'
 import users_logo from '../../commons/imgs/navBar/users_logo.png'
 import chat_logo from '../../commons/imgs/navBar/chat_logo.webp'
+import { getIsMobileScreenSelector } from "../../redux/selectors"
+import { useSelector } from "react-redux"
 
 
 const NavBar: React.FC = () => {
+    const isMobileScreen = useSelector(getIsMobileScreenSelector)
+    const navElems = ['Profile', 'Dialogs', 'Users', 'Chat']
+    
     return(
-        <div className={s.navBar}>
+        <div className={ isMobileScreen ? s.navBar__mobile : s.navBar}>
             <ul>
-                <NavLink to={'/profile'}>
-                    <li>
-                        <img src={profile_logo}/>
-                        <span>Profile</span>
-                    </li>
-                </NavLink>
-                <NavLink to={'/dialogs'}>
-                    <li>
-                        <img src={dialogs_logo}/>
-                        <span>Dialogs</span>
-                    </li>
-                </NavLink>
-                <NavLink to={'/users'}>
-                    <li>
-                        <img src={users_logo}/>
-                        <span>Users</span>
-                    </li>
-                </NavLink>
-                <NavLink to={'/chat'}>
-                    <li>
-                        <img src={chat_logo}/>
-                        <span>Chat</span>
-                    </li>
-                </NavLink>
+                { navElems.map(elem => {
+                    return (
+                        <NavLink to={`/${elem.toLowerCase()}`}>
+                            <li>
+                                <img src={profile_logo}/>
+                                <span>{elem}</span>
+                            </li>
+                        </NavLink>
+                    )
+                }) }
             </ul>
         </div>
     )
