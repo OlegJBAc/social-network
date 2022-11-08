@@ -1,19 +1,39 @@
+$main-light-background-color: rgb(249, 244, 244);
+$main-dark-background-color: rgb(17, 17, 17);
+
+$input-top-padding: 3px;
+$input-side-padding: 8px;
+
+.container{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .login{
     box-sizing: border-box;
-    width: 88%;
+    width: 40%;
     background: rgb(255, 255, 255);
     padding: 2%;
     margin-top: 10px;
     border-radius: 1rem;
+    form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
     &__email{
+        box-sizing: border-box;
         margin: 10px 0px;
+        width: 90%;
         input{
-            box-sizing: content-box;
-            height: 27px;
-            width: 30%;
+            box-sizing: border-box;
+            height: 35px;
+            width: 100%;
             border-radius: 10px;
-            padding: 0px 0px 0px 8px;
             font-size: 1em;
+            padding: 0px 0px 0px 8px;
         }
     }
     &__email_error{
@@ -34,15 +54,19 @@
         }
     }
     &__password{
+        box-sizing: border-box;
         margin: 10px 0px;
+        width: 90%;
         input{
-            height: 25px;
-            width: 30%;
+            box-sizing: border-box;
+            height: 33px;
+            width: 100%;
             border-radius: 10px;
             padding: 0px 0px 0px 8px;
             font-size: 1em;
         }
     }
+
     &__password_error{
         margin: 10px 0px;
         input{
@@ -60,11 +84,58 @@
         }
     }
     &__rememberMe{
-        margin: 10px 0px;
+        margin: 10px 0px 0px 1.7rem;
+        align-self: flex-start;
         input{
             height: 20px;
             width: 20px;
             box-shadow: 0px 0px 5px black;
+        }
+    }
+    button{
+        width: 30%;
+        height: 2.3rem;
+
+    }
+}
+
+@media screen and (max-width: 992px) {
+
+    .login{
+        width: 100%;
+        border: none;
+        &__email{
+            margin: 0em;
+            input{
+                width: calc(100% - $input-side-padding * 2);
+                font-size: 1.2em;
+                margin: 0em;
+                border-radius: 0px;
+            }
+            span{
+                display: none;
+            }
+        }
+        &__password{
+            margin: 0em;
+            input{
+                width: calc(100% - $input-side-padding * 2);
+                font-size: 1.2em;
+                margin: 0em;
+                border-radius: 0px;
+            }
+            span{
+                display: none;
+            }
+        }
+        &__rememberMe_wrap{
+            display: none;
+        }
+        button{
+            box-sizing: border-box;
+            width: 88%;
+            margin: 0.3em 0.9em 0 0;
+            align-self: center;
         }
     }
 }
