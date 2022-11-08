@@ -76,7 +76,23 @@
 
 @media screen and (max-width: 768px){
     .chat{
-        margin: 0 auto;
+        height: calc(100vh - 80px - 80px);
+        margin: -10px auto;
+        &__body{
+            height: calc(100vh - 80px - 70px - 90px);
+        }
+        &__input{
+            display: flex;
+            align-items: flex-end;
+            margin-top: 5px;
+            button{
+
+            }
+            textarea{
+                min-height: 40px;
+                max-height: 60px;
+            }
+        }
     }
  
 }

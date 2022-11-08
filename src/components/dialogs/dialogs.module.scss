@@ -4,12 +4,14 @@
     min-height: 550px;
     background: white;
     padding: 2%;
-    margin-top: 10px;
     border-radius: 1rem;
+    margin-top: 10px;
+    &__own{
+        padding: 0 2rem;
+    }
     &__myself{
         width: 88%;
         height: 290px;
-        margin-top: 10px;
         border-radius: 1rem;
         background: rgb(255, 255, 255);
         font-style: italic;
@@ -24,16 +26,37 @@
     }
 }
 
+@media screen and (max-width: 1300px){
+    .dialogs{
+        &__myself{
+            font-size: 1.1em;
+        }
+    }
+}
+
 @media screen and (max-width: 768px){
     .dialogs{
-        margin: 0 auto;
         span{
-            font-size: 1.5rem;
+            font-size: 1.3rem;
         }
         &__myself{
-            margin: 0.8em auto 0 auto;
+            margin: 0 auto;
             span{
-                font-size: 1.5rem;
+                font-size: 1.3rem;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 490px){
+    .dialogs{
+        span{
+            font-size: 1.1rem;
+        }
+        &__myself{
+            span{
+                font-size: 1.1rem;
             }
         }
     }

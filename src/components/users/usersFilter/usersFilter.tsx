@@ -5,7 +5,6 @@ import { filterType, getUsersTC } from "../../../redux/users-reducer"
 import s from './usersFilter.module.scss'
 
 
-
 const UsersFilter = () => {
     const dispatch = useDispatch()
     const submit = (values: filterType, { setSubmitting }: any) => {

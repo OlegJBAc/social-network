@@ -28,7 +28,7 @@ const UserItem: React.FC<propsType> = ({users, flexible}) => {
                         <div className={flexible ? s.flexible__nameWrapper : s.classic__nameWrapper}>
                             <Link to={`/profile/id=${user.id}`}>
                                 <div className={flexible ? s.flexible__name : s.classic__name}>
-                                    {user.name}
+                                    <span>{user.name}</span>
                                 </div>
                             </Link>
                             <div className={flexible ? s.flexible__following : s.classic__following}>

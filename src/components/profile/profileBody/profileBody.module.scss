@@ -15,7 +15,7 @@
     }
 }
 .profile__posts_wrapper{
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     margin: 20px 0px;
     padding-bottom: 10px;
     border-bottom: 1px solid gray;
@@ -24,5 +24,22 @@
         margin: 20px 0px;
         padding-bottom: 10px;
         border-bottom: 1px solid gray;
+    }
+}
+
+@media screen and (max-width: 1200px){
+    .profile__posts_wrapper{
+        font-size: 1.1rem;
+    }
+    .profile__body{
+        font-size: 1em;
+    }
+}
+@media screen and (max-width: 992px){
+    .profile__posts_wrapper{
+        font-size: 1rem;
+    }
+    .profile__body{
+        font-size: 0.85em;
     }
 }

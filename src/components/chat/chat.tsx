@@ -55,7 +55,6 @@ const Chat = () => {
                                 <div className={s.chat__name}>
                                     <Link to={`/profile/id=${message.userId}`}>
                                         {message.userName}
-                                    
                                     </Link>
                                 </div>
                                 <div className={s.chat__text}>

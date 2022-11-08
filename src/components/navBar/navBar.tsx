@@ -8,20 +8,26 @@ import users_logo from '../../commons/imgs/navBar/users_logo.png'
 import chat_logo from '../../commons/imgs/navBar/chat_logo.webp'
 import { getIsMobileScreenSelector } from "../../redux/selectors"
 import { useSelector } from "react-redux"
-
+import { v4 } from "uuid"
 
 const NavBar: React.FC = () => {
     const isMobileScreen = useSelector(getIsMobileScreenSelector)
     const navElems = ['Profile', 'Dialogs', 'Users', 'Chat']
+    const logosObj = {
+        profile: profile_logo,
+        dialogs: dialogs_logo,
+        users: users_logo,
+        chat: chat_logo,
+    } as any
     
     return(
         <div className={ isMobileScreen ? s.navBar__mobile : s.navBar}>
             <ul>
                 { navElems.map(elem => {
                     return (
-                        <NavLink to={`/${elem.toLowerCase()}`}>
+                        <NavLink key={v4()} to={`/${elem.toLowerCase()}`}>
                             <li>
-                                <img src={profile_logo}/>
+                                <img src={logosObj[elem.toLowerCase()]}/>
                                 <span>{elem}</span>
                             </li>
                         </NavLink>

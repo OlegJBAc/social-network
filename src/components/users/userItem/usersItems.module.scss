@@ -17,6 +17,9 @@
         }
     }
     .classic__following{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
         button{
             min-width: 80px;
         }
@@ -25,6 +28,7 @@
         font-size: 1.20em;
         font-style: italic;
         margin: 0px 0px 10px 0px;
+        word-wrap: wrap;
     }
     .classic__nameWrapper{
         padding: 0px 0px 0px 20px;
@@ -33,18 +37,18 @@
         background: rgb(28, 250, 165);
         color: black;
         font-weight: 600;
-        margin-left: 20px;
+        padding: 0.3em 0.7em;
     }
 }
 .user__flexible{
+    box-sizing: border-box;
+    padding: 0.3em;
     width: 27%;
-    height: 180px;
+    min-height: 190px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    // padding: 15px 0px;
-    // margin: 15px 0px;
     border: 1px solid rgb(0, 0, 0);
     border-radius: 15px;
     margin-top: 10px;
@@ -60,17 +64,24 @@
         }
     }
     .flexible__name{
-        margin: 0px 0px 25px 0px;
+        margin: 0px 0px 0.8em 0px;
         font-style: italic;
         font-size: 1.20em;
+        span{
+            word-break: break-all;
+        }
     }
     .flexible__nameWrapper{
         display: flex;
         flex-direction: column;
         align-items: center;
-        
     }
     .flexible__following{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 0.8em;
         button{
             width: 80px;
         }
@@ -78,9 +89,11 @@
     #flexible__write{
         background: rgb(28, 250, 165);
         color: black;
+        height: auto;
         font-weight: 600;
         width: auto;
         margin: 0px 0px 0px 0px;
+        padding: 0.3em;
     }
 }
 .user__unfollow{
@@ -88,4 +101,52 @@
     color: black;
     font-weight: 600;
     padding: 0px;
+}
+
+@media screen and (max-width: 768px){
+    .user__classic{
+        .classic__img{
+            img{
+                width: 60px;
+                height: 60px;
+            }
+        }
+    }
+    .user__flexible{
+        width: 38%;
+        .flexible__img{
+            img{
+                width: 70px;
+                height: 70px;
+            }
+        }
+        .flexible__name{
+            span{
+                font-size: 1.2rem;
+            }
+        }
+    }
+    button{
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 410px){
+    .user__flexible{
+        width: 80%;
+        .flexible__img{
+            img{
+                width: 70px;
+                height: 70px;
+            }
+        }
+        .flexible__name{
+            span{
+                font-size: 1.2rem;
+            }
+        }
+    }
+    button{
+        font-size: 0.9rem;
+    }
 }

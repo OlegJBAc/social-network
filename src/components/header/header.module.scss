@@ -1,5 +1,10 @@
 .header{
     background: rgb(255, 255, 255);
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100vw;
+    z-index: 100;
     img{
         margin: 0.5%;
         height: 40px;

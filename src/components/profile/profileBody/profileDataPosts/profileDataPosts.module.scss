@@ -87,3 +87,21 @@
         }
     }
 }
+
+
+@media screen and (max-width: 1200px){
+    .profile__textarea{
+        
+        textarea{
+            font-size: 0.9em;
+        }
+    }
+}
+@media screen and (max-width: 992px){
+    .profile__textarea{
+        
+        textarea{
+            font-size: 0.8em;
+        }
+    }
+}
