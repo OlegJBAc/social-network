@@ -5,6 +5,7 @@ import { inferActionsType } from "./store"
 const initialState = {
     appInitialized: false,
     isMobileScreen: false,
+    theme: 'Dark' as 'Light' | 'Dark'
 }
 
 const appReducer = (state=initialState, action: actionsType): typeof initialState => {
@@ -13,6 +14,9 @@ const appReducer = (state=initialState, action: actionsType): typeof initialStat
             return {...state, appInitialized: action.appInitialized}
         case 'SET_IS_MOBILE_SCREEN':
             return {...state, isMobileScreen: action.isMobileScreen}
+        case 'SET_THEME':
+            localStorage.setItem('theme', action.theme)
+            return {...state, theme: action.theme}
         default:
             return state
     }
@@ -23,6 +27,8 @@ export const actions = {
         return { type: 'SET_APP_INITIALIZED', appInitialized} as const },
     setIsMobileScreen: (isMobileScreen: boolean) => {
         return { type: 'SET_IS_MOBILE_SCREEN', isMobileScreen} as const },
+    setTheme: (theme: 'Light' | 'Dark') => {
+        return { type: 'SET_THEME', theme} as const },
 }
 
 

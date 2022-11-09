@@ -4,12 +4,16 @@ import { useDispatch, useSelector } from "react-redux"
 import { Navigate } from "react-router-dom"
 import { maxLengthVC } from "../../commons/validators/validators"
 import { logInTC } from "../../redux/auth-reducer"
-import { getIsAuthSelector } from "../../redux/selectors"
+import { getAppTheme, getIsAuthSelector } from "../../redux/selectors"
 import s from './login.module.scss'
+import cnBind from 'classnames/bind'
 
 
 const Login = () => {
     const dispatch = useDispatch()
+    const appTheme = useSelector(getAppTheme)
+    const cx = cnBind.bind(s)
+
     const submit = (values: any, setSubmitting: any) => {
         // @ts-ignore
         dispatch(logInTC(values.email, values.password, values.rememberMe, null))
@@ -21,8 +25,14 @@ const Login = () => {
         return <Navigate to='/Profile'/>
     }
     return(
-        <div className={s.container}>
-            <div className={s.login}>
+        <div className={cx('container', {
+            light: appTheme === 'Light',
+            dark: appTheme === 'Dark',
+        })}>
+            <div className={cx('login', {
+                    light: appTheme === 'Light',
+                    dark: appTheme === 'Dark',
+                })}>
                 <Formik initialValues={{email: '', password: '', rememberMe: false}} onSubmit={submit}>
                 {({errors, touched, isValidating, isSubmitting}) => (
                     <Form>

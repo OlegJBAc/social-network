@@ -1,18 +1,14 @@
 import React, { useEffect } from 'react'
 import s from './app.module.scss'
 import { connect, useDispatch, useSelector } from 'react-redux'
-import Header from './components/header/header'
-import NavBar from './components/navBar/navBar'
-import Profile from './components/profile/profile'
 import { BrowserRouter, HashRouter, Navigate, Route, Routes } from 'react-router-dom'
-import Dialogs from './components/dialogs/dialogs'
-import Users from './components/users/users'
 import { getAuthDataTC } from './redux/auth-reducer'
 import Login from './components/login/login'
-import Chat from './components/chat/chat'
 import { getAppInitializedSelector } from './redux/selectors'
 import { actions } from './redux/app-reducer'
 import MainLayout from './components/mainLayout/mainLayout'
+import Layout from './components/layout/layout'
+import PageContainer from './components/pageContainer/pageContainer'
 
 
 type propsType = {
@@ -37,6 +33,13 @@ const App: React.FC<propsType> = () => {
   }, [appInitialized])
 
   useEffect(() => {
+    const theme = localStorage.getItem('theme') as 'Dark' | 'Light'
+    if(theme !== 'Dark' && theme !== 'Light'){
+      dispatch(actions.setTheme(theme))
+    }else{
+      dispatch(actions.setTheme('Dark'))
+      localStorage.setItem('theme', 'Dark')
+    }
     if(window.innerWidth > 768){
       dispatch(actions.setIsMobileScreen(false))
     }else{
@@ -48,24 +51,18 @@ const App: React.FC<propsType> = () => {
 
   return (
     <HashRouter>
-      {appInitialized
-        ? <Routes>
-            <Route path='/' element={<MainLayout/>}>
-              <Route path={'/'} element={<Navigate to={'/profile'}/> }/>
-              {/* @ts-ignore */}
-              <Route path='/profile' element={<Profile/>}>
-                <Route path=':id' element={<Profile/>}/>
+      <Layout>
+        {appInitialized
+          ? <Routes>
+              <Route path='/' element={<MainLayout/>}>
+                <Route path={'/'} element={<Navigate to={'/profile'}/> }/>
+                <Route path='/*' element={<PageContainer />}/>
               </Route>
-              <Route path='/dialogs' element={<Dialogs/>}>
-                <Route path=':id' element={<Dialogs/>}/>
-              </Route>
-              <Route path='/users' element={<Users/>}/>
-              <Route path='/chat' element={<Chat/>}/>
-            </Route>
-            <Route path='/login' element={<Login/>}/>
-          </Routes>
-        : <></>
-      }
+              <Route path='/login' element={<Login/>}/>
+            </Routes>
+          : <></>
+        }
+      </Layout>
     </HashRouter>
   )
 }

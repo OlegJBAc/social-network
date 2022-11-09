@@ -6,20 +6,24 @@ import { userType } from "../../../types/types"
 import { followTC, unfollowTC } from '../../../redux/users-reducer'
 import { v1 } from 'uuid'
 import { Link } from "react-router-dom"
+import { getAppTheme } from "../../../redux/selectors"
+import cnBind from 'classnames/bind'
 
-
-type propsType = {
-    users: userType[]
-    flexible: boolean
-}
 
 const UserItem: React.FC<propsType> = ({users, flexible}) => {
     const dispatch = useDispatch()
+
+    const appTheme = useSelector(getAppTheme)
+    const cx = cnBind.bind(s)
+    
     return(
         <>
             {users.map(user => {
                 return(
-                    <div key={v1()} className={flexible ? s.user__flexible : s.user__classic}>
+                    <div key={v1()} className={cx(`${flexible ? s.user__flexible : s.user__classic}`, {
+                        light: appTheme === 'Light',
+                        dark: appTheme === 'Dark',
+                    })}>
                         <div className={flexible ? s.flexible__img : s.classic__img}>
                             <Link to={`/profile/id=${user.id}`}>
                                 <img src={user.photos.small ? user.photos.small : user_main}/>
@@ -59,3 +63,9 @@ const UserItem: React.FC<propsType> = ({users, flexible}) => {
 }
 
 export default UserItem
+
+
+type propsType = {
+    users: userType[]
+    flexible: boolean
+}

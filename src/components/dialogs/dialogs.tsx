@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { getMessagesTC } from "../../redux/dialogs-reducer"
-import { getIsMobileScreenSelector, getMyUserIdSelector } from "../../redux/selectors"
+import { getAppTheme, getIsMobileScreenSelector, getMyUserIdSelector } from "../../redux/selectors"
 import s from './dialogs.module.scss'
 import DialogsInput from "./dialogsInput/dialogsInput"
 import DialogsMessages from "./dialogsMessages/dialogsMessages"
@@ -10,6 +10,7 @@ import { useLocation } from "react-router-dom"
 import authRedirectHoc from "../../commons/hocs/hoc"
 import DialogsHeader from "./dialogsHeader/dialogsHeader"
 import { getProfileTC } from "../../redux/profile-reducer"
+import cnBind from 'classnames/bind'
 
 
 const Dialogs = React.memo(() => {
@@ -18,6 +19,9 @@ const Dialogs = React.memo(() => {
     const [userId, setUserId] = useState(0)
 
     const isMobileScreen = useSelector(getIsMobileScreenSelector)
+
+    const appTheme = useSelector(getAppTheme)
+    const cx = cnBind.bind(s)
 
     useEffect(() => {
         const parsed = queryString.parse(history.pathname)
@@ -37,9 +41,15 @@ const Dialogs = React.memo(() => {
         }
     }, [userId])
     return(
-        <div className={userId === 0 ? s.dialogs__myself : s.dialogs}>
+        <div className={cx(`${userId === 0 ? s.dialogs__myself : s.dialogs}`, {
+            light: appTheme === 'Light',
+            dark: appTheme === 'Dark',
+        })}>
             {userId === 0
-                ? <div className={s.dialogs__own}>
+                ? <div className={cx(`dialogs__own`, {
+                    light: appTheme === 'Light',
+                    dark: appTheme === 'Dark',
+                })}>
                     <span>Sorry, but you can't send message to yourself^_^</span>
                 </div>
                 : <>

@@ -1,10 +1,18 @@
 .chat{
     box-sizing: border-box;
-    width: 88%;
+    width: 100%;
     background: rgb(255, 255, 255);
     padding: 2%;
     margin-top: 10px;
     border-radius: 1rem;
+    &.light{
+        background: white;
+        border: 1px solid gray;
+    }
+    &.dark{
+        border: 1px solid gray;
+        background: rgb(32, 31, 31);
+    }
     a{
         color: black;
         text-decoration: none;
@@ -86,11 +94,20 @@
             align-items: flex-end;
             margin-top: 5px;
             button{
-
+                margin: 0 0 7px 0;
+                background: none !important;
             }
             textarea{
                 min-height: 40px;
                 max-height: 60px;
+            }
+        }
+        &.dark{
+            textarea{
+                color: white;
+                &::placeholder{
+                    color: white;
+                }
             }
         }
     }

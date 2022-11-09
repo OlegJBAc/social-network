@@ -2,11 +2,19 @@
     box-sizing: border-box;
     background: rgb(255, 255, 255);
     // background: #4d5061;
-    width: 88%;
+    width: 100%;
     padding: 2%;
     height: auto;
     margin-top: 10px;
     border-radius: 1rem;
+    &.light{
+        background: white;
+        border: 1px solid gray;
+    }
+    &.dark{
+        border: 1px solid gray;
+        background: rgb(32, 31, 31);
+    }
     &__classic{
         margin: 0px 0px 0px 0px;
     }
@@ -17,6 +25,7 @@
     }
     &__view{
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
         padding: 10px 12px 0px 12px;
     }

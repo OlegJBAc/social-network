@@ -1,19 +1,22 @@
 import React, { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import Loader from "../../commons/loader/loader"
-import { getUsersSelector } from "../../redux/selectors"
+import { getAppTheme, getUsersSelector } from "../../redux/selectors"
 import { getUsersTC } from "../../redux/users-reducer"
 import s from './users.module.scss'
 import UserItem from "./userItem/usersItems"
 import Paginator from "./paginator/paginator"
 import UsersFilter from "./usersFilter/usersFilter"
 import authRedirectHoc from "../../commons/hocs/hoc"
+import cnBind from 'classnames/bind'
 
 
 const Users = () => {
     const dispatch = useDispatch()
     let users = useSelector(getUsersSelector)
     const [flexible, setFlexible] = useState(true)
+    const appTheme = useSelector(getAppTheme)
+    const cx = cnBind.bind(s)
     
     useEffect(() => {
         // @ts-ignore
@@ -23,7 +26,10 @@ const Users = () => {
         return <Loader/>
     }
     return(
-        <div className={s.users}>
+        <div className={cx("users", {
+            light: appTheme === 'Light',
+            dark: appTheme === 'Dark',
+        })}>
             <Paginator/>
             <div className={s.users__view}>
                 <UsersFilter/>

@@ -1,37 +1,19 @@
 .app{
-    height: 100%;
+    min-height: 100vh;
+    width: 100%;
+    position: relative;  
 }
 .container{
-    width: 70%;
-    height: 100%;
-    margin: 60px auto 0 auto;
     display: flex;
-    &__mobile{
-        width: 100%;
-        height: 100%;
-        padding: 80px 0px 90px 0px;
-        justify-content: space-around;
-        align-items: center;
-        display: flex;
-        flex-direction: column-reverse;
-        overflow-y: scroll;
-        position: relative;
-    }
+    min-height: 100vh;
+    width: 70%;
+    padding: 70px 0px 90px 0px;
+    margin: 0 auto;
 }
-button{
-    height: 27px;
-    color: #fff;
-    border: 1px solid rgb(174, 170, 170);
-    border-radius: 5px;
-    padding: 0px 15px;
-    font-family: 'Lato', sans-serif;
-    font-weight: 500;
-    background: linear-gradient(180deg, rgb(23, 65, 171), purple);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: inline-block;
-    box-shadow:inset -3px 3px 3px 0px rgba(255,255,255,.5),
-            7px 7px 20px 0px rgba(0,0,0,.1),
-            7px 7px 5px 0px rgba(0,0,0,.1);
-    outline: none;
+
+
+@media screen and (max-width: 768px) {
+    .container{
+        width: 100%;
+    }
 }

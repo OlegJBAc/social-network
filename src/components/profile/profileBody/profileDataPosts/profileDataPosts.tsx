@@ -1,16 +1,20 @@
 import { Formik, Form, Field } from "formik"
 import React, { useEffect, useRef, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { getLikedPostsSelector, getPostsProfileSelector, getProfileSelector } from "../../../../redux/selectors"
-import styles from './profileDataPosts.module.scss'
+import { getAppTheme, getLikedPostsSelector, getPostsProfileSelector, getProfileSelector } from "../../../../redux/selectors"
+import s from './profileDataPosts.module.scss'
 import { actions } from "../../../../redux/profile-reducer"
 import user_small from '../../../../commons/imgs/users/user_main.webp'
 import ProfileDataPostItem from "./ProfileDataPostItem"
+import cnBind from 'classnames/bind'
+
 
 const ProfileDataPosts: React.FC = React.memo(() => {
     let posts = useSelector(getPostsProfileSelector)
     const myTextareaRef: any = useRef('')
     const dispatch = useDispatch()
+    const appTheme = useSelector(getAppTheme)
+    const cx = cnBind.bind(s)
 
     // useEffect(() => {
     //     function OnInput(){
@@ -39,11 +43,17 @@ const ProfileDataPosts: React.FC = React.memo(() => {
         }
         setSubmitting(false)
     }
-    return <div className={styles.profile__posts}>
+    return <div className={cx('profile__posts', {
+            light: appTheme === 'Light',
+            dark: appTheme === 'Dark',
+        })}>
         <Formik initialValues={{fieldPosts: ''}}
                 onSubmit={submit}>
         {({ isSubmitting }) => (
-            <Form className={styles.profile__textarea}>
+            <Form className={cx('profile__textarea', {
+                light: appTheme === 'Light',
+                dark: appTheme === 'Dark',
+            })}>
             <Field type="text" component='textarea' name="fieldPosts"
             placeholder={'Enter your post...'}/>
             <button type="submit" disabled={isSubmitting}>
@@ -52,7 +62,10 @@ const ProfileDataPosts: React.FC = React.memo(() => {
             </Form>
         )}
         </Formik>
-        <div className={styles.profile__posts}>
+        <div className={cx('profile__posts', {
+                light: appTheme === 'Light',
+                dark: appTheme === 'Dark',
+        })}>
             <ul>
             {posts.map((post, index) => {
                     return <ProfileDataPostItem key={post.post + index} post={post} index={index}/>

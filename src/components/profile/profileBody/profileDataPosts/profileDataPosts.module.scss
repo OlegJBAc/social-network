@@ -1,9 +1,19 @@
 .profile__textarea{
-    background: rgb(255, 255, 255);
     display: flex;
     align-items: flex-end;
     border-radius: 10px;
     margin: 10px 0px 0px 0px;
+    &.dark{
+        background: rgb(32, 31, 31);
+        textarea{
+            background: rgb(94, 91, 91);
+            color: white;
+            &::placeholder{
+                color: white;
+            }
+        }
+
+    }
     textarea{
         min-height: 70px;
         width: 90%;
@@ -11,6 +21,7 @@
         background: rgb(255, 246, 246);
         padding: 10px;
         border-radius: 8px;
+        
     }
     button{
         border-radius: 10px;
@@ -20,9 +31,11 @@
     }
 }
 .profile__posts{
-    background: rgb(255, 255, 255);
     border-radius: 10px;
     margin: 10px 0px 0px 0px;
+    &.dark{
+        background: rgb(32, 31, 31);
+    }
     ul{
         line-height: 170%;
         list-style: none;

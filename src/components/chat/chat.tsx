@@ -1,12 +1,13 @@
 import React, { useEffect, useRef, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { startListeningMessagesTC, sendMessage, stopListeningMessagesTC } from "../../redux/chat-reducer"
-import { getChatMessagesSelector } from "../../redux/selectors"
+import { getAppTheme, getChatMessagesSelector } from "../../redux/selectors"
 import s from './chat.module.scss'
 import { v1 } from 'uuid'
 import user_main from '../../commons/imgs/users/user_main.webp'
 import { Link } from "react-router-dom"
 import authRedirectHoc from "../../commons/hocs/hoc"
+import cnBind from 'classnames/bind'
 
 
 const Chat = () => {
@@ -23,6 +24,8 @@ const Chat = () => {
 
     const messagesAnchorRef = useRef<HTMLDivElement>(null)
     const [isAutoScroll, setIsAutoScroll] = useState(true)
+    const appTheme = useSelector(getAppTheme)
+    const cx = cnBind.bind(s)
 
     const scrollHandler = (e: React.UIEvent<HTMLDivElement, UIEvent>) => {
         const element = e.currentTarget;
@@ -41,7 +44,10 @@ const Chat = () => {
     }, [messages])
 
     return(
-        <div className={s.chat}>
+        <div className={cx(`chat`, {
+            light: appTheme === 'Light',
+            dark: appTheme === 'Dark',
+        })}>
             <div className={s.chat__body} onScroll={scrollHandler}>
                 {messages.map(message => {
                     return(

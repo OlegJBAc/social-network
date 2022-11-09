@@ -4,11 +4,12 @@ import { useLocation } from "react-router-dom"
 import authRedirectHoc from "../../commons/hocs/hoc"
 import Loader from "../../commons/loader/loader"
 import { getProfileTC } from "../../redux/profile-reducer"
-import { getMyUserIdSelector, getProfileSelector } from "../../redux/selectors"
+import { getAppTheme, getMyUserIdSelector, getProfileSelector } from "../../redux/selectors"
 import s from './profile.module.scss'
 import ProfileBody from "./profileBody/profileBody"
 import ProfileFace from "./profileFace/profileFace"
 import * as queryString from 'query-string'
+import cnBind from 'classnames/bind'
 
 
 const Profile = React.memo(() => {
@@ -18,6 +19,7 @@ const Profile = React.memo(() => {
     let userId = useSelector(getMyUserIdSelector)
     const [isOwner, setIsOwner] = useState<boolean | null>(null)
     const [currentUserId, setCurrentUserId] = useState(userId)
+
     useEffect(() => {
         const parsed = queryString.parse(history.pathname)
         if(Number(parsed['/profile/id']) === userId){
@@ -36,11 +38,18 @@ const Profile = React.memo(() => {
             setIsOwner(true)
         }
     }, [history.pathname])
+
+    const appTheme = useSelector(getAppTheme)
+    const cx = cnBind.bind(s)
+
     if(!profile){
         return <Loader/>
     }
     return(
-        <div className={s.profile}>
+        <div className={cx(`profile`, {
+            light: appTheme === 'Light',
+            dark: appTheme === 'Dark',
+        })}>
             <ProfileFace currentUserId={currentUserId} isOwner={isOwner} profile={profile}/>
             <ProfileBody isOwner={isOwner} profile={profile}/>
         </div>

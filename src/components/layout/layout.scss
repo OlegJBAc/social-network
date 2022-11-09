@@ -1,0 +1,55 @@
+.layout{
+    width: 100%;
+    min-height: 100vh;
+    button{
+        height: 27px;
+        color: #fff;
+        border: 1px solid rgb(174, 170, 170);
+        border-radius: 5px;
+        padding: 0px 15px;
+        font-family: 'Lato', sans-serif;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: inline-block;
+        box-shadow:inset -3px 3px 3px 0px rgba(255,255,255,.5),
+                7px 7px 20px 0px rgba(0,0,0,.1),
+                7px 7px 5px 0px rgba(0,0,0,.1);
+        outline: none;
+    }
+}
+.layout.dark{
+    background: rgba(0, 0, 0, 0.918);
+    color: white;
+    a{
+        color: white;
+    }
+    button{
+        
+        background: rgb(109, 3, 230);
+        color: white;
+    }
+    svg{
+        fill: white;
+        &:hover{
+            fill: rgb(245, 96, 11);
+        }
+    }
+}
+.layout.light{
+    background: gainsboro;
+    color: rgb(0, 0, 0);
+    a{
+        color: black;
+    }
+    button{
+        background: rgb(109, 3, 230);
+        color: white;
+    }
+    svg{
+        fill: black;
+        &:hover{
+            fill: rgb(124, 0, 226);
+        }
+    }
+}

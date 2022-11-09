@@ -13,10 +13,16 @@ $input-side-padding: 8px;
 .login{
     box-sizing: border-box;
     width: 40%;
-    background: rgb(255, 255, 255);
     padding: 2%;
     margin-top: 10px;
     border-radius: 1rem;
+    border: 1px solid gray;
+    &.light{
+        background: white;
+    }
+    &.dark{
+        background: rgb(32, 31, 31);
+    }
     form{
         display: flex;
         flex-direction: column;

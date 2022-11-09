@@ -1,17 +1,29 @@
 .profile__body{
     box-sizing: border-box;
     width: 68%;
-    background: white;
     border-radius: 1rem;
     padding: 2%;
     font-size: 1.1em;
+    border: 1px solid gray;
+    &.light{
+        background: white;
+    }
+    &.dark{
+        background: rgb(32, 31, 31);
+    }
     &_mobile{
         box-sizing: border-box;
-        width: 88%;
-        background: white;
+        width: 100%;
         border-radius: 1rem;
         padding: 2%;
         font-size: 0.9em;
+        border: 1px solid gray;
+        &.light{
+            background: white;
+        }
+        &.dark{
+            background: rgb(32, 31, 31);
+        }
     }
 }
 .profile__posts_wrapper{

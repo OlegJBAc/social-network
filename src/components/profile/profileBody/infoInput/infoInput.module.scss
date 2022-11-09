@@ -7,7 +7,7 @@
         }
         input{
             width: 43%;
-            height: 20px;
+            height: 25px;
             border-radius: 10px;
             padding: 0px 0px 0px 5px;
             font-size: 0.9em;
@@ -19,6 +19,7 @@
     .info__key{
         padding-left: 8px;
         font-weight: 500;
+        word-break: break-all;
     }
     .info__hidden{
         display: none;

@@ -42,3 +42,6 @@ export const getAppInitializedSelector = (state: appType) => {
 export const getIsMobileScreenSelector = (state: appType) => {
     return state.app.isMobileScreen
 }
+export const getAppTheme = (state: appType) => {
+    return state.app.theme
+}

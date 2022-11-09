@@ -5,7 +5,8 @@ import { useDispatch, useSelector } from "react-redux"
 import { updateProfilePhotoTC } from "../../../redux/profile-reducer"
 import { profileType } from "../../../types/types"
 import { Link } from "react-router-dom"
-import { getIsMobileScreenSelector, getLoginSelector } from "../../../redux/selectors"
+import { getAppTheme, getIsMobileScreenSelector, getLoginSelector } from "../../../redux/selectors"
+import cnBind from 'classnames/bind'
 
 
 const ProfileFaceContent: React.FC<propsType> = ({ profile, isOwner, currentUserId }) => {
@@ -16,6 +17,10 @@ const ProfileFaceContent: React.FC<propsType> = ({ profile, isOwner, currentUser
     }
     const isMobileScreen = useSelector(getIsMobileScreenSelector)
     const login = useSelector(getLoginSelector)
+
+    const appTheme = useSelector(getAppTheme)
+    const cx = cnBind.bind(s)
+
     return (
         <>
             <div className={s.avatar}>
@@ -53,8 +58,15 @@ const ProfileFaceContent: React.FC<propsType> = ({ profile, isOwner, currentUser
 
 const ProfileFace: React.FC<propsType> = ({ profile, isOwner, currentUserId }) => {
     const isMobileScreen = useSelector(getIsMobileScreenSelector)
+    
+    const appTheme = useSelector(getAppTheme)
+    const cx = cnBind.bind(s)
+    
     return(
-        <div className={ isMobileScreen ? s.profile__face_mobile : s.profile__face}>
+        <div className={cx(`${isMobileScreen ? s.profile__face_mobile : s.profile__face}`, {
+            light: appTheme === 'Light',
+            dark: appTheme === 'Dark',
+        })}>
             {isMobileScreen 
                 ? <ProfileFaceContent profile={profile} isOwner={isOwner} currentUserId={currentUserId}/>
                 : <ProfileFaceContent profile={profile} isOwner={isOwner} currentUserId={currentUserId}/>
