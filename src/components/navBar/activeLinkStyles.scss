@@ -1,6 +1,15 @@
 .active{
     color: rgb(255, 149, 0);
     .navItem{
+        color: white;
+        svg{
+            circle{
+                fill: white !important;
+            }
+            path{
+                fill: white !important;
+            }
+        }
         transition-property: background;
         transition-duration: 1s;
         font-size: 105%;

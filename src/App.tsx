@@ -19,6 +19,8 @@ const App: React.FC<propsType> = () => {
   const dispatch = useDispatch()
   const appInitialized = useSelector(getAppInitializedSelector)
 
+
+// ===================================================APP INITIALIZING====================================================
   useEffect(() => {
     if(!appInitialized){
       window.addEventListener('resize', () => {
@@ -33,8 +35,8 @@ const App: React.FC<propsType> = () => {
   }, [appInitialized])
 
   useEffect(() => {
-    const theme = localStorage.getItem('theme') as 'Dark' | 'Light'
-    if(theme !== 'Dark' && theme !== 'Light'){
+    const theme = localStorage.getItem('theme') as 'Dark' | 'Light' 
+    if(theme){
       dispatch(actions.setTheme(theme))
     }else{
       dispatch(actions.setTheme('Dark'))
@@ -48,6 +50,8 @@ const App: React.FC<propsType> = () => {
     // @ts-ignore
     dispatch(getAuthDataTC())
   }, [])
+
+// ===================================================APP INITIALIZING====================================================
 
   return (
     <HashRouter>

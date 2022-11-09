@@ -1,10 +1,10 @@
-import React from "react"
+import React, { useState, useEffect, useReducer } from "react"
 import s from './profileFace.module.scss'
 import user_main from '../../../commons/imgs/users/user_main.webp'
 import { useDispatch, useSelector } from "react-redux"
 import { updateProfilePhotoTC } from "../../../redux/profile-reducer"
 import { profileType } from "../../../types/types"
-import { Link } from "react-router-dom"
+import { Link,  } from "react-router-dom"
 import { getAppTheme, getIsMobileScreenSelector, getLoginSelector } from "../../../redux/selectors"
 import cnBind from 'classnames/bind'
 
@@ -15,11 +15,16 @@ const ProfileFaceContent: React.FC<propsType> = ({ profile, isOwner, currentUser
         // @ts-ignore
         dispatch(updateProfilePhotoTC(e.target.files[0]))
     }
+    const [currentName, setCurrentName] = useState(profile?.fullName)
     const isMobileScreen = useSelector(getIsMobileScreenSelector)
     const login = useSelector(getLoginSelector)
-
     const appTheme = useSelector(getAppTheme)
     const cx = cnBind.bind(s)
+
+    useEffect(() => {
+        setCurrentName(profile?.fullName)
+    }, [profile?.fullName])
+
 
     return (
         <>
@@ -29,14 +34,14 @@ const ProfileFaceContent: React.FC<propsType> = ({ profile, isOwner, currentUser
             <div className={s.face__wrapper}>
                 {isOwner
                     ? <>
-                        { isMobileScreen && 
-                        <div className={s.login}>
-                            <span>{ login }</span>
-                        </div> }
-                        <div className={s.input__wrapper}>
-                            <input id='input__file' onChange={updatePhoto} type="file" accept="image/*"/>
-                            <label htmlFor='input__file'>Choose a photo</label>
-                        </div>
+                        { isMobileScreen &&
+                            <div className={s.login}>
+                                <span>{ currentName }</span>
+                            </div> }
+                            <div className={s.input__wrapper}>
+                                <input id='input__file' onChange={updatePhoto} type="file" accept="image/*"/>
+                                <label htmlFor='input__file'>Choose a photo</label>
+                            </div>
                     </> 
                     : <>
                         { isMobileScreen && 
@@ -44,7 +49,10 @@ const ProfileFaceContent: React.FC<propsType> = ({ profile, isOwner, currentUser
                             <span>{ login }</span>
                         </div>  }
                         <Link to={`/dialogs/id=${currentUserId}`}>
-                            <div className={s.profile__dialogs}>
+                            <div className={cx(`profile__dialogs`, {
+                                light: appTheme === 'Light',
+                                dark: appTheme === 'Dark',
+                            })}>
                                 <span>SendMessage</span>
                             </div>
                         </Link>
