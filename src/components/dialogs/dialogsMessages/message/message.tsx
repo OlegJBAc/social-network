@@ -1,5 +1,5 @@
 import React, { Dispatch } from "react"
-import { useSelector } from "react-redux"
+import { useAppSelector } from "../../../../commons/hooks/hooks"
 import { getMyUserIdSelector } from "../../../../redux/selectors"
 import { messageType } from "../../../../types/types"
 import s from './message.module.scss'
@@ -20,8 +20,9 @@ const Message: React.FC<propsType> = ({message,
                                        setSelectedMessages, 
                                        selectingMode, 
                                        setSelectingMode}) => {
-    let myUserId = useSelector(getMyUserIdSelector)
-    console.log(message)
+
+    let myUserId = useAppSelector(getMyUserIdSelector)
+
     const onRightClick = (e: any) => {
         e.preventDefault()
         setSelectingMode(true)

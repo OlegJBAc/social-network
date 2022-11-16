@@ -1,14 +1,14 @@
+import React from "react"
 import { Field, Form, Formik } from "formik"
-import React, { useEffect, useState } from "react"
-import { useDispatch } from "react-redux"
+import { useAppDispatch } from "../../../commons/hooks/hooks"
 import { filterType, getUsersTC } from "../../../redux/users-reducer"
 import s from './usersFilter.module.scss'
 
 
 const UsersFilter = () => {
-    const dispatch = useDispatch()
+    const dispatch = useAppDispatch()
+
     const submit = (values: filterType, { setSubmitting }: any) => {
-        // @ts-ignore
         dispatch(getUsersTC(100, 1, values))
         setSubmitting(false);
     }

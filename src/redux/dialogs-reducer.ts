@@ -31,7 +31,7 @@ export const getMessagesTC = (userId: number, page: number, count: number) => as
         dispatch(actions.getMessages(response.data.items))
 }
 
-export const sendMessageTC = (userId: number, body: string) => async (dispatch: Dispatch) => {
+export const sendMessageTC = (userId: number, body: string): any => async (dispatch: Dispatch) => {
     let response = await dialogsAPI.sendMessage(userId, body)
     dispatch(actions.messagesWithSended(response.data.data.message))
 }

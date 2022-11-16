@@ -1,7 +1,7 @@
 import { Dispatch } from "redux"
 import { usersAPI } from "../API/usersAPI"
 import { userType } from "../types/types"
-import { inferActionsType } from "./store"
+import { appDispatchType, inferActionsType } from "./store"
 
 export type filterType = {
     term: string
@@ -59,14 +59,14 @@ export const actions = {
 
 export const getUsersTC = (count: number, 
                            page: number, 
-                           filter: filterType={term: '', friend: null}) => async (dispatch: any) => {
+                           filter: filterType={term: '', friend: null}): any => async (dispatch: appDispatchType) => {
     const response = await usersAPI.getUsers(count, page, filter)
     dispatch(actions.setUsers(response.data.items))
     dispatch(actions.setTotalUsersCount(response.data.totalCount))
     dispatch(actions.setCurrentPage(page))
 }
 
-export const followTC = (userId: number) => async (dispatch: any) => {
+export const followTC = (userId: number) => async (dispatch: appDispatchType) => {
     const response = await usersAPI.follow(userId)
     if(response.data.resultCode === 0){
         dispatch(actions.follow(userId))
@@ -75,7 +75,7 @@ export const followTC = (userId: number) => async (dispatch: any) => {
     }
 }
 
-export const unfollowTC = (userId: number) => async (dispatch: any) => {
+export const unfollowTC = (userId: number) => async (dispatch: appDispatchType) => {
     const response = await usersAPI.unfollow(userId)
     if(response.data.resultCode === 0){
         dispatch(actions.unfollow(userId))
@@ -83,7 +83,6 @@ export const unfollowTC = (userId: number) => async (dispatch: any) => {
         console.error('unfollowTC some trouble')
     }
 }
-
 
 export default usersReducer
 

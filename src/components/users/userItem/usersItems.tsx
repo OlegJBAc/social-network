@@ -1,5 +1,4 @@
 import React from "react"
-import { useDispatch, useSelector } from "react-redux"
 import s from './usersItems.module.scss'
 import user_main from '../../../commons/imgs/users/user_main.webp'
 import { userType } from "../../../types/types"
@@ -8,12 +7,13 @@ import { v1 } from 'uuid'
 import { Link } from "react-router-dom"
 import { getAppTheme } from "../../../redux/selectors"
 import cnBind from 'classnames/bind'
+import { useAppDispatch, useAppSelector } from "../../../commons/hooks/hooks"
 
 
 const UserItem: React.FC<propsType> = ({users, flexible}) => {
-    const dispatch = useDispatch()
+    const dispatch = useAppDispatch()
 
-    const appTheme = useSelector(getAppTheme)
+    const appTheme = useAppSelector(getAppTheme)
     const cx = cnBind.bind(s)
     
     return(

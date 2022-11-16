@@ -26,8 +26,7 @@ export type AppDispatch = typeof store.dispatch
 
 export type ThunkType<ReturnType = void> = ThunkAction<ReturnType, RootState, unknown, AnyAction>
 
-
-
+export type appDispatchType = typeof store.dispatch
 
 
 export default store

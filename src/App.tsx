@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import s from './app.module.scss'
-import { connect, useDispatch, useSelector } from 'react-redux'
-import { BrowserRouter, HashRouter, Navigate, Route, Routes } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { HashRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { getAuthDataTC } from './redux/auth-reducer'
 import Login from './components/login/login'
 import { getAppInitializedSelector } from './redux/selectors'
@@ -9,15 +9,12 @@ import { actions } from './redux/app-reducer'
 import MainLayout from './components/mainLayout/mainLayout'
 import Layout from './components/layout/layout'
 import PageContainer from './components/pageContainer/pageContainer'
+import { useAppDispatch, useAppSelector } from './commons/hooks/hooks'
 
-
-type propsType = {
-
-}
 
 const App: React.FC<propsType> = () => {
-  const dispatch = useDispatch()
-  const appInitialized = useSelector(getAppInitializedSelector)
+  const dispatch = useAppDispatch()
+  const appInitialized = useAppSelector(getAppInitializedSelector)
 
 
 // ===================================================APP INITIALIZING====================================================
@@ -47,7 +44,6 @@ const App: React.FC<propsType> = () => {
     }else{
       dispatch(actions.setIsMobileScreen(true))
     }
-    // @ts-ignore
     dispatch(getAuthDataTC())
   }, [])
 
@@ -78,3 +74,8 @@ let mapStateToProps = (state: any) => {
 }
 
 export default connect(mapStateToProps, {})(App);
+
+
+type propsType = {
+
+}

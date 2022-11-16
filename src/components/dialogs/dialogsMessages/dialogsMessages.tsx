@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react"
-import {  useDispatch, useSelector } from "react-redux"
 import { v1 } from "uuid"
+import { useAppDispatch, useAppSelector } from "../../../commons/hooks/hooks"
 import { deleteMessagesTC } from "../../../redux/dialogs-reducer"
 import { getDialogsMessagesSelector} from "../../../redux/selectors"
 import s from './dialogsMessages.module.scss'
@@ -12,13 +12,15 @@ type propsType = {
 }
 
 const DialogsMessages: React.FC<propsType> = React.memo(({ userId }) => {
-    const dispatch = useDispatch()
-    let messages = useSelector(getDialogsMessagesSelector)
+    const dispatch = useAppDispatch()
+    let messages = useAppSelector(getDialogsMessagesSelector)
+
     const [isAutoScroll, setIsAutoScroll] = useState(true)
     const [selectingMode, setSelectingMode] = useState(false)
     const [selectedMessages, setSelectedMessages] = useState<string[]>([])
 
     const messagesAnchorRef = useRef<HTMLDivElement>(null)
+
     const scrollHandler = (e: React.UIEvent<HTMLDivElement, UIEvent>) => {
         const element = e.currentTarget;
         if (Math.abs( (element.scrollHeight - element.scrollTop) - element.clientHeight ) < 300)

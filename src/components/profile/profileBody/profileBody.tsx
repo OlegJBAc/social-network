@@ -17,16 +17,18 @@ type propsType = {
 const ProfileBody: React.FC<propsType> = ({profile, isOwner}) => {
     const [editMode, setEditMode] = useState(false)
     const [updatedProfile, setUpdatedProfile] = useState(false)
+
     const isMobileScreen = useSelector(getIsMobileScreenSelector)
     const appTheme = useSelector(getAppTheme)
+
     const cx = cnBind.bind(s)
 
     return(
-        <div className={cx(`${isMobileScreen ? s.profile__body_mobile : s.profile__body}`, {
+        <div className={cx('profileBody', {
             light: appTheme === 'Light',
             dark: appTheme === 'Dark',
         })}>
-            <div className={s.info}>
+            <div className={s.profileBody__info}>
                 {editMode
                     ? <InfoInput updatedProfile={updatedProfile} editMode={editMode} isOwner={isOwner}
                                  setUpdatedProfile={setUpdatedProfile} profile={profile}

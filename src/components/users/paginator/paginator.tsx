@@ -1,16 +1,17 @@
 import React, { useState } from "react"
-import { useDispatch, useSelector } from "react-redux"
 import { v1 } from "uuid"
+import { useAppDispatch, useAppSelector } from "../../../commons/hooks/hooks"
 import { getCurrentPageSelector, getPageSizeSelector, getTotalUsersCountSelector } from "../../../redux/selectors"
 import { getUsersTC } from "../../../redux/users-reducer"
 import s from './paginator.module.scss'
 
 
 const Paginator: React.FC = () => {
-    const dispatch = useDispatch()
-    let totalUsersCount = useSelector(getTotalUsersCountSelector)
-    let pageSize = useSelector(getPageSizeSelector)
-    let currentPage = useSelector(getCurrentPageSelector)
+    const dispatch = useAppDispatch()
+    let totalUsersCount = useAppSelector(getTotalUsersCountSelector)
+    let pageSize = useAppSelector(getPageSizeSelector)
+    let currentPage = useAppSelector(getCurrentPageSelector)
+    
     const changePage = (page: number) => {
         // @ts-ignore
         dispatch(getUsersTC(pageSize, page))

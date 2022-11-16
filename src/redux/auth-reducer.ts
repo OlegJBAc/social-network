@@ -1,6 +1,6 @@
 import { Dispatch } from "redux"
 import { authAPI } from "../API/authAPI"
-import { inferActionsType } from "./store"
+import { appDispatchType, inferActionsType } from "./store"
 
 
 const initialState = {
@@ -25,7 +25,7 @@ const actions = {
 }
 
 
-export const getAuthDataTC = () => async (dispatch: any) => {
+export const getAuthDataTC = (): any => async (dispatch: appDispatchType) => {
     const response = await authAPI.me()
     if(response.data.resultCode === 0){
         const {email, id, login} = response.data.data
@@ -38,7 +38,7 @@ export const getAuthDataTC = () => async (dispatch: any) => {
 export const logInTC = (email: string, 
                         password: string, 
                         rememberMe: boolean, 
-                        captcha: string | null=null) => async (dispatch: any) => {
+                        captcha: string | null=null) => async (dispatch: appDispatchType) => {
     const response = await authAPI.login(email, password, rememberMe, captcha)
     if(response.data.resultCode === 0){
         dispatch(getAuthDataTC())
@@ -47,7 +47,7 @@ export const logInTC = (email: string,
     }
 }
 
-export const logOutTC = () => async (dispatch: any) => {
+export const logOutTC = () => async (dispatch: appDispatchType) => {
     const response = await authAPI.logout()
     if(response.data.resultCode === 0){
         dispatch(actions.setAuthData(null, null, null, false))

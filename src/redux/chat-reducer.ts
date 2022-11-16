@@ -1,6 +1,6 @@
 import { Dispatch } from "redux"
 import { chatAPI, messageType } from "../API/chatAPI"
-import { inferActionsType } from "./store"
+import { appDispatchType, inferActionsType } from "./store"
 import { v1 } from 'uuid'
 
 
@@ -28,7 +28,7 @@ export const actions = {
 }
 
 let _newMessageHandler: ((messages: messageType[]) => void) | null = null
-let newMessagesHandlerCreator = (dispatch: Dispatch) => {
+let newMessagesHandlerCreator = (dispatch: appDispatchType) => {
     if(_newMessageHandler === null){
         _newMessageHandler = (messages: any) => {
             dispatch(actions.setMessages(messages))
@@ -37,12 +37,12 @@ let newMessagesHandlerCreator = (dispatch: Dispatch) => {
     return _newMessageHandler 
 }
 
-export const startListeningMessagesTC = () => (dispatch: Dispatch) => {
+export const startListeningMessagesTC = () => (dispatch: appDispatchType) => {
     chatAPI.createChannel()
     // @ts-ignore
     chatAPI.subscribe('messages-received', newMessagesHandlerCreator(dispatch))
 } 
-export const stopListeningMessagesTC = () => (dispatch: Dispatch) => {
+export const stopListeningMessagesTC = () => (dispatch: appDispatchType) => {
     chatAPI.unsubscribe('messages-received', newMessagesHandlerCreator(dispatch))
     chatAPI.destroyChannel()
     dispatch(actions.cleanMessages())

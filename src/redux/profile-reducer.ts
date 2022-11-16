@@ -69,7 +69,7 @@ export const updateProfileTC = (profile: any, myId: number) => async (dispatch: 
     }
 }
 
-export const updateProfilePhotoTC = (photo: File): ThunkType => async (dispatch: Dispatch) => {
+export const updateProfilePhotoTC = (photo: File): any => async (dispatch: Dispatch) => {
     let response = await profileAPI.updateProfilePhoto(photo)
     if(response.data.resultCode === 0){
         dispatch(actions.setProfilePhoto(response.data.data.photos))

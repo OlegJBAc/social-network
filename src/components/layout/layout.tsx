@@ -6,7 +6,8 @@ import { useSelector } from "react-redux"
 
 
 const Layout: FC<propsType> = ({ children }) => {
-    const appTheme = useSelector(getAppTheme) 
+    const appTheme = useSelector(getAppTheme)
+    
     return (
         <div className={cn("layout", {
             light: appTheme === 'Light',

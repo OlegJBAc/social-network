@@ -1,16 +1,14 @@
 import React, { useEffect, useRef, useState } from "react"
-import { useDispatch } from "react-redux"
+import { useAppDispatch } from "../../../commons/hooks/hooks"
 import { sendMessageTC } from "../../../redux/dialogs-reducer"
 import s from './dialogsInput.module.scss'
 
-type propsType = {
-    userId: number | null
-}
 
-const DialogsInput: React.FC<propsType> = React.memo(({userId}) => {
+const DialogsInput: React.FC<propsType> = React.memo(({ userId }) => {
     const [currentValue, setCurrentValue] = useState('')
-    const dispatch = useDispatch()
-    const myTextareaRef: any = useRef('')
+    const dispatch = useAppDispatch()
+
+    const myTextareaRef: React.RefObject<HTMLTextAreaElement | null | undefined> = useRef()
     const newSymbol = (e: any) => {
         setCurrentValue(e.currentTarget.value)
     }
@@ -29,8 +27,8 @@ const DialogsInput: React.FC<propsType> = React.memo(({userId}) => {
             this.style.height = (this.scrollHeight) + 'px'
         }
         for (let i = 0; i < 1; i++) {
-            myTextareaRef.current.setAttribute('style', 'height:')
-            myTextareaRef.current.addEventListener("input", OnInput, false)
+            myTextareaRef.current?.setAttribute('style', 'height:')
+            myTextareaRef.current?.addEventListener("input", OnInput, false)
         }
         return () => {
             if(myTextareaRef.current){
@@ -39,16 +37,20 @@ const DialogsInput: React.FC<propsType> = React.memo(({userId}) => {
         }
     }, [])
     const sendMessageWrapper = () => {
-        {/* @ts-ignore */}
-        dispatch(sendMessageTC(userId, currentValue))
+        if(userId){
+            dispatch(sendMessageTC(userId, currentValue))
+        }
         setCurrentValue('')
-        myTextareaRef.current.style.height = '45px'
+        if(myTextareaRef.current){
+            myTextareaRef.current.style.height = '45px'
+        }
+
     }
     return(
         <div className={s.dialogs__input}>
             {/* @ts-ignore */}
             <textarea ref={myTextareaRef} onKeyDown={checkingForKeys}
-             onChange={newSymbol} value={currentValue} placeholder={'write a message...'} />
+                      onChange={newSymbol} value={currentValue} placeholder={'write a message...'} />
             <button onClick={sendMessageWrapper}>
                 <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <g id="send_24__Page-2" stroke="none" fill="none">
@@ -63,5 +65,9 @@ const DialogsInput: React.FC<propsType> = React.memo(({userId}) => {
     )
 })
 
-
 export default DialogsInput
+
+
+type propsType = {
+    userId: number | null
+}

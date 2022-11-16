@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react"
-import { useDispatch, useSelector } from "react-redux"
 import Loader from "../../commons/loader/loader"
 import { getAppTheme, getUsersSelector } from "../../redux/selectors"
 import { getUsersTC } from "../../redux/users-reducer"
@@ -9,17 +8,18 @@ import Paginator from "./paginator/paginator"
 import UsersFilter from "./usersFilter/usersFilter"
 import authRedirectHoc from "../../commons/hocs/hoc"
 import cnBind from 'classnames/bind'
+import { useAppDispatch, useAppSelector } from "../../commons/hooks/hooks"
 
 
 const Users = () => {
-    const dispatch = useDispatch()
-    let users = useSelector(getUsersSelector)
+    const dispatch = useAppDispatch()
+    let users = useAppSelector(getUsersSelector)
     const [flexible, setFlexible] = useState(true)
-    const appTheme = useSelector(getAppTheme)
+    
+    const appTheme = useAppSelector(getAppTheme)
     const cx = cnBind.bind(s)
     
     useEffect(() => {
-        // @ts-ignore
         dispatch(getUsersTC(9, 1))
     }, [])
     if(!users){

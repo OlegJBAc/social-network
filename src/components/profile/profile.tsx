@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react"
-import { useDispatch, useSelector } from "react-redux"
 import { useLocation } from "react-router-dom"
 import authRedirectHoc from "../../commons/hocs/hoc"
 import Loader from "../../commons/loader/loader"
@@ -10,13 +9,16 @@ import ProfileBody from "./profileBody/profileBody"
 import ProfileFace from "./profileFace/profileFace"
 import * as queryString from 'query-string'
 import cnBind from 'classnames/bind'
+import { useAppDispatch, useAppSelector } from "../../commons/hooks/hooks"
 
 
 const Profile = React.memo(() => {
-    const dispatch = useDispatch()
+    const dispatch = useAppDispatch()
     const history = useLocation()
-    let profile = useSelector(getProfileSelector)
-    let userId = useSelector(getMyUserIdSelector)
+    let profile = useAppSelector(getProfileSelector)
+    let userId = useAppSelector(getMyUserIdSelector)
+    const appTheme = useAppSelector(getAppTheme)
+
     const [isOwner, setIsOwner] = useState<boolean | null>(null)
     const [currentUserId, setCurrentUserId] = useState(userId)
 
@@ -39,7 +41,7 @@ const Profile = React.memo(() => {
         }
     }, [history.pathname])
 
-    const appTheme = useSelector(getAppTheme)
+
     const cx = cnBind.bind(s)
 
     if(!profile){
