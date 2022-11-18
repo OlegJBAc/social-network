@@ -51,12 +51,23 @@
     &__input{
         display: flex;
         align-items: flex-end;
+        box-sizing: border-box;
+        &.light{
+            textarea{
+                color: black;
+            }
+        }
+        &.dark{
+            textarea{
+                color: white;
+            }
+        }
         button{
             display: block;
             height: 100%;
             margin-left: 5px;
             margin-bottom: 8px;
-            background: white;
+            background: rgba(255, 255, 255, 0) !important;
             border: none;
             box-shadow: none;
             border-radius: none;
@@ -66,18 +77,17 @@
                 height: 43px;
             }
         }
-            textarea{
-                color: black;
-                font-size: 1rem;
-                box-sizing: border-box;
-                min-height: 70px;
-                max-height: 150px;
-                width: 90%;
-                padding: 10px;
-                border-radius: 20px;
-                border: none;
-                background: rgba(103, 179, 249, 0.225);
-                overflow-y: auto;
+        textarea{
+            font-size: 1rem;
+            box-sizing: border-box;
+            min-height: 70px;
+            max-height: 150px;
+            width: 90%;
+            padding: 10px;
+            border-radius: 20px;
+            border: none;
+            background: rgba(103, 179, 249, 0.225);
+            overflow-y: auto;
         }
     }
 }

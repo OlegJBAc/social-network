@@ -4,11 +4,21 @@
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid gray;
+    &.light{
+        span{
+            color: black;
+        }
+    }
+    &.dark{
+        span{
+            color: white;
+        }
+    }
     &__name{
-            a{
-                text-decoration: none;
-                color: black;
-            }
+        a{
+            text-decoration: none;
+            color: black;
+        }
         span{
             text-decoration: none;
             color: black;

@@ -8,6 +8,7 @@ import user_main from '../../commons/imgs/users/user_main.webp'
 import { Link } from "react-router-dom"
 import authRedirectHoc from "../../commons/hocs/hoc"
 import cnBind from 'classnames/bind'
+import { useAppSelector } from "../../commons/hooks/hooks"
 
 
 const Chat = () => {
@@ -80,7 +81,12 @@ const Chat = () => {
 const AddMessage = () => {
     const [currentValue, setCurrentValue] = useState('')
     const dispatch = useDispatch()
-    const myTextareaRef: any = useRef('')
+    const myTextareaRef = useRef('') as any
+
+    const appTheme = useAppSelector(getAppTheme)
+
+    const cx = cnBind.bind(s)
+
     const newSymbol = (e: any) => {
         setCurrentValue(e.currentTarget.value)
     }
@@ -100,8 +106,8 @@ const AddMessage = () => {
         }
 
             for (let i = 0; i < 1; i++) {
-                myTextareaRef.current.setAttribute('style', 'height:')
-                myTextareaRef.current.addEventListener("input", OnInput, false)
+                myTextareaRef.current?.setAttribute('style', 'height:')
+                myTextareaRef.current?.addEventListener("input", OnInput, false)
             }
         
         return () => {
@@ -112,14 +118,16 @@ const AddMessage = () => {
     }, [])
     const sendMessageWrapper = () => {
         if(currentValue !== ''){
-            {/* @ts-ignore */}
             sendMessage(currentValue)
             setCurrentValue('')
             myTextareaRef.current.style.height = '45px'
         }
     }
     return(
-        <div className={s.chat__input}>
+        <div className={cx('chat__input', {
+                light: appTheme === 'Light',
+                dark: appTheme === 'Dark',
+            })}>
             <textarea ref={myTextareaRef} onKeyDown={checkingForKeys}
              onChange={newSymbol} value={currentValue} placeholder={'write a message...'}/>
             <div className={s.chat__button}>

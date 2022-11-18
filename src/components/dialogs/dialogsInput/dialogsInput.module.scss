@@ -1,6 +1,16 @@
 .dialogs__input{
     display: flex;
     align-items: flex-end;
+    &.light{
+        textarea{
+            color: black;
+        }
+    }
+    &.dark{
+        textarea{
+            color: white;
+        }
+    }
     button{
         display: block;
         height: 100%;
@@ -17,7 +27,6 @@
         }
     }
     textarea{
-        color: black;
         font-size: 1rem;
         box-sizing: border-box;
         min-height: 70px;

@@ -7,14 +7,7 @@ import { v1 } from "uuid"
 import { updateProfileTC } from "../../../../redux/profile-reducer"
 
 
-type propsType = {
-    setEditMode: (editMode: boolean) => void
-    profile: any
-    isOwner: boolean | null
-    editMode: boolean
-    updatedProfile: boolean
-    setUpdatedProfile: any
-}
+
 
 const InfoInput: React.FC<propsType> = ({setEditMode, profile, isOwner, editMode, 
                                         updatedProfile, setUpdatedProfile}) => {
@@ -67,3 +60,13 @@ const InfoInput: React.FC<propsType> = ({setEditMode, profile, isOwner, editMode
 }
 
 export default InfoInput
+
+
+type propsType = {
+    setEditMode: (editMode: boolean) => void
+    profile: any
+    isOwner: boolean | null
+    editMode: boolean
+    updatedProfile: boolean
+    setUpdatedProfile: any
+}

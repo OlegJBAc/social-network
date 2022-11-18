@@ -1,14 +1,20 @@
 import React, { useEffect, useRef, useState } from "react"
-import { useAppDispatch } from "../../../commons/hooks/hooks"
+import { useAppDispatch, useAppSelector } from "../../../commons/hooks/hooks"
 import { sendMessageTC } from "../../../redux/dialogs-reducer"
+import { getAppTheme } from "../../../redux/selectors"
 import s from './dialogsInput.module.scss'
+import cnBind from 'classnames/bind'
 
 
 const DialogsInput: React.FC<propsType> = React.memo(({ userId }) => {
     const [currentValue, setCurrentValue] = useState('')
     const dispatch = useAppDispatch()
 
-    const myTextareaRef: React.RefObject<HTMLTextAreaElement | null | undefined> = useRef()
+    const appTheme = useAppSelector(getAppTheme)
+
+    const cx = cnBind.bind(s)
+
+    const myTextareaRef = useRef() as React.RefObject<HTMLTextAreaElement>
     const newSymbol = (e: any) => {
         setCurrentValue(e.currentTarget.value)
     }
@@ -47,8 +53,10 @@ const DialogsInput: React.FC<propsType> = React.memo(({ userId }) => {
 
     }
     return(
-        <div className={s.dialogs__input}>
-            {/* @ts-ignore */}
+        <div className={cx('dialogs__input', {
+            light: appTheme === 'Light',
+            dark: appTheme === 'Dark',
+        })}>
             <textarea ref={myTextareaRef} onKeyDown={checkingForKeys}
                       onChange={newSymbol} value={currentValue} placeholder={'write a message...'} />
             <button onClick={sendMessageWrapper}>

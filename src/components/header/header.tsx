@@ -28,7 +28,8 @@ const Header: React.FC = () => {
                 <button className={cx('theme__toggle', {
                         light: appTheme === 'Light',
                         dark: appTheme === 'Dark',
-                })} id={s.theme__toggle} onClick={changeTheme}>
+                })} id={s.theme__toggle} onClick={changeTheme}
+                    title={'Change theme'}>
             </button>
                 <div className={s.header__login}>
                     {isAuth
