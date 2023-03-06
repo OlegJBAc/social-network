@@ -62,7 +62,7 @@ const DialogsMessages: React.FC<propsType> = React.memo(({ userId }) => {
                         
                         : false
                     }
-                    {messages.map(message => <Message key={v1()}
+                    { messages.map(message => <Message key={v1()}
                                                     userId={userId}
                                                     message={message}
                                                     selectedMessages={selectedMessages}

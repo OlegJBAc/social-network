@@ -27,11 +27,14 @@ const actions = {
 
 export const getAuthDataTC = (): any => async (dispatch: appDispatchType) => {
     const response = await authAPI.me()
+
     if(response.data.resultCode === 0){
         const {email, id, login} = response.data.data
         dispatch(actions.setAuthData(email, id, login, true))
+        return true
     }else{
-        console.log('getAuthDataTC some trouble')
+        return true
+        console.error('getAuthDataTC some trouble')
     }
 }
 
@@ -43,7 +46,7 @@ export const logInTC = (email: string,
     if(response.data.resultCode === 0){
         dispatch(getAuthDataTC())
     }else{
-        console.log('logInTC some trouble')
+        console.error('logInTC some trouble')
     }
 }
 
@@ -52,7 +55,7 @@ export const logOutTC = () => async (dispatch: appDispatchType) => {
     if(response.data.resultCode === 0){
         dispatch(actions.setAuthData(null, null, null, false))
     }else{
-        console.log('logOutTC some trouble')
+        console.error('logOutTC some trouble')
     }
 }
 

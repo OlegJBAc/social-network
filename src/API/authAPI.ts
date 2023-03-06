@@ -13,4 +13,4 @@ export const authAPI = {
 }
 
 // okarakulinjb@mail.ru
-// 12345
+// qwerty

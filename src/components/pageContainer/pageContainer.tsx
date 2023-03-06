@@ -9,6 +9,8 @@ import s from './pageContainer.module.scss'
 
 const PageContainer: React.FC<propsType> = () => {
 
+    console.log('from PAGE CONTAINER')
+
     return(
         <div className={s.page}>
             <Routes>

@@ -1,7 +1,7 @@
 import { Field, Form, Formik } from "formik"
 import React from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { Navigate } from "react-router-dom"
+import {Navigate, useLocation} from "react-router-dom"
 import { maxLengthVC } from "../../commons/validators/validators"
 import { logInTC } from "../../redux/auth-reducer"
 import { getAppTheme, getIsAuthSelector } from "../../redux/selectors"
@@ -12,6 +12,8 @@ import cnBind from 'classnames/bind'
 const Login = () => {
     const dispatch = useDispatch()
     const appTheme = useSelector(getAppTheme)
+    let isAuth = useSelector(getIsAuthSelector)
+
     const cx = cnBind.bind(s)
 
     const submit = (values: any, setSubmitting: any) => {
@@ -19,9 +21,10 @@ const Login = () => {
         dispatch(logInTC(values.email, values.password, values.rememberMe, null))
         setSubmitting(false)
     }
+
     let maxLength30 = maxLengthVC(30)
-    let isAuth = useSelector(getIsAuthSelector)
-    if(isAuth){
+
+    if ( isAuth ){
         return <Navigate to='/Profile'/>
     }
     return(
@@ -36,9 +39,11 @@ const Login = () => {
                 <Formik initialValues={{email: '', password: '', rememberMe: false}} onSubmit={submit}>
                 {({errors, touched, isValidating, isSubmitting}) => (
                     <Form>
-                        <div className={errors.email && touched.email ? s.login__email_error : s.login__email}>
+                        <div className={cx('login__email', {
+                            error: errors.email && touched.email,
+                        })}>
                             <Field type='email' name='email' validate={maxLength30}/>
-                            {errors.email && touched.email
+                            { errors.email && touched.email
                                 ? <span>{errors.email}</span>
                                 : false
                             }

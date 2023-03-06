@@ -1,11 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="74058480-daec-45f8-a196-1467dae2df0a" name="Changes" comment="" />
+    <list default="true" id="74058480-daec-45f8-a196-1467dae2df0a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/API/authAPI.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/API/authAPI.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/API/dialogsAPI.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/API/dialogsAPI.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dialogs/dialogsMessages/dialogsMessages.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialogs/dialogsMessages/dialogsMessages.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dialogs/dialogsMessages/message/message.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialogs/dialogsMessages/message/message.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dialogs/dialogsMessages/message/message.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialogs/dialogsMessages/message/message.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/login/login.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/login/login.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/login/login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/login/login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/mainLayout/mainLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainLayout/mainLayout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pageContainer/pageContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pageContainer/pageContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/auth-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/auth-reducer.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -23,9 +44,13 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Projects/NodeJS_Learning/main",
+    "last_opened_file_path": "C:/OSPanel/domains/crypto-blog",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "C:\\Projects\\finalPreparation\\social-network\\node_modules\\typescript\\lib",
+    "ts.external.directory.path": "C:\\Programming\\JS\\FinalPreparation\\FinishedProjects\\social-network\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -39,10 +64,48 @@
       <updated>1658227698285</updated>
       <workItem from="1658227700014" duration="19000" />
       <workItem from="1658228111627" duration="63000" />
+      <workItem from="1675181896446" duration="1463000" />
+      <workItem from="1675499645146" duration="1274000" />
+      <workItem from="1675505379763" duration="10000" />
+      <workItem from="1675701674889" duration="1026000" />
+      <workItem from="1675754499885" duration="91000" />
+      <workItem from="1677130603045" duration="1866000" />
+      <workItem from="1677500757550" duration="820000" />
+      <workItem from="1677505204804" duration="1719000" />
+      <workItem from="1677609685431" duration="712000" />
+      <workItem from="1677774512318" duration="56000" />
+      <workItem from="1677923750990" duration="9624000" />
+      <workItem from="1677959859777" duration="158000" />
+      <workItem from="1678004008508" duration="1863000" />
+      <workItem from="1678016730559" duration="2864000" />
+      <workItem from="1678034269236" duration="4015000" />
+      <workItem from="1678090299549" duration="7258000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/navBar/navBar.tsx</url>
+          <line>15</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

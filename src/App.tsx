@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react'
-import s from './app.module.scss'
-import { connect } from 'react-redux'
-import { HashRouter, Navigate, Route, Routes } from 'react-router-dom'
+import style from './app.module.scss'
+import {connect, useSelector} from 'react-redux'
+import {HashRouter, Navigate, Route, Routes, useLocation, useNavigate} from 'react-router-dom'
 import { getAuthDataTC } from './redux/auth-reducer'
 import Login from './components/login/login'
-import { getAppInitializedSelector } from './redux/selectors'
+import {getAppInitializedSelector, getIsAuthSelector} from './redux/selectors'
 import { actions } from './redux/app-reducer'
 import MainLayout from './components/mainLayout/mainLayout'
 import Layout from './components/layout/layout'
@@ -12,70 +12,40 @@ import PageContainer from './components/pageContainer/pageContainer'
 import { useAppDispatch, useAppSelector } from './commons/hooks/hooks'
 
 
-const App: React.FC<propsType> = () => {
-  const dispatch = useAppDispatch()
-  const appInitialized = useAppSelector(getAppInitializedSelector)
 
+const App: React.FC = () => {
+    let appInitialized = useAppSelector(getAppInitializedSelector)
 
-// ===================================================APP INITIALIZING====================================================
-  useEffect(() => {
-    if(!appInitialized){
-      window.addEventListener('resize', () => {
-        if(window.innerWidth > 768){
-          dispatch(actions.setIsMobileScreen(false))
-        }else{
-          dispatch(actions.setIsMobileScreen(true))
-        }
-      })
-      dispatch(actions.setAppInitialized(true))
+    const dispatch = useAppDispatch()
+
+    useEffect(() => {
+        // @ts-ignore
+        dispatch(getAuthDataTC()).then(result => {
+            if ( result ) {
+                dispatch(actions.setAppInitialized(true))
+            }
+        })
+    }, [])
+
+    if ( !appInitialized ) {
+        return (
+            <div className={style.loader}>
+                <span>Loading...</span>
+            </div>
+        )
     }
-  }, [appInitialized])
 
-  useEffect(() => {
-    const theme = localStorage.getItem('theme') as 'Dark' | 'Light' 
-    if(theme){
-      dispatch(actions.setTheme(theme))
-    }else{
-      dispatch(actions.setTheme('Dark'))
-      localStorage.setItem('theme', 'Dark')
-    }
-    if(window.innerWidth > 768){
-      dispatch(actions.setIsMobileScreen(false))
-    }else{
-      dispatch(actions.setIsMobileScreen(true))
-    }
-    dispatch(getAuthDataTC())
-  }, [])
-
-// ===================================================APP INITIALIZING====================================================
-
-  return (
-    <HashRouter>
-      <Layout>
-        {appInitialized
-          ? <Routes>
-              <Route path='/' element={<MainLayout/>}>
-                <Route path={'/'} element={<Navigate to={'/profile'}/> }/>
-                <Route path='/*' element={<PageContainer />}/>
-              </Route>
-              <Route path='/login' element={<Login/>}/>
+    return (
+        <Layout>
+            <Routes>
+                <Route path='/' element={<MainLayout/>}>
+                    <Route path='/*' element={<PageContainer />}/>
+                </Route>
+                <Route path='/login' element={<Login/>}/>
             </Routes>
-          : <></>
-        }
-      </Layout>
-    </HashRouter>
-  )
+        </Layout>
+    )
 }
 
-let mapStateToProps = (state: any) => {
-  return {
-    messages: state.profile.myMessage
-  }
-}
 
-export default connect(mapStateToProps, {})(App);
-
-
-type propsType = {
-
-}
+export default App

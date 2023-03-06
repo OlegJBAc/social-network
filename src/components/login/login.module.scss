@@ -41,24 +41,18 @@ $input-side-padding: 8px;
             font-size: 1em;
             padding: 0px 0px 0px 8px;
         }
-    }
-    &__email_error{
-        margin: 10px 0px;
-        input{
-            box-sizing: content-box;
-            height: 27px;
-            width: 30%;
-            border-radius: 10px;
-            padding: 0px 0px 0px 8px;
-            font-size: 1em;
-            border: 2px solid rgb(248, 11, 11);
-        }
-        span{
-            margin: 0 0 0 1.5rem;
-            font-size: 1.15rem;
-            color: rgb(240, 36, 36);
+        &.error{
+            input{
+                border: 2px solid rgb(248, 11, 11);
+            }
+            span{
+                margin: 0 0 0 1.5rem;
+                font-size: 1.15rem;
+                color: rgb(240, 36, 36);
+            }
         }
     }
+
     &__password{
         box-sizing: border-box;
         margin: 10px 0px;
