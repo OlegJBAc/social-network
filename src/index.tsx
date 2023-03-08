@@ -1,12 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.module.scss';
-import App from './App';
+import './index.scss';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import store from './redux/store';
-import AppContainer from "./App";
-import {HashRouter} from "react-router-dom";
+import App from "./App";
+import { HashRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -14,7 +13,7 @@ const root = ReactDOM.createRoot(
 root.render(
     <HashRouter>
       <Provider store={store}>
-        <AppContainer />
+        <App />
       </Provider>
     </HashRouter>
 );

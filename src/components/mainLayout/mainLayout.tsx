@@ -17,7 +17,10 @@ const MainLayout = () => {
     const cx = cnBind.bind(s)
 
     if ( isAuth && location.pathname === '/' ){
-        return <Navigate to='/Profile'/>
+        return <Navigate to='/profile'/>
+    }
+    if( !isAuth ) {
+        return <Navigate to={'/login'}/>
     }
 
     return (

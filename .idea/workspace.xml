@@ -4,21 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74058480-daec-45f8-a196-1467dae2df0a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="74058480-daec-45f8-a196-1467dae2df0a" name="Changes" comment="routing fixes and message parse">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/API/authAPI.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/API/authAPI.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/API/dialogsAPI.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/API/dialogsAPI.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/dialogs/dialogsMessages/dialogsMessages.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialogs/dialogsMessages/dialogsMessages.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/dialogs/dialogsMessages/message/message.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialogs/dialogsMessages/message/message.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/dialogs/dialogsMessages/message/message.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialogs/dialogsMessages/message/message.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/login/login.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/login/login.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/login/login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/login/login.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/mainLayout/mainLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainLayout/mainLayout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pageContainer/pageContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pageContainer/pageContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profileBody/profileBody.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profileBody/profileBody.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profileFace/profileFace.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profileFace/profileFace.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/auth-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/auth-reducer.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +39,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/OSPanel/domains/crypto-blog",
+    "last_opened_file_path": "C:/Programming/JS/FinalPreparation/FinishedProjects/social-network",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -79,8 +74,19 @@
       <workItem from="1678004008508" duration="1863000" />
       <workItem from="1678016730559" duration="2864000" />
       <workItem from="1678034269236" duration="4015000" />
-      <workItem from="1678090299549" duration="7258000" />
+      <workItem from="1678090299549" duration="8582000" />
+      <workItem from="1678121253829" duration="3739000" />
+      <workItem from="1678173929116" duration="2554000" />
+      <workItem from="1678278471256" duration="1826000" />
     </task>
+    <task id="LOCAL-00001" summary="routing fixes and message parse">
+      <created>1678105639003</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1678105639003</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -96,6 +102,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="routing fixes and message parse" />
+    <option name="LAST_COMMIT_MESSAGE" value="routing fixes and message parse" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
