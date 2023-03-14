@@ -1,6 +1,9 @@
+@import "../../../adaptive-tools";
+
+
 .header{
     display: flex;
-    padding: 0px 10px 15px 0px;
+    padding: 0 vh(10px) vw(15px) 0;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid gray;
@@ -15,27 +18,32 @@
         }
     }
     &__name{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
         a{
             text-decoration: none;
             color: black;
+            margin-bottom: vh(10px);
         }
         span{
             text-decoration: none;
             color: black;
         }
-        font-size: 1.3em;
+        font-size: vw(16px);
     }
     &__name span:hover{
-
         border-bottom: 2px solid gray;
     }
     &__back{
         display: flex;
         align-items: center;
-        font-size: 1.05em;
+        font-size: vw(14px);
         cursor: pointer;
         span{
-            margin-left: 15px;
+            margin-left: vw(15px);
         }
         svg{
             padding: 0;
@@ -48,8 +56,46 @@
         border-bottom: 1px solid gray;
     }
     img{
-        height: 55px;
-        width: 55px;
+        height: vh(55px);
+        width: vw(55px);
         border-radius: 50%;
+    }
+}
+.dialogs__listening{
+    word-break: break-word;
+    line-height: 180%;
+    background: rgba(27, 9, 60, 0) !important;
+    box-shadow: none !important;
+    width: vw(200px) !important;
+    height: unset !important;
+    max-height: unset !important;
+    padding: vh(5px) vw(15px) !important;
+}
+
+
+
+@media screen and (max-width: $mobile-screen-vw) {
+    .header{
+        padding: 0 mobile_vh(10px) mobile_vw(15px) 0;
+        &__name{
+            a{
+                margin-bottom: mobile_vh(10px);
+            }
+            font-size: mobile_vw(16px);
+        }
+        &__back{
+            font-size: mobile_vw(14px);
+            span{
+                margin-left: mobile_vw(15px);
+            }
+        }
+        img{
+            height: mobile_vh(55px);
+            width: mobile_vw(55px);
+        }
+    }
+    .dialogs__listening{
+        width: mobile_vw(200px) !important;
+        padding: mobile_vh(5px) mobile_vw(15px) !important;
     }
 }

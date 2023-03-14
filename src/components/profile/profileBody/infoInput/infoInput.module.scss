@@ -1,3 +1,5 @@
+@import "../../../../adaptive-tools";
+
 .info__input{
     .info__item{
         display: flex;
@@ -7,17 +9,17 @@
         }
         input{
             width: 43%;
-            height: 25px;
+            height: vh(25px);
             border-radius: 10px;
-            padding: 0px 0px 0px 5px;
-            font-size: 0.9em;
+            padding: 0px 0px 0px vh(5px);
+            font-size: vw(15px);
         }
     }
     .info__save{
-        margin-top: 10px;
+        margin-top: vh(10px);
     }
     .info__key{
-        padding-left: 8px;
+        padding-left: vw(8px);
         font-weight: 500;
         word-break: break-all;
     }
@@ -30,23 +32,53 @@
         justify-content: center;
         #show__button{
             width: 95%;
-            height: 37px;
+            height: vh(37px);
             border-radius: 10px;
-            font-size: 1em;
+            font-size: vw(16px);
             background: rgb(234, 226, 226);
             color: rgb(0, 0, 0);
             border: none;
-            margin: 10px 0px;
+            margin: vh(10px) 0px;
         }
         #show__button:hover{
             width: 100%;
-            height: 37px;
+            height: vh(37px);
             border-radius: 10px;
-            font-size: 1.15em;
+            font-size: vw(17px);
             background: rgb(207, 203, 232);
             color: rgb(0, 0, 0);
             transition-duration: 1s;
             cursor: pointer;
+        }
+    }
+}
+
+
+@media screen and (max-width: $mobile-screen-vw) {
+    .info__input{
+        .info__item{
+            input{
+                height: mobile_vh(25px);
+                padding: 0px 0px 0px mobile_vh(5px);
+                font-size: mobile_vw(15px);
+            }
+        }
+        .info__save{
+            margin-top: mobile_vh(10px);
+        }
+        .info__key{
+            padding-left: mobile_vw(8px);
+        }
+        .show__buttonWrap{
+            #show__button{
+                height: mobile_vh(37px);
+                font-size: mobile_vw(16px);
+                margin: mobile_vh(10px) 0;
+            }
+            #show__button:hover{
+                height: mobile_vh(37px);
+                font-size: mobile_vw(17px);
+            }
         }
     }
 }

@@ -1,3 +1,6 @@
+@import "../../../adaptive-tools";
+
+
 .dialogs__input{
     display: flex;
     align-items: flex-end;
@@ -14,28 +17,50 @@
     button{
         display: block;
         height: 100%;
-        margin-left: 5px;
-        margin-bottom: 8px;
+        margin-left: vw(5px);
+        margin-bottom: vh(8px);
         background: white;
         border: none;
         box-shadow: none;
-        border-radius: none;
+        border-radius: unset;
         svg{
             color: rgb(167, 167, 230);
-            width: 43px;
-            height: 43px;
+            width: vw(43px);
+            height: vh(43px);
         }
     }
     textarea{
-        font-size: 1rem;
+        font-size: vw(16px);
         box-sizing: border-box;
-        min-height: 70px;
-        max-height: 150px;
+        min-height: vh(70px);
+        max-height: vh(150px);
         width: 90%;
-        padding: 10px;
+        padding: vh(10px) vw(10px);
         border-radius: 20px;
         border: none;
         background: rgba(103, 179, 249, 0.225);
         overflow-y: auto;
     }
+}
+
+
+
+@media screen and (max-width: $mobile-screen-vw) {
+    .dialogs__input{
+        button{
+            margin-left: mobile_vw(5px);
+            margin-bottom: mobile_vh(8px);
+            svg{
+                width: mobile_vw(43px);
+                height: mobile_vh(43px);
+            }
+        }
+        textarea{
+            font-size: mobile_vw(16px);
+            min-height: mobile_vh(70px);
+            max-height: mobile_vh(150px);
+            padding: mobile_vh(10px) mobile_vw(10px);
+        }
+    }
+
 }

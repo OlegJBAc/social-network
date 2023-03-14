@@ -7,6 +7,7 @@ import { logInTC } from "../../redux/auth-reducer"
 import { getAppTheme, getIsAuthSelector } from "../../redux/selectors"
 import s from './login.module.scss'
 import cnBind from 'classnames/bind'
+import cn from "classnames";
 
 
 const Login = () => {
@@ -48,7 +49,9 @@ const Login = () => {
                                 : false
                             }
                         </div>
-                        <div className={errors.password && touched.password ? s.login__password_error : s.login__password}>
+                        <div className={cx('login__password', {
+                            error: errors.password && touched.password,
+                        })}>
                             <Field type='password' name='password' validate={maxLength30}/>
                             {errors.password && touched.password
                                 ? <span>{errors.password}</span>
@@ -57,8 +60,14 @@ const Login = () => {
                         </div>
                         <div className={s.login__rememberMe}>
                             <Field type='checkbox' name='rememberMe'/>
+                            <span>Remember me</span>
                         </div>
-                        <button type="submit" disabled={isSubmitting}>LogIn</button>
+                        <button className={cn('auth-button', {
+                            custom: true,
+                        })} type="submit" disabled={isSubmitting}>
+                            <span>Log In</span>
+                        </button>
+
                         {/* @ts-ignore */}
                         {/* <button type='button' onClick={() => console.log(errors, touched, isValidating)}>Click</button> */}
                     </Form>

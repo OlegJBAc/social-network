@@ -1,7 +1,9 @@
+@import "../../../../adaptive-tools";
+
 .content{
     width: 100%;
     .sendMessage{
-        padding: 7px;
+        padding: vh(7px) vw(7px);
         background: rgb(224, 218, 218);
         &.light{
             color: black;
@@ -9,29 +11,29 @@
         &.dark{
             color: black;
         }
-        font-size: 1.1em;
+        font-size: vw(17px);
         display: flex;
         justify-content: center;
         align-items: center;
         border-radius: 20px;
-        margin-top: 10px;
+        margin-top: vh(10px);
     }
     .loadPhoto{
         position: relative;
-        height: 100px;
+        height: vh(100px);
         input[type="file"]{
             display: none;
          }
         label{
             color: rgb(0, 0, 0);
-            height: 30px;
+            height: vh(30px);
             width: 100%;
             border-radius: 20px;
-            font-size: 1.05rem;
+            font-size: vw(16px);
             background: rgb(234, 226, 226);
             position: absolute;
-            margin: 20px auto;
-            padding: 4px 0px 5px 0px;
+            margin: vh(20px) auto;
+            padding: vh(4px) 0 vh(5px) 0;
             font-weight: 500;
             top: 0;
             left: 0;
@@ -41,12 +43,12 @@
          }
          label:hover{
              transition-duration: 1s;
-             font-size: 1.2em;
+             font-size: vw(17px);
              cursor: pointer;
          }
     }
     .userName{
-        margin: 0em 0em 0.5em 2em;
+        display: none;
     }
 }
 
@@ -60,81 +62,39 @@
     }
 }
 
-@media screen and (max-width: 768px){
-    .content{
-        .loadPhoto{
-            height: 70px;
-            label{
-                margin-left: 2rem;
-                width: 70%;
+
+@media screen and (max-width: $mobile-screen-vw) {
+    .avatar{
+        img{
+            width: mobile_vw(150px);
+        }
+    }
+    .content {
+        padding: 10px 15px;
+        height: 100%;
+        .userName {
+            display: block;
+            margin: 0 0 vh(8px) vw(10px);
+        }
+        .sendMessage {
+            padding: mobile_vh(7px) mobile_vw(7px);
+            font-size: mobile_vw(17px);
+            margin-top: mobile_vh(10px);
+        }
+        .loadPhoto {
+            height: mobile_vh(100px);
+            width: 100%;
+            label {
+                height: mobile_vh(30px);
+                font-size: mobile_vw(16px);
+                padding: mobile_vh(4px) 0 mobile_vh(5px) 0;
+                margin-top: vh(100px);
+            }
+
+            label:hover {
+                font-size: mobile_vw(17px);
             }
         }
     }
-    .avatar{
-        img{
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-        }
-    }
 }
 
-@media screen and (max-width: 1200px){
-    .loadPhoto{
-        padding: 1.5%;
-        label{
-            font-size: 1em;
-            padding: 2px 0px 2px 0px;
-        }
-        label:hover{
-                font-size: 1.1em;
-               }
-    }
-}
-
-@media screen and (max-width: 992px){
-    .loadPhoto{
-        label{
-           font-size: 0.8rem !important;
-           padding: 0px 0px 0px 0px;
-        }
-        label:hover{
-            font-size: 0.9rem;
-        }
-    }
-}
-
-@media screen and (max-width: 768px){
-    .content{
-        .sendMessage{
-            font-size: 0.9rem;
-            width: 80%;
-            margin-left: 2rem;
-            padding: 4px;
-        }
-    }
-    .loadPhoto{
-        label{
-            font-size: 0.7rem !important;
-        }
-        label:hover{
-           font-size: 0.8rem !important;
-        }
-    }
-}
-
-@media screen and (max-width: 520px){
-    .loadPhoto{
-        label{
-            width: 75% !important;
-        }
-    }
-}
-
-@media screen and (max-width: 320px){
-    .loadPhoto{
-        label{
-            width: 80% !important;
-        }
-    }
-}

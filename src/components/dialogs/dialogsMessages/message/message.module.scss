@@ -1,19 +1,22 @@
+@import "../../../../adaptive-tools";
+
+
 .message{
     &__my{
         display: flex;
         justify-content: end;
-        margin: 0px 0px 10px 0px;
+        margin-top: vh(10px);
     }
     &__property {
-        margin-bottom: 10px;
+        margin-bottom: vh(10px);
     }
     #message__time{
-        font-size: 0.7em;
-        padding-left: 10px;
+        font-size: vw(12px);
+        padding-left: vw(10px);
     }
     #message__text{
-        font-size: 1.1em;
-        padding-left: 5px;
+        font-size: vw(18px);
+        padding-left: vw(5px);
         word-break: break-all;
     }
     .my__wrapper{
@@ -21,33 +24,73 @@
         background: rgb(132, 11, 219);
         color: white;
         border-radius: 10px;
-        padding: 5px;
+        padding: vh(5px) vw(5px);
     }
     .friend__wrapper{
         display: inline-block;
         background: rgb(132, 11, 219);
         color: white;
         border-radius: 10px;
-        padding: 5px;
+        padding: vh(5px) vw(5px);
         span{
-            font-size: 0.8em;
+            font-size: vw(14px);
         }
     }
     &__friend{
         display: flex;
         justify-content: start;
-        margin: 0px 0px 10px 0px;
+        margin-top: vh(10px);
         span{
             color: white;
             border-radius: 10px;
-            padding: 5px;
+            padding: vh(5px) vw(5px);
         }
     }
     &__selected{
         background: rgb(18, 113, 197);
     }
     #message__viewed{
-        font-size: 0.7em;
-        margin-left: 10px;
+        font-size: vw(12px);
+        margin-left: vw(10px);
+    }
+}
+
+
+
+@media screen and (max-width: $mobile-screen-vw) {
+    .message{
+        &__my{
+            margin-top: mobile_vh(10px);
+        }
+        &__property {
+            margin-bottom: mobile_vh(10px);
+        }
+        #message__time{
+            font-size: mobile_vw(12px);
+            padding-left: mobile_vw(10px);
+        }
+        #message__text{
+            font-size: mobile_vw(18px);
+            padding-left: mobile_vw(5px);
+        }
+        .my__wrapper{
+            padding: mobile_vh(5px) mobile_vw(5px);
+        }
+        .friend__wrapper{
+            padding: mobile_vh(5px) mobile_vw(5px);
+            span{
+                font-size: mobile_vw(14px);
+            }
+        }
+        &__friend{
+            margin-top: mobile_vh(10px);
+            span{
+                padding: mobile_vh(5px) mobile_vw(5px);
+            }
+        }
+        #message__viewed{
+            font-size: mobile_vw(12px);
+            margin-left: mobile_vw(10px);
+        }
     }
 }

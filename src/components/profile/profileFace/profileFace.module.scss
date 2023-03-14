@@ -1,9 +1,11 @@
+@import "../../../adaptive-tools";
+
 .profileFace{
     box-sizing: border-box;
     width: 30%;
     height: fit-content;
-    border-radius: 1rem;
-    padding: 2%;
+    border-radius: 1.6rem;
+    padding: vh(16px) vw(16px);
     &.light{
         background: white;
     }
@@ -16,24 +18,11 @@
     }
 }
 
-@media screen and (max-width: 1200px){
-    .profileFace{
-        padding: 1.5%;
-    }
-}
-@media screen and (max-width: 992px){
-    .profileFace{
-        padding: 1em 1% 1em 1%;
-    }
-}
-
-@media screen and (max-width: 768px){
+@media screen and (max-width: $mobile-screen-vw){
     .profileFace{
         display: flex;
         width: 100%;
-        margin: 0em 0.5em;
-        padding: 1em 1em 1em 2em;
-        margin-bottom: 0.5em;
-        border: 1px solid gray;
+        margin: 0 mobile_vw(8px) mobile_vh(8px) mobile_vw(8px);
+        padding: mobile_vh(16px) mobile_vw(16px) mobile_vh(16px) mobile_vw(32px);
     }
 }

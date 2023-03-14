@@ -1,18 +1,21 @@
+@import "../../../adaptive-tools";
+
+
 .user__classic{
     display: flex;
     box-sizing: border-box;
     max-width: 87%;
-    margin: 10px 0px 20px 12px;
-    padding: 0px 0px 10px 0px;
-    border-bottom: 1px solid gray;
+    margin: vh(10px) 0 vh(20px) vw(12px);
+    padding-bottom: vh(10px);
+    border-bottom: vh(1px) solid gray;
     a{
         color: black;
         text-decoration: none;
     }
     .classic__img{
         img{
-            width: 70px;
-            height: 70px;
+            width: vw(70px);
+            height: vh(70px);
             border-radius: 50%;
         }
     }
@@ -21,36 +24,40 @@
         justify-content: space-between;
         flex-wrap: wrap;
         button{
-            min-width: 80px;
+            height: vh(30px);
+            margin-right: vw(10px);
         }
     }
     .classic__name{
-        font-size: 1.20em;
+        font-size: vw(18px);
         font-style: italic;
-        margin: 0px 0px 10px 0px;
+        margin-bottom: vh(10px);
         word-wrap: wrap;
     }
     .classic__nameWrapper{
-        padding: 0px 0px 0px 20px;
+        padding-left: vw(20px);
     }
-    #classic__write{
+    .classic__write-button{
         background: rgb(28, 250, 165);
         color: black;
         font-weight: 600;
-        padding: 0.3em 0.7em;
+        padding: vh(5px) vw(10px);
     }
 }
+
 .user__flexible{
-    box-sizing: border-box;
-    padding: 0.3em;
-    width: 27%;
-    min-height: 190px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    padding: 5px vw(5px);
+    width: 27%;
+    min-height: vh(190px);
+
     border-radius: 15px;
-    margin-top: 10px;
+    margin-top: vh(10px);
     &.light{
         border: 1px solid rgb(0, 0, 0);
     }
@@ -63,15 +70,15 @@
     }
     .flexible__img{
         img{
-            width: 70px;
-            height: 70px;
+            width: vw(70px);
+            height: vh(70px);
             border-radius: 50%;
         }
     }
     .flexible__name{
-        margin: 0px 0px 0.8em 0px;
+        margin-bottom: vh(14px);
         font-style: italic;
-        font-size: 1.20em;
+        font-size: vw(18px);
         span{
             word-break: break-all;
         }
@@ -86,72 +93,82 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        margin-bottom: 0.8em;
+        margin-bottom: vh(14px);
         button{
-            width: 80px;
+            margin-top: vh(10px);
+            width: 100%;
+            color: #3b0c5d;
+            letter-spacing: 0.1ch;
+            font-weight: 600;
         }
     }
-    #flexible__write{
+    .flexible__write-button{
         background: rgb(28, 250, 165);
         color: black;
-        height: auto;
-        font-weight: 600;
-        width: auto;
-        margin: 0px 0px 0px 0px;
-        padding: 0.3em;
+        margin: 0;
     }
 }
 .user__unfollow{
     background: rgb(52, 253, 159);
     color: black;
-    font-weight: 600;
-    padding: 0px;
+    padding: 0;
 }
 
-@media screen and (max-width: 768px){
+.flexible__follow-button {
+    color: white !important;
+}
+
+
+
+@media screen and (max-width: $mobile-screen-vw) {
     .user__classic{
+        margin: mobile_vh(10px) 0 mobile_vh(20px) mobile_vw(12px);
+        padding-bottom: mobile_vh(10px);
+        border-bottom: mobile_vh(1px) solid gray;
         .classic__img{
             img{
-                width: 60px;
-                height: 60px;
+                width: mobile_vw(70px);
+                height: mobile_vh(70px);
             }
         }
-    }
-    .user__flexible{
-        width: 38%;
-        .flexible__img{
-            img{
-                width: 70px;
-                height: 70px;
+        .classic__following{
+            button{
+                height: mobile_vh(30px);
+                margin-right: mobile_vw(10px);
             }
         }
-        .flexible__name{
-            span{
-                font-size: 1.2rem;
-            }
+        .classic__name{
+            font-size: mobile_vw(18px);
+            margin-bottom: mobile_vh(10px);
+        }
+        .classic__nameWrapper{
+            padding-left: mobile_vw(20px);
+        }
+        .classic__write-button{
+            padding: mobile_vh(5px) mobile_vw(10px);
         }
     }
-    button{
-        font-size: 0.9rem;
-    }
-}
 
-@media screen and (max-width: 410px){
     .user__flexible{
-        width: 80%;
-        .flexible__img{
+        padding: mobile_vh(5px) mobile_vw(5px);
+        min-height: mobile_vh(200px);
+        margin-top: mobile_vh(10px);
+        width: 40%;
+        .flexible__img {
             img{
-                width: 70px;
-                height: 70px;
+                width: mobile_vw(70px);
+                height: mobile_vh(70px);
             }
         }
         .flexible__name{
-            span{
-                font-size: 1.2rem;
+            margin-bottom: mobile_vh(14px);
+            font-size: mobile_vw(18px);
+        }
+        .flexible__following{
+            margin-bottom: mobile_vh(14px);
+            button{
+                margin-top: mobile_vh(10px);
             }
         }
-    }
-    button{
-        font-size: 0.9rem;
     }
 }

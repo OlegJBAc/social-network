@@ -4,6 +4,7 @@ import { useAppDispatch, useAppSelector } from "../../../commons/hooks/hooks"
 import { getCurrentPageSelector, getPageSizeSelector, getTotalUsersCountSelector } from "../../../redux/selectors"
 import { getUsersTC } from "../../../redux/users-reducer"
 import s from './paginator.module.scss'
+import cnBind from "classnames/bind";
 
 
 const Paginator: React.FC = () => {
@@ -27,10 +28,14 @@ const Paginator: React.FC = () => {
     let leftPortionPageNumber = (currentPortion + 1) * portionSize - 10
     let rightPortionPageNumber = leftPortionPageNumber + portionSize
 
+    const cx = cnBind.bind(s)
+
+
     return(
         <div className={s.paginator}>
             <div className={s.pages}>
-                <button onClick={currentPortion > 0 
+                <button className={s['pages-button__prev']}
+                        onClick={currentPortion > 0
                                     ? () => setCurrentPortion((currentPortion) => currentPortion - 1) 
                                     : () => setCurrentPortion((currentPortion) => currentPortion)}>
                     <span>Prev</span>
@@ -38,14 +43,18 @@ const Paginator: React.FC = () => {
                 {pages.filter(page => page >= leftPortionPageNumber && page <= rightPortionPageNumber)
                 .map(page => {
                     return(
-                        <button className={page === currentPage ? s.pages__current : s.pages__item} 
+                        <button className={cx('pages-button', {
+                            current: page === currentPage,
+                        })}
                                 onClick={() => changePage(page)} key={v1()}>
                             {page}
                         </button>
                 )})}
-                <button onClick={currentPortion < countPortions 
+                <button className={s['pages-button__next']}
+                        onClick={currentPortion < countPortions
                                     ? () => setCurrentPortion((currentPortion) => currentPortion + 1) 
-                                    : () => setCurrentPortion((currentPortion) => currentPortion)}>
+                                    : () => setCurrentPortion((currentPortion) => currentPortion)}
+                >
                     <span>Next</span>
                 </button>
             </div>

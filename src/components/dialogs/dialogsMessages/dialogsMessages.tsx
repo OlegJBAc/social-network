@@ -5,6 +5,7 @@ import { deleteMessagesTC } from "../../../redux/dialogs-reducer"
 import { getDialogsMessagesSelector} from "../../../redux/selectors"
 import s from './dialogsMessages.module.scss'
 import Message from "./message/message"
+import cnBind from "classnames/bind";
 
 
 type propsType = {
@@ -20,6 +21,8 @@ const DialogsMessages: React.FC<propsType> = React.memo(({ userId }) => {
     const [selectedMessages, setSelectedMessages] = useState<string[]>([])
 
     const messagesAnchorRef = useRef<HTMLDivElement>(null)
+
+    const cx = cnBind.bind(s)
 
     const scrollHandler = (e: React.UIEvent<HTMLDivElement, UIEvent>) => {
         const element = e.currentTarget;
@@ -43,21 +46,31 @@ const DialogsMessages: React.FC<propsType> = React.memo(({ userId }) => {
                 ? <div className={s.dialogs__messagesZero}>
                     <span>There are no messages here yet</span>
                 </div>
-                : <div className={s.dialogs__messages} onScroll={scrollHandler}>
-                    {selectingMode 
+                : <div className={cx(`dialogs__messages`, {
+                                        selectingMode: selectingMode,
+                                    })}
+                onScroll={scrollHandler}>
+                    { selectingMode
                         ? 
                             <div className={s.selecting}>
-                                {/* @ts-ignore */}
-                                <button onClick={() => {
+                                <div className={s.selecting__wrapper}>
                                     {/* @ts-ignore */}
-                                    dispatch(deleteMessagesTC(selectedMessages, userId)).then(() => {
+                                    <button onClick={() => {
+                                        {/* @ts-ignore */}
+                                        dispatch(deleteMessagesTC(selectedMessages, userId)).then(() => {
+                                            setSelectingMode(false)
+                                        })
+                                    }}>
+                                        Delete
+                                    </button>
+                                    <button onClick={() => {
                                         setSelectingMode(false)
-                                    })
-                                    }}>Delete</button>
-                                <button onClick={() => {
-                                    setSelectingMode(false)
-                                    setSelectedMessages([])
-                                    }}>Cancel</button>
+                                        setSelectedMessages([])
+                                    }}>
+                                        Cancel
+                                    </button>
+                                </div>
+
                             </div>
                         
                         : false

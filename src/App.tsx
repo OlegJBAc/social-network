@@ -19,6 +19,13 @@ const App: React.FC = () => {
     const dispatch = useAppDispatch()
 
     useEffect(() => {
+        const localStorageTheme = localStorage.getItem('theme') as 'Light' | 'Dark' | undefined
+        if( !localStorageTheme ) {
+            localStorage.setItem('theme', 'Dark')
+            dispatch(actions.setTheme('Dark'))
+        }else{
+            dispatch(actions.setTheme( localStorageTheme ))
+        }
         // @ts-ignore
         dispatch(getAuthDataTC()).then(result => {
             if ( result ) {

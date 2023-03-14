@@ -2,11 +2,7 @@ import React from "react"
 import { NavLink } from "react-router-dom"
 import s from './navBar.module.scss'
 import './activeLinkStyles.scss'
-import profile_logo from '../../commons/imgs/navBar/profile_logo.png'
-import dialogs_logo from '../../commons/imgs/navBar/dialogs_logo.png'
-import users_logo from '../../commons/imgs/navBar/users_logo.png'
-import chat_logo from '../../commons/imgs/navBar/chat_logo.webp'
-import { getAppTheme, getIsMobileScreenSelector } from "../../redux/selectors"
+import { getAppTheme } from "../../redux/selectors"
 import { useSelector } from "react-redux"
 import { v4 } from "uuid"
 import cnBind from 'classnames/bind'
@@ -17,7 +13,6 @@ import { ReactComponent as ChatSvg } from '../../commons/imgs/navBar/chat.svg'
 
 
 const NavBar: React.FC = () => {
-    const isMobileScreen = useSelector(getIsMobileScreenSelector)
     const navElems = ['Profile', 'Dialogs', 'Users', 'Chat']
     const logosObj = {
         profile: <AvatarSvg/>,
@@ -30,7 +25,7 @@ const NavBar: React.FC = () => {
     const cx = cnBind.bind(s)
 
     return(
-        <div className={cx(`${isMobileScreen ? s.navBar__mobile : s.navBar}`, {
+        <div className={cx('navBar', {
             light: appTheme === 'Light',
             dark: appTheme === 'Dark',
         })}>

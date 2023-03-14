@@ -1,0 +1,22 @@
+$desktop-screen-vw: 1920px;
+$desktop-screen-vh: 1080px;
+
+$mobile-screen-vw: 768px;
+$mobile-screen-vh: 844px;
+
+
+@function vw($px-vw, $base-vw: $desktop-screen-vw) {
+    @return ($px-vw * 100vw) / $base-vw
+}
+
+@function vh($px-vw, $base-vw: $desktop-screen-vh) {
+    @return ($px-vw * 100vh) / $base-vw
+}
+
+@function mobile_vw($px-vw, $base-vw: $mobile-screen-vw) {
+    @return ($px-vw * 100vw) / $base-vw
+}
+
+@function mobile_vh($px-vw, $base-vw: $mobile-screen-vh) {
+    @return ($px-vw * 100vh) / $base-vw
+}

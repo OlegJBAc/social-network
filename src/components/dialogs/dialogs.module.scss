@@ -1,78 +1,62 @@
+@import "../../adaptive-tools";
+
+
 .dialogs{
     box-sizing: border-box;
     width: 100%;
-    min-height: 550px;
+    min-height: vh(550px);
     background: white;
     padding: 2%;
-    border-radius: 1rem;
-    margin-top: 10px;
+    border-radius: 14px;
+    margin-top: vh(10px);
     &.light{
         background: white;
-        border: 1px solid gray;
     }
     &.dark{
-        border: 1px solid gray;
         background: rgb(32, 31, 31);
     }
     &__own{
-        padding: 0 2rem;
+        padding: 0 vw(28px);
     }
     &__myself{
         width: 100%;
-        height: 290px;
-        border-radius: 1rem;
+        height: 80vh;
+        border-radius: 14px;
         &.light{
             background: white;
-            border: 1px solid gray;
         }
         &.dark{
-            border: 1px solid gray;
             background: rgb(32, 31, 31);
         }
         font-style: italic;
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 0px 0px 30px 0px;
+        padding-bottom: vh(30px);
         span{
-            font-size: 2rem;
-            text-shadow: 0px 0px 8px rgb(56, 55, 55);
+            font-size: vw(28px);
+            text-shadow: 0 0 8px rgb(56, 55, 55);
         }
     }
 }
 
-@media screen and (max-width: 1300px){
-    .dialogs{
-        &__myself{
-            font-size: 1.1em;
-        }
-    }
-}
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: $mobile-screen-vw) {
     .dialogs{
-        span{
-            font-size: 1.3rem;
+        min-height: mobile_vh(550px);
+        margin-top: mobile_vh(10px);
+
+        &__own{
+            padding: 0 mobile_vw(28px);
         }
         &__myself{
-            margin: 0 auto;
+            height: mobile_vh(290px);
+            padding-bottom: mobile_vh(30px);
             span{
-                font-size: 1.3rem;
+                font-size: mobile_vw(28px);
             }
         }
     }
+
 }
 
-
-@media screen and (max-width: 490px){
-    .dialogs{
-        span{
-            font-size: 1.1rem;
-        }
-        &__myself{
-            span{
-                font-size: 1.1rem;
-            }
-        }
-    }
-}

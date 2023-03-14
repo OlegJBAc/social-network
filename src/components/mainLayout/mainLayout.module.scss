@@ -1,3 +1,6 @@
+@import "../../adaptive-tools";
+
+
 .app{
     min-height: 100vh;
     width: 100%;
@@ -7,13 +10,14 @@
     display: flex;
     min-height: 100vh;
     width: 70%;
-    padding: 70px 0px 90px 0px;
+    padding: vh(70px) 0 vh(90px) 0;
     margin: 0 auto;
 }
 
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: $mobile-screen-vw) {
     .container{
         width: 100%;
+        padding: mobile_vh(70px) 0 mobile_vh(90px) 0;
     }
 }

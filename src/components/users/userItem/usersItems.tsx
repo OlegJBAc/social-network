@@ -43,14 +43,14 @@ const UserItem: React.FC<propsType> = ({users, flexible}) => {
                                         <span>Unfollow</span>
                                     </button>
                                 
-                                    : <button className={s.user__follow}
+                                    : <button className={flexible ? s['flexible__follow-button'] : s['classic__follow-button']}
                                             // @ts-ignore
                                             onClick={() => dispatch(followTC(user.id))}>
                                         <span>Follow</span>
                                     </button>
                                 }
                                 <Link to={`/dialogs/id=${user.id}`}>
-                                    <button id={flexible ? s.flexible__write : s.classic__write}>
+                                    <button className={flexible ? s['flexible__write-button'] : s['classic__write-button']}>
                                         <span>Write message</span>
                                     </button>
                                 </Link>

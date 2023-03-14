@@ -1,9 +1,12 @@
+@import "../../adaptive-tools";
+
+
 .page{
     box-sizing: border-box;
     width: 80%;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: $mobile-screen-vw) {
     .page{
         width: 90%;
         margin: 0 auto;

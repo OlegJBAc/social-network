@@ -6,15 +6,6 @@ import s from './message.module.scss'
 import {v4} from "uuid";
 
 
-type propsType = {
-    message: messageType
-    userId: number
-    selectedMessages: string[]
-    setSelectedMessages: (messagesId: string[] | ((selectedMessagesArr: string[]) => any)) => void
-    selectingMode: boolean
-    setSelectingMode: (mode: boolean) => void
-}
-
 const Message: React.FC<propsType> = ({message, 
                                        userId,
                                        selectedMessages, 
@@ -41,6 +32,7 @@ const Message: React.FC<propsType> = ({message,
         if(messageText[0] === '{') {
             const messageCleared = messageText.substring(1, messageText.length - 1).split('&quot;')
             const messageProperties = ['name', 'email', 'phone', 'message']
+
             return messageProperties.map(property => {
                 const propertyIndex = messageCleared.indexOf(property)
                 const propertyContent = messageCleared[propertyIndex + 2]
@@ -55,6 +47,7 @@ const Message: React.FC<propsType> = ({message,
             return messageText
         }
     }
+
     return(
         <div onContextMenu={onRightClick}
              onDoubleClick={selectingMode ? selectMessage : (e: any) => e.preventDefault()}
@@ -65,8 +58,12 @@ const Message: React.FC<propsType> = ({message,
                         <div id={s.message__text}>
                             { parseMessage() }
                         </div>
-                        <span id={s.message__time}>{message.addedAt.substr(beginOfTimeIndex, 5)}</span>
-                        <span id={s.message__viewed}>{message.viewed ? '✔' : '🔵'}</span>
+                        <span id={s.message__time}>
+                            { message.addedAt.substr(beginOfTimeIndex, 5) }
+                        </span>
+                        <span id={s.message__viewed}>
+                            { message.viewed ? '✔' : '🔵' }
+                        </span>
                     </div>
                 </div>
             </div>
@@ -75,3 +72,13 @@ const Message: React.FC<propsType> = ({message,
 }
 
 export default Message
+
+
+type propsType = {
+    message: messageType
+    userId: number
+    selectedMessages: string[]
+    setSelectedMessages: (messagesId: string[] | ((selectedMessagesArr: string[]) => any)) => void
+    selectingMode: boolean
+    setSelectingMode: (mode: boolean) => void
+}

@@ -3,7 +3,7 @@ import s from './profileFaceContent.module.scss'
 import user_main from '../../../../commons/imgs/users/user_main.webp'
 import { updateProfilePhotoTC } from "../../../../redux/profile-reducer"
 import { Link,  } from "react-router-dom"
-import { getAppTheme, getIsMobileScreenSelector } from "../../../../redux/selectors"
+import { getAppTheme } from "../../../../redux/selectors"
 import cnBind from 'classnames/bind'
 import { useAppDispatch, useAppSelector } from "../../../../commons/hooks/hooks"
 import { profileType } from "../../../../types/types"
@@ -12,7 +12,6 @@ import { profileType } from "../../../../types/types"
 const ProfileFaceContent: React.FC<propsType> = ({ profile, isOwner, currentUserId }) => {
     const dispatch = useAppDispatch()
 
-    const isMobileScreen = useAppSelector(getIsMobileScreenSelector)
     const appTheme = useAppSelector(getAppTheme)
 
     const cx = cnBind.bind(s)
@@ -29,20 +28,18 @@ const ProfileFaceContent: React.FC<propsType> = ({ profile, isOwner, currentUser
             <div className={s.content}>
                 {isOwner
                     ? <>
-                        { isMobileScreen &&
                             <div className={s.userName}>
                                 <span>{ profile?.fullName }</span>
-                            </div> }
+                            </div>
                             <div className={s.loadPhoto}>
                                 <input id='loadPhoto__input' onChange={updatePhoto} type="file" accept="image/*"/>
                                 <label htmlFor='loadPhoto__input'>Choose a photo</label>
                             </div>
                     </> 
                     : <>
-                        { isMobileScreen && 
                             <div className={s.userName}>
                                 <span>{ profile?.fullName }</span>
-                            </div>  }
+                            </div>
                             <Link to={`/dialogs/id=${currentUserId}`}>
                                 <div className={cx(`sendMessage`, {
                                     light: appTheme === 'Light',
@@ -54,7 +51,6 @@ const ProfileFaceContent: React.FC<propsType> = ({ profile, isOwner, currentUser
                     </>
                 }
             </div>
-            
         </>
     )
 }

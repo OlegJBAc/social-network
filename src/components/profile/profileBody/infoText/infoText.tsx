@@ -1,18 +1,7 @@
 import React, { useState } from "react"
-import { useSelector } from "react-redux"
 import { v1 } from "uuid"
-import { getProfileSelector } from "../../../../redux/selectors"
-import { profileType } from "../../../../types/types"
 import s from './infoText.module.scss'
 
-
-type propsType = {
-    setEditMode: (editMode: boolean) => void
-    profile: any
-    isOwner: boolean | null
-    updatedProfile: boolean
-    setUpdatedProfile: any
-}
 
 const InfoText: React.FC<propsType> = ({setEditMode, profile, isOwner, updatedProfile, setUpdatedProfile}) => {
     const [showContacts, setShowContacts] = useState(isOwner ? false : true)
@@ -68,3 +57,12 @@ const InfoText: React.FC<propsType> = ({setEditMode, profile, isOwner, updatedPr
 }
 
 export default InfoText
+
+
+type propsType = {
+    setEditMode: (editMode: boolean) => void
+    profile: any
+    isOwner: boolean | null
+    updatedProfile: boolean
+    setUpdatedProfile: any
+}

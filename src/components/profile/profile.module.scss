@@ -1,15 +1,18 @@
+@import "../../adaptive-tools";
+
 .profile{
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding-top: 10px;
+    padding-top: vh(10px);
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: $mobile-screen-vw) {
     .profile{
         width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding-top: mobile_vh(10px);
     }
 }

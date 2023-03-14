@@ -1,8 +1,10 @@
+@import "../../../../adaptive-tools";
+
 .profile__textarea{
     display: flex;
     align-items: flex-end;
     border-radius: 10px;
-    margin: 10px 0px 0px 0px;
+    margin-top: vh(10px);
     &.dark{
         background: rgb(32, 31, 31);
         textarea{
@@ -15,61 +17,64 @@
 
     }
     textarea{
-        min-height: 70px;
+        min-height: vh(70px);
         width: 90%;
-        font-size: 1rem;
+        font-size: vw(16px);
         background: rgb(255, 246, 246);
-        padding: 10px;
-        border-radius: 8px;
-        
+        padding: vh(10px) vw(10px);
+        border-top-right-radius: 8px;
     }
     button{
-        border-radius: 10px;
-        height: 30px;
-        width: 52px;
-        padding: 0px 0px;
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+        height: vh(30px);
+        width: vw(52px);
+        padding: 0;
     }
 }
-.profile__posts{
+.profile__posts {
     border-radius: 10px;
-    margin: 10px 0px 0px 0px;
+    margin-top: vh(10px);
+    &-item {
+        margin-top: vh(20px);
+    }
     &.dark{
         background: rgb(32, 31, 31);
     }
     ul{
         line-height: 170%;
         list-style: none;
-        margin: 0px 0px 0px 0px;
-        padding: 0px;
+        margin: 0;
+        padding: 0;
     }
     li{
-        padding: 0px 0px 0px 0px;
-        margin: 0px 0px 10px 0px;
+        padding: 0;
+        margin: vh(10px) 0;
         max-width: 100%;
     }
     &Photo{
         display: flex;
         span{
-            padding-left: 15px;
+            padding-left: vw(15px);
             font-weight: 600;
         }
     }
     &Photo img{
-        height: 50px;
-        width: 50px;
+        height: vh(50px);
+        width: vw(50px);
         border-radius: 50%;
     }
     &Post{
         span{
             display: inline-block;
-            border-left: 4px solid rgb(99, 255, 47);
-            margin-left: 10px;
-            padding-left: 10px;
+            border-left: vw(4px) solid rgb(99, 255, 47);
+            margin-left: vw(10px);
+            padding-left: vw(10px);
         }
     }
     &Like{
         display: inline-block;
-        padding-top: 3px;
+        padding-top: vh(3px);
         border-radius: 15px;
         button{
             width: 100%;
@@ -78,14 +83,14 @@
             background: rgba(221, 217, 217, 0.903);
             color: black;
             border: none;
-            border-radius: none;
-            font-size: 1rem;
+            border-radius: 10px;
+            font-size: vw(16px);
             box-shadow: none;
         }
     }
     &Unlike{
         display: inline-block;
-        padding-top: 3px;
+        padding-top: vh(3px);
         border-radius: 15px;
         button{
             width: 100%;
@@ -94,27 +99,59 @@
             background: rgba(221, 217, 217, 0.903);
             color: black;
             border: none;
-            border-radius: none;
-            font-size: 1rem;
+            border-radius: 10px;
+            font-size: vw(16px);
             box-shadow: none;
         }
     }
 }
 
 
-@media screen and (max-width: 1200px){
+@media screen and (max-width: $mobile-screen-vw) {
     .profile__textarea{
-        
+        margin-top: mobile_vh(10px);
         textarea{
-            font-size: 0.9em;
+            min-height: mobile_vh(70px);
+            font-size: mobile_vw(16px);
+            padding: mobile_vh(10px) mobile_vw(10px);
+        }
+        button{
+            height: mobile_vh(30px);
+            width: mobile_vw(52px);
         }
     }
-}
-@media screen and (max-width: 992px){
-    .profile__textarea{
-        
-        textarea{
-            font-size: 0.8em;
+    .profile__posts{
+        margin-top: mobile_vh(10px);
+        li{
+            margin: mobile_vh(10px) 0;
+        }
+        &Photo{
+            span{
+                padding-left: mobile_vw(15px);
+            }
+        }
+        &Photo img{
+            height: mobile_vh(50px);
+            width: mobile_vw(50px);
+        }
+        &Post{
+            span{
+                border-left: mobile_vw(4px) solid rgb(99, 255, 47);
+                margin-left: mobile_vw(10px);
+                padding-left: mobile_vw(10px);
+            }
+        }
+        &Like{
+            padding-top: mobile_vh(3px);
+            button{
+                font-size: mobile_vw(16px);
+            }
+        }
+        &Unlike{
+            padding-top: mobile_vh(3px);
+            button{
+                font-size: mobile_vw(16px);
+            }
         }
     }
 }

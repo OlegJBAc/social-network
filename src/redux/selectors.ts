@@ -39,9 +39,7 @@ export const getPostsProfileSelector = (state: appType) => {
 export const getAppInitializedSelector = (state: appType) => {
     return state.app.appInitialized
 }
-export const getIsMobileScreenSelector = (state: appType) => {
-    return state.app.isMobileScreen
-}
+
 export const getAppTheme = (state: appType) => {
     return state.app.theme
 }

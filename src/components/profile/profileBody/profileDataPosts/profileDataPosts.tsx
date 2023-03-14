@@ -11,29 +11,12 @@ import cnBind from 'classnames/bind'
 
 const ProfileDataPosts: React.FC = React.memo(() => {
     let posts = useSelector(getPostsProfileSelector)
-    const myTextareaRef: any = useRef('')
-    const dispatch = useDispatch()
     const appTheme = useSelector(getAppTheme)
+
+    const dispatch = useDispatch()
+
     const cx = cnBind.bind(s)
 
-    // useEffect(() => {
-    //     function OnInput(){
-    //         //@ts-ignore
-    //         this.style.height = 'auto'
-    //         //@ts-ignore
-    //         this.style.height = (this.scrollHeight) + 'px'
-    //     }
-    //     debugger
-    //     for (let i = 0; i < 1; i++) {
-    //         myTextareaRef.current.setAttribute('style', 'height:')
-    //         myTextareaRef.current.addEventListener("input", OnInput, false)
-    //     }
-    //     return () => {
-    //         if(myTextareaRef.current){
-    //             myTextareaRef.current.removeEventListener("input", OnInput, false)
-    //         }
-    //     }
-    // }, [])
 
     const submit = (values: {fieldPosts: string}, { setSubmitting }: any) => {
         if(values.fieldPosts !== ''){
@@ -67,7 +50,7 @@ const ProfileDataPosts: React.FC = React.memo(() => {
                 dark: appTheme === 'Dark',
         })}>
             <ul>
-            {posts.map((post, index) => {
+            { posts.map((post, index) => {
                     return <ProfileDataPostItem key={post.post + index} post={post} index={index}/>
                 })
             }

@@ -6,6 +6,7 @@ import { getAppTheme, getIsAuthSelector, getLoginSelector } from "../../redux/se
 import { logOutTC } from "../../redux/auth-reducer"
 import cnBind from 'classnames/bind'
 import { actions } from "../../redux/app-reducer"
+import cn from "classnames";
 
 const Header: React.FC = () => {
     const dispatch = useDispatch()
@@ -18,6 +19,7 @@ const Header: React.FC = () => {
         dispatch(actions.setTheme(appTheme === 'Light' ? 'Dark' : 'Light'))
     }
 
+    // @ts-ignore
     return(
         <div className={cx("header", {
             light: appTheme === 'Light',
@@ -33,10 +35,18 @@ const Header: React.FC = () => {
             </button>
                 <div className={s.header__login}>
                     {isAuth
-                        ? <div className={s.header__authorized}> 
+                        ? <div className={s.header__authorized}>
                             <span>{login}</span>
-                            {/* @ts-ignore */}
-                            <button onClick={() => dispatch(logOutTC())}>Logout</button>
+                            {/* @ts-ignore*/}
+                            <button onClick={() => dispatch(logOutTC())}
+                                    className={cn('auth-button', {
+                                        custom: true,
+                                        changes: true,
+                                    })}
+                                    id={s['auth-button']}
+                            >
+                                <span>Logout</span>
+                            </button>
                         </div>
                         : <div className={s.header__notauthorized}>
                             <span>Please LogIn</span>

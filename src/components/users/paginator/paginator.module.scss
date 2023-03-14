@@ -1,9 +1,50 @@
+@import "../../../adaptive-tools";
+
+
 .paginator{
-    margin-left: 12px;
+    margin-left: vw(12px);
 }
-.pages__current{
-    background: rgb(30, 253, 149);
-    color: rgb(0, 0, 0);
-    font-size: 1.2em;
-    font-weight: 600;
+.pages {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    &-button {
+        font-size: vw(18px);
+        font-weight: 600;
+        margin-right: vw(2px);
+        &:hover {
+            transition-duration: 0.3s;
+            background: rgba(128, 255, 198, 0.89);
+            color: #000000;
+        }
+        &.current {
+            background: rgb(103, 246, 180);
+            color: rgb(17, 25, 47);
+            font-weight: 600;
+        }
+        &__prev {
+            background: #6d03e6;
+            margin-right: vw(2px);
+        }
+        &__next {
+            background: #6d03e6;
+        }
+    }
+}
+
+
+
+@media screen and (max-width: $mobile-screen-vw) {
+    .paginator{
+        margin-left: mobile_vw(12px);
+    }
+    .pages {
+        &-button {
+            font-size: mobile_vw(18px);
+            margin-right: mobile_vw(2px);
+            &__prev {
+                margin-right: mobile_vw(2px);
+            }
+        }
+    }
 }

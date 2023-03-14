@@ -13,7 +13,7 @@ const ProfileDataPostItem: React.FC<any> = React.memo(({post, index}) => {
     let likedPosts = useSelector(getLikedPostsSelector)
     const dispatch = useDispatch()
     
-    return <>
+    return <div className={styles['profile__posts-item']}>
             <li className={styles.profile__postsPhoto}>
                 <img src={profile?.photos.small ? profile?.photos.small : user_small}/>
                 <span>{profile?.fullName ? profile.fullName : 'Name'}</span>
@@ -34,7 +34,7 @@ const ProfileDataPostItem: React.FC<any> = React.memo(({post, index}) => {
                     {likedPosts.includes(post.id) ? '❤️ ' + post.likeCount : '🤍 ' + post.likeCount}
                 </button>
             </li>
-    </>
+    </div>
 })
 
 export default ProfileDataPostItem

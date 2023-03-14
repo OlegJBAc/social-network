@@ -54,7 +54,7 @@ const Dialogs = React.memo(() => {
                     <span>Sorry, but you can't send message to yourself^_^</span>
                 </div>
                 : <>
-                    <DialogsHeader/>
+                    <DialogsHeader userId={userId}/>
                     <DialogsMessages userId={userId}/>
                     <DialogsInput userId={userId}/>
                 </>

@@ -1,16 +1,17 @@
+@import "../../adaptive-tools";
+
+
 .chat{
     box-sizing: border-box;
     width: 100%;
     background: rgb(255, 255, 255);
     padding: 2%;
-    margin-top: 10px;
+    margin-top: vh(10px);
     border-radius: 1rem;
     &.light{
         background: white;
-        border: 1px solid gray;
     }
     &.dark{
-        border: 1px solid gray;
         background: rgb(32, 31, 31);
     }
     a{
@@ -18,34 +19,32 @@
         text-decoration: none;
     }
     &__body{
-        height: 500px;
+        height: 70vh;
         overflow-y: scroll;
         img{
-            height: 80px;
-            width: 80px;
+            height: vh(80px);
+            width: vw(80px);
             border-radius: 50%;
         }
     }
     &__message{
         display: flex;
         border-bottom: 1px solid gray;
-        margin: 0px 0px 10px 0px;
-        padding-bottom: 10px;
+        margin-top: vh(25px);
+        padding-bottom: vh(25px);
     }
     &__info{
-        padding: 0px 0px 0px 20px;
+        padding-left: vw(20px);
         display: flex;
         flex-direction: column;
         justify-content: space-between;
     }
     &__name{
-        font-size: 1.15em;
-        padding: 0px 0px 25px 0px;
+        padding-bottom: vh(25px);
         font-style: italic;
     }
     &__text{
-        font-size: 1em;
-        padding-bottom: 12px;
+        padding-bottom: vh(12px);
         word-break: break-all;
     }
     &__input{
@@ -65,25 +64,25 @@
         button{
             display: block;
             height: 100%;
-            margin-left: 5px;
-            margin-bottom: 8px;
+            margin-left: vw(5px);
+            margin-bottom: vh(8px);
             background: rgba(255, 255, 255, 0) !important;
             border: none;
             box-shadow: none;
             border-radius: none;
             svg{
                 color: rgb(167, 167, 230);
-                width: 43px;
-                height: 43px;
+                width: vw(43px);
+                height: vh(43px);
             }
         }
         textarea{
-            font-size: 1rem;
+            font-size: vw(14px);
             box-sizing: border-box;
-            min-height: 70px;
-            max-height: 150px;
+            min-height: vh(100px);
+            max-height: vh(250px);
             width: 90%;
-            padding: 10px;
+            padding: vh(10px) vw(10px);
             border-radius: 20px;
             border: none;
             background: rgba(103, 179, 249, 0.225);
@@ -92,32 +91,46 @@
     }
 }
 
-@media screen and (max-width: 768px){
+
+
+@media screen and (max-width: $mobile-screen-vw) {
     .chat{
         height: calc(100vh - 80px - 80px);
-        margin: -10px auto;
+        margin-top: mobile_vh(10px);
         &__body{
             height: calc(100vh - 80px - 70px - 90px);
+            img{
+                height: mobile_vh(80px);
+                width: mobile_vw(80px);
+            }
+        }
+        &__message{
+            margin-top: mobile_vh(10px);
+            padding-bottom: mobile_vh(10px);
+        }
+        &__info{
+            padding-left: mobile_vw(20px);
+        }
+        &__name{
+            padding-bottom: mobile_vh(25px);
+        }
+        &__text{
+            padding-bottom: mobile_vh(12px);
         }
         &__input{
-            display: flex;
-            align-items: flex-end;
-            margin-top: 5px;
             button{
-                margin: 0 0 7px 0;
-                background: none !important;
-            }
-            textarea{
-                min-height: 40px;
-                max-height: 60px;
-            }
-        }
-        &.dark{
-            textarea{
-                color: white;
-                &::placeholder{
-                    color: white;
+                margin-left: mobile_vw(5px);
+                margin-bottom: mobile_vh(8px);
+                svg{
+                    width: mobile_vw(43px);
+                    height: mobile_vh(43px);
                 }
+            }
+            textarea{
+                font-size: mobile_vw(14px);
+                min-height: mobile_vh(40px);
+                max-height: mobile_vh(60px);
+                padding: mobile_vh(10px) mobile_vw(10px);
             }
         }
     }

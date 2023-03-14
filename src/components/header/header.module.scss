@@ -1,3 +1,6 @@
+@import "../../adaptive-tools";
+
+
 .header{
     position: fixed;
     top: 0;
@@ -5,49 +8,61 @@
     min-width: 100vw;
     z-index: 100;
     &.light{
-        background: rgb(0, 0, 0);
+        background: #26202c;
         color: white;
-        box-shadow: inset 0 0 5px white;
+        #auth-button {
+            span{
+                color: white;
+            }
+        }
     }
     &.dark{
         background: rgb(39, 38, 38);
     }
     img{
         margin: 0.5%;
-        height: 40px;
-        width: 40px;
+        height: vh(40px);
+        width: vw(40px);
         border-radius: 50%;
     }
     &__content{
-        height: 50px;
+        height: vh(50px);
         width: 70%;
-        margin: 0px auto;
+        margin: 0 auto;
         display: flex;
         justify-content: space-between;
+        align-items: center;
     }
-    
+
     &__authorized{
         display: flex;
-        margin: 5% 0% 0% 0%;
+        justify-content: space-between;
         span{
-            font-size: 1.3em;
-        }
-        button{
-            font-size: 0.8em;
-            margin: 0px 0px 0px 50px;
+            font-size: vw(22px);
         }
     }
     &__notauthorized{
-        font-size: 1.3em;
-        margin: 10px 0px 0px 23px;
+        font-size: vw(22px);
+        margin: vh(10px) 0 0 vh(23px);
+    }
+    &__login{
+        width: 30%;
+        margin: vh(10px) 0;
     }
 }
-
+#auth-button {
+    height: vh(35px);
+    width: vw(150px);
+    span{
+        font-size: vw(16px);
+        padding-top: vh(8px);
+    }
+}
 #theme__toggle{
-    width: 80px;
-    height: 32px;
-    margin: 5px 0em 0px 0;
-    padding: 0px;
+    width: vw(80px);
+    height: vh(32px);
+    margin-top: vh(5px);
+    padding: 0;
     border-radius: 30px;
     display: flex;
     align-items: center;
@@ -56,8 +71,8 @@
     border: 2px solid gray;
     &:before{
         content: '';
-        width: 30px;
-        height: 29px;
+        width: vw(30px);
+        height: vh(29px);
         background-color: white;
         border-radius: 50%;
         display: flex;
@@ -76,7 +91,7 @@
     &.dark{
         &:before{
             transform: translateX(153%);
-            height: 28px;
+            height: vh(28px);
             background-color: white;
             transition-duration: 1s;
         }
@@ -84,30 +99,52 @@
     }
 }
 
-@media screen and (max-width: 768px) {
+
+
+@media screen and (max-width: $mobile-screen-vw) {
     .header{
-        &__authorized{
-            span{
-                font-size: 1.1rem;
-            }
+        img{
+            height: mobile_vh(40px);
+            width: mobile_vw(40px);
         }
         &__content{
-            width: 90%;
+            height: mobile_vh(50px);
+        }
+        &__authorized {
+            span {
+                font-size: mobile_vw(22px);
+            }
+        }
+        &__notauthorized {
+            font-size: mobile_vw(22px);
+            margin: mobile_vh(10px) 0 0 mobile_vh(23px);
+        }
+        &__login {
+            width: 50%;
+            margin: mobile_vh(10px) 0;
+        }
+    }
+    #auth-button {
+        height: mobile_vh(35px);
+        width: mobile_vw(120px);
+        span{
+            font-size: mobile_vw(14px);
+            padding-top: mobile_vh(8px);
         }
     }
     #theme__toggle{
-        margin: 5px 0em 0px 0;
-    }
-}
+        width: mobile_vw(80px);
+        height: mobile_vh(32px);
+        margin-top: mobile_vh(5px);
+        &:before{
+            content: '';
+            width: mobile_vw(30px);
+            height: mobile_vh(29px);
 
-@media screen and (max-width: 420px) {
-    .header{
-        &__authorized{
-            span{
-                font-size: 1rem;
-            }
-            button{
-                margin-left: 1rem;
+        }
+        &.dark{
+            &:before{
+                height: mobile_vh(28px);
             }
         }
     }

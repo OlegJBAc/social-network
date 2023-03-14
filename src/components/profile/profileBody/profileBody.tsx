@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { useSelector } from "react-redux"
-import { getAppTheme, getIsMobileScreenSelector } from "../../../redux/selectors"
+import { getAppTheme } from "../../../redux/selectors"
 import { profileType } from "../../../types/types"
 import InfoInput from "./infoInput/infoInput"
 import InfoText from "./infoText/infoText"
@@ -18,7 +18,6 @@ const ProfileBody: React.FC<propsType> = ({profile, isOwner}) => {
     const [editMode, setEditMode] = useState(false)
     const [updatedProfile, setUpdatedProfile] = useState(false)
 
-    const isMobileScreen = useSelector(getIsMobileScreenSelector)
     const appTheme = useSelector(getAppTheme)
 
     const cx = cnBind.bind(s)
@@ -39,7 +38,7 @@ const ProfileBody: React.FC<propsType> = ({profile, isOwner}) => {
             </div>
             {isOwner
                 ? <>
-                    <div className={cx(`${isMobileScreen ? s.profile__posts_wrapper_mobile : s.profile__posts_wrapper}`, {
+                    <div className={cx('profile__posts_wrapper', {
                         light: appTheme === 'Light',
                         dark: appTheme === 'Dark',
                     })}>

@@ -1,9 +1,11 @@
+@import "../../../adaptive-tools";
+
 .profileBody{
     box-sizing: border-box;
     width: 68%;
     border-radius: 1rem;
     padding: 2%;
-    font-size: 1.1em;
+    font-size: vw(17px);
 
     &.light{
         background: white;
@@ -13,39 +15,21 @@
     }
 }
 .profile__posts_wrapper{
-    font-size: 1.3rem;
-    margin: 20px 0px;
+    font-size: vw(18px);
+    margin: vh(20px) 0;
     padding-bottom: 10px;
-    border-bottom: 1px solid gray;
-    &_mobile{
-        font-size: 1.1rem;
-        margin: 20px 0px;
-        padding-bottom: 10px;
-        border-bottom: 1px solid gray;
-    }
+    border-bottom: vh(1px) solid gray;
 }
 
-@media screen and (max-width: 1200px){
-    .profileBody{
-        font-size: 1em;
-    }
-    .profile__posts_wrapper{
-        font-size: 1.1rem;
-    }
 
-}
-@media screen and (max-width: 992px){
-    .profile__posts_wrapper{
-        font-size: 1rem;
-    }
-    .profileBody{
-        font-size: 0.85em;
-    }
-}
-
-@media screen and (max-width: 768px) {
+@media screen and (max-width: $mobile-screen-vw) {
     .profileBody{
         width: 100%;
-        font-size: 0.9em;
+        font-size: mobile_vw(14px);
+    }
+    .profile__posts_wrapper {
+        font-size: mobile_vw(17px);
+        margin: mobile_vh(20px) 0;
+        padding-bottom: mobile_vh(10px);
     }
 }

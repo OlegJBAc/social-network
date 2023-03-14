@@ -1,13 +1,14 @@
+@import "../../adaptive-tools";
 .navBar{
     width: 20%;
     background: rgba(156, 154, 154, 0);
-    font-size: 1.1em;
+    font-size: vw(16px);
     line-height: 170%;
     svg{
-        height: 23px;
-        width: 23px;
-        padding-top: 2px;
-        margin-right: 1em;
+        height: vh(23px);
+        width: vw(23px);
+        padding-top: vh(2px);
+        margin-right: vw(16px);
     }
     &.light{
         svg{
@@ -33,11 +34,11 @@
     img{
         height: auto;
         width: 12.1%;
-        padding-top: 2px;
+        padding-top: vh(2px);
     }
     ul{
         list-style: none;
-        padding: 0px 20px 0px 0px;
+        padding: 0px vw(20px) 0px 0px;
         a{
             text-decoration: none;
             color: rgb(27, 9, 60);
@@ -45,30 +46,43 @@
         li{
             display: flex;
             align-items: center;
-            border-radius: 0.9rem;
+            border-top-right-radius: 5px;
+            border-top-left-radius: 5px;
             img{
-                margin-right: 10px;
+                margin-right: vw(10px);
             }
-            padding-left: 10px;
+            padding-left: vw(10px);
             margin-bottom: 5%;
         }
         li:hover{
             transition-duration: 0.3s;
             background: rgba(255, 255, 255, 0.633);
+            color: black;
+            svg{
+                circle{
+                    fill: black !important;
+                }
+                path{
+                    fill: black !important;
+                }
+            }
         }
     }
+}
 
-    &__mobile{
+@media screen and (max-width: $mobile-screen-vw){
+    .navBar{
         width: 100%;
-        height: 80px;
+        height: mobile_vh(80px);
         position: fixed;
         left: 0;
         bottom: 0;
         z-index: 100;
+        font-size: mobile_vw(14px);
         svg{
-            height: 23px;
-            width: 23px;
-            padding-top: 2px;
+            height: mobile_vh(23px);
+            width: mobile_vw(23px);
+            padding-top: mobile_vh(2px);
             margin-right: 0;
         }
         &.light{
@@ -104,7 +118,6 @@
             justify-content: space-around;
             padding: 0;
             margin: 0;
-            box-shadow: inset 0px 0px 10px black;
             height: 100%;
             a{
                 display: block;
@@ -119,24 +132,15 @@
                 flex-direction: column;
                 align-items: center;
                 list-style: none;
-                font-size: 0.9em;
-                padding: 1em 0;
+                padding: mobile_vh(10px) 0;
                 img{
-                    width: 35px;
-                    height: 35px;
+                    width: mobile_vw(35px);
+                    height: mobile_vw(35px);
                     border-radius: 50%;
                 }
             }
         }
+
     }
 }
-@media screen and (max-width: 1200px){
-    .navBar{
-        font-size: 1em;
-    }
-}
-@media screen and (max-width: 992px){
-    .navBar{
-        font-size: 0.9em;
-    }
-}
+

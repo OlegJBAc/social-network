@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useState} from "react"
 import { useDispatch } from "react-redux"
 import s from './dialogsHeader.module.scss'
 import { Link, useLocation, useNavigate } from "react-router-dom"
@@ -6,13 +6,19 @@ import { getAppTheme, getProfileSelector } from "../../../redux/selectors"
 import user_small from '../../../commons/imgs/users/user_main.webp'
 import * as queryString from 'query-string'
 import cnBind from 'classnames/bind'
-import { useAppSelector } from "../../../commons/hooks/hooks"
+import {useAppDispatch, useAppSelector} from "../../../commons/hooks/hooks"
+import {getMessagesTC} from "../../../redux/dialogs-reducer";
 
 
-const DialogsHeader = () => {
+type propsType = {
+    userId: number
+}
+
+const DialogsHeader: React.FC<propsType> = ({ userId }) => {
     const dispatch = useDispatch()
     const history = useLocation()
     const navigate = useNavigate()
+
 
     let profile = useAppSelector(getProfileSelector)
     const appTheme = useAppSelector(getAppTheme)
@@ -20,6 +26,13 @@ const DialogsHeader = () => {
     const cx = cnBind.bind(s)
 
     let parsed = queryString.parse(history.pathname)
+
+    const getMessagesFunc = (userId: number) => () => {
+        if(userId !== 0) {
+            // @ts-ignore
+            dispatch(getMessagesTC(userId, 1, 20))
+        }
+    }
     return(
         <div className={cx('header', {
             light: appTheme === 'Light',
@@ -33,9 +46,13 @@ const DialogsHeader = () => {
                 <span onClick={() => navigate(-1)}>Back</span>
             </div>
             <div className={s.header__name}>
-            <Link to={`/profile/id=${Number(parsed['/dialogs/id'])}`}>
-                <span>{profile?.fullName}</span>
-            </Link>
+                <Link to={`/profile/id=${Number(parsed['/dialogs/id'])}`}>
+                    <span>{profile?.fullName}</span>
+                </Link>
+                <button className={s.dialogs__listening}
+                        onClick={getMessagesFunc(userId)}>
+                    <span>Update Messages</span>
+                </button>
             </div>
             <Link to={`/profile/id=${Number(parsed['/dialogs/id'])}`}>
                 <img src={profile?.photos.small ? profile.photos.small : user_small}/>
