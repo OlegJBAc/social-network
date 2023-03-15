@@ -31,7 +31,7 @@ const ProfileBody: React.FC<propsType> = ({profile, isOwner}) => {
                 {editMode
                     ? <InfoInput updatedProfile={updatedProfile} editMode={editMode} isOwner={isOwner}
                                  setUpdatedProfile={setUpdatedProfile} profile={profile}
-                                setEditMode={setEditMode}/>
+                                 setEditMode={setEditMode}/>
                     : <InfoText isOwner={isOwner} profile={profile} setEditMode={setEditMode}
                         updatedProfile={updatedProfile} setUpdatedProfile={setUpdatedProfile}/>
                 }

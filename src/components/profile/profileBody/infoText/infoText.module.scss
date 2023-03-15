@@ -22,7 +22,6 @@
     .info__zero{
         display: flex;
         justify-content: center;
-        font-size: vw(18px);
         margin-top: vh(18px);
         font-weight: 500;
         font-style: oblique;
@@ -35,7 +34,6 @@
             width: 95%;
             height: vh(37px);
             border-radius: 10px;
-            font-size: vw(16px);
             background: rgb(234, 226, 226);
             color: rgb(0, 0, 0);
             border: none;
@@ -45,7 +43,6 @@
             width: 100%;
             height: vh(37px);
             border-radius: 10px;
-            font-size: vw(17px);
             background: rgb(207, 203, 232);
             color: rgb(0, 0, 0);
             transition-duration: 1s;
@@ -64,18 +61,18 @@
             padding-left: mobile_vw(8px);
         }
         .info__zero{
-            font-size: mobile_vw(18px);
             margin-top: mobile_vh(18px);
+        }
+        .info__item {
+            margin: 10px 0;
         }
         .show__buttonWrap{
             #show__button{
                 height: mobile_vh(37px);
-                font-size: mobile_vw(16px);
                 margin: mobile_vh(10px) 0;
             }
             #show__button:hover{
                 height: mobile_vh(37px);
-                font-size: mobile_vw(17px);
             }
         }
         .info__buttonarea{

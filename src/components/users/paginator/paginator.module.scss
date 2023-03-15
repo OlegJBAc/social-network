@@ -9,7 +9,6 @@
     flex-wrap: wrap;
     width: 80%;
     &-button {
-        font-size: vw(18px);
         font-weight: 600;
         margin-right: vw(2px);
         &:hover {
@@ -40,7 +39,6 @@
     }
     .pages {
         &-button {
-            font-size: mobile_vw(18px);
             margin-right: mobile_vw(2px);
             &__prev {
                 margin-right: mobile_vw(2px);

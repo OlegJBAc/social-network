@@ -13,7 +13,6 @@ $selecting-height: vh(40px);
         padding: vh(178px) 0 vh(178px) 0;
         justify-content: center;
         align-items: center;
-        font-size: vw(36px);
     }
 }
 .selecting{
@@ -27,7 +26,6 @@ $selecting-height: vh(40px);
         height: $selecting-height;
         background: rgb(66, 5, 135) !important;
         color: white;
-        font-size: vw(15px);
         border: 2px solid black;
         margin-right: vw(10px);
     }
@@ -39,13 +37,11 @@ $selecting-height: vh(40px);
         padding: mobiel_vh(10px) mobiel_vw(10px);
         &Zero{
             padding: mobiel_vh(178px) 0 mobiel_vh(178px) 0;
-            font-size: mobiel_vw(36px);
         }
     }
     .selecting{
         button{
             height: $selecting-height;
-            font-size: mobiel_vw(15px);
             margin-right: mobiel_vw(10px);
         }
     }

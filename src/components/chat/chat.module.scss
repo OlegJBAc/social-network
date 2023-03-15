@@ -77,7 +77,6 @@
             }
         }
         textarea{
-            font-size: vw(14px);
             box-sizing: border-box;
             min-height: vh(100px);
             max-height: vh(250px);
@@ -98,14 +97,14 @@
         height: calc(100vh - 80px - 80px);
         margin-top: mobile_vh(10px);
         &__body{
-            height: calc(100vh - 80px - 70px - 90px);
+            height: calc(94vh - 80px - 70px - 90px);
             img{
                 height: mobile_vh(80px);
                 width: mobile_vw(80px);
             }
         }
         &__message{
-            margin-top: mobile_vh(10px);
+            margin-top: mobile_vh(20px);
             padding-bottom: mobile_vh(10px);
         }
         &__info{
@@ -127,9 +126,8 @@
                 }
             }
             textarea{
-                font-size: mobile_vw(14px);
-                min-height: mobile_vh(40px);
-                max-height: mobile_vh(60px);
+                min-height: mobile_vh(100px);
+                max-height: mobile_vh(120px);
                 padding: mobile_vh(10px) mobile_vw(10px);
             }
         }

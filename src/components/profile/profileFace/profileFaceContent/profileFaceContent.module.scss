@@ -11,7 +11,6 @@
         &.dark{
             color: black;
         }
-        font-size: vw(17px);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -29,7 +28,6 @@
             height: vh(30px);
             width: 100%;
             border-radius: 20px;
-            font-size: vw(16px);
             background: rgb(234, 226, 226);
             position: absolute;
             margin: vh(20px) auto;
@@ -43,7 +41,6 @@
          }
          label:hover{
              transition-duration: 1s;
-             font-size: vw(17px);
              cursor: pointer;
          }
     }
@@ -66,33 +63,31 @@
 @media screen and (max-width: $mobile-screen-vw) {
     .avatar{
         img{
-            width: mobile_vw(150px);
+            height: 100%;
+            width: 100%;
         }
     }
     .content {
-        padding: 10px 15px;
-        height: 100%;
+        padding: 10px 15px 40px 15px;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-around;
         .userName {
             display: block;
             margin: 0 0 vh(8px) vw(10px);
         }
         .sendMessage {
             padding: mobile_vh(7px) mobile_vw(7px);
-            font-size: mobile_vw(17px);
             margin-top: mobile_vh(10px);
         }
         .loadPhoto {
-            height: mobile_vh(100px);
             width: 100%;
             label {
-                height: mobile_vh(30px);
-                font-size: mobile_vw(16px);
+                height: mobile_vw(40px);
                 padding: mobile_vh(4px) 0 mobile_vh(5px) 0;
                 margin-top: vh(100px);
-            }
-
-            label:hover {
-                font-size: mobile_vw(17px);
             }
         }
     }

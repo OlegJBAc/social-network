@@ -3,6 +3,7 @@
 
 body {
   margin: 0;
+  font-size: vw(16px);
   color: black;
   background: gainsboro;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -57,10 +58,55 @@ button {
   background: #9546f1;
 }
 
+h2 {
+  font-size: vw(20px);
+}
+h3 {
+  font-size: vw(18px);
+}
+span {
+  font-size: vw(18px);
+}
+input, textarea {
+  font-size: vw(16px);
+  &::placeholder{
+    font-size: vw(16px);
+    font-style: oblique;
+  }
+}
+button {
+  padding: vh(10px) vw(20px);
+  font-size: vw(18px);
+  span{
+    font-size: vw(18px);
+  }
+}
 
 @media screen and (max-width: $mobile-screen-vw){
+    body {
+      font-size: mobile_vw(22px);
+    }
     button {
       padding: mobile_vh(5px) mobile_vw(10px);
-      font-size: mobile_vw(14px);
+      font-size: mobile_vw(22px);
+      span{
+        font-size: mobile_vw(22px);
+      }
+    }
+    h2 {
+        font-size: mobile_vw(26px);
+    }
+    h3 {
+        font-size: mobile_vw(24px);
+    }
+    span {
+        font-size: mobile_vw(22px);
+    }
+    input, textarea {
+        font-size: mobile_vw(24px);
+        &::placeholder{
+          font-size: mobile_vw(24px);
+          font-style: oblique;
+        }
     }
 }

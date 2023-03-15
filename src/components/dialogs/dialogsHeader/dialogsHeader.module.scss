@@ -32,7 +32,6 @@
             text-decoration: none;
             color: black;
         }
-        font-size: vw(16px);
     }
     &__name span:hover{
         border-bottom: 2px solid gray;
@@ -40,7 +39,6 @@
     &__back{
         display: flex;
         align-items: center;
-        font-size: vw(14px);
         cursor: pointer;
         span{
             margin-left: vw(15px);
@@ -81,10 +79,8 @@
             a{
                 margin-bottom: mobile_vh(10px);
             }
-            font-size: mobile_vw(16px);
         }
         &__back{
-            font-size: mobile_vw(14px);
             span{
                 margin-left: mobile_vw(15px);
             }

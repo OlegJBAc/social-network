@@ -4,54 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74058480-daec-45f8-a196-1467dae2df0a" name="Changes" comment="routing fixes and message parse">
-      <change afterPath="$PROJECT_DIR$/src/adaptive-tools.scss" afterDir="false" />
+    <list default="true" id="74058480-daec-45f8-a196-1467dae2df0a" name="Changes" comment="adaptive update and login bugs fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/chat/chat.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/chat/chat.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/dialogs/dialogs.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialogs/dialogs.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/dialogs/dialogs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialogs/dialogs.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/dialogs/dialogsHeader/dialogsHeader.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialogs/dialogsHeader/dialogsHeader.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/dialogs/dialogsHeader/dialogsHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialogs/dialogsHeader/dialogsHeader.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/dialogs/dialogsInput/dialogsInput.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialogs/dialogsInput/dialogsInput.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/dialogs/dialogsMessages/dialogsMessages.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialogs/dialogsMessages/dialogsMessages.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/dialogs/dialogsMessages/dialogsMessages.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialogs/dialogsMessages/dialogsMessages.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/dialogs/dialogsMessages/message/message.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialogs/dialogsMessages/message/message.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/dialogs/dialogsMessages/message/message.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialogs/dialogsMessages/message/message.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/header/header.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/header.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/layout/layout.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/layout.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/login/login.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/login/login.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/login/login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/login/login.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/mainLayout/mainLayout.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainLayout/mainLayout.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/navBar/navBar.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navBar/navBar.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navBar/navBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navBar/navBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pageContainer/pageContainer.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pageContainer/pageContainer.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/profile.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/profile/profileBody/infoInput/infoInput.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profileBody/infoInput/infoInput.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profileBody/infoInput/infoInput.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profileBody/infoInput/infoInput.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/profile/profileBody/infoText/infoText.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profileBody/infoText/infoText.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/profileBody/infoText/infoText.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profileBody/infoText/infoText.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/profile/profileBody/profileBody.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profileBody/profileBody.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/profile/profileBody/profileBody.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profileBody/profileBody.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/profileBody/profileDataPosts/ProfileDataPostItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profileBody/profileDataPosts/ProfileDataPostItem.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/profile/profileBody/profileDataPosts/profileDataPosts.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profileBody/profileDataPosts/profileDataPosts.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/profileBody/profileDataPosts/profileDataPosts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profileBody/profileDataPosts/profileDataPosts.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/profileFace/profileFace.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profileFace/profileFace.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/profileFace/profileFace.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profileFace/profileFace.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/profile/profileFace/profileFaceContent/profileFaceContent.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profileFace/profileFaceContent/profileFaceContent.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/profileFace/profileFaceContent/profileFaceContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profileFace/profileFaceContent/profileFaceContent.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/users/paginator/paginator.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/paginator/paginator.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/users/paginator/paginator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/paginator/paginator.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/users/userItem/usersItems.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/userItem/usersItems.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/users/userItem/usersItems.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/userItem/usersItems.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/users/users.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/users.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/users/users.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/users.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/users/usersFilter/usersFilter.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/usersFilter/usersFilter.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/app-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/app-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/selectors.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/selectors.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,22 +45,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Programming/JS/FinalPreparation/FinishedProjects/social-network&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.editor.code.editing&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Programming\\JS\\FinalPreparation\\FinishedProjects\\social-network\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Programming/JS/FinalPreparation/FinishedProjects/my-portfolio",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.editor.code.editing",
+    "ts.external.directory.path": "C:\\Programming\\JS\\FinalPreparation\\FinishedProjects\\social-network\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Programming\JS\FinalPreparation\FinishedProjects\social-network\src\types" />
@@ -132,7 +105,10 @@
       <workItem from="1678440892212" duration="633000" />
       <workItem from="1678698949786" duration="17918000" />
       <workItem from="1678785393805" duration="303000" />
-      <workItem from="1678788983693" duration="1344000" />
+      <workItem from="1678788983693" duration="1743000" />
+      <workItem from="1678797891949" duration="24000" />
+      <workItem from="1678867568369" duration="600000" />
+      <workItem from="1678869494125" duration="5327000" />
     </task>
     <task id="LOCAL-00001" summary="routing fixes and message parse">
       <created>1678105639003</created>
@@ -141,7 +117,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678105639003</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="adaptive update and login bugs fix">
+      <created>1678794273930</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1678794273930</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -160,6 +143,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="routing fixes and message parse" />
-    <option name="LAST_COMMIT_MESSAGE" value="routing fixes and message parse" />
+    <MESSAGE value="adaptive update and login bugs fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="adaptive update and login bugs fix" />
   </component>
 </project>

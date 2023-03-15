@@ -19,7 +19,6 @@
     textarea{
         min-height: vh(70px);
         width: 90%;
-        font-size: vw(16px);
         background: rgb(255, 246, 246);
         padding: vh(10px) vw(10px);
         border-top-right-radius: 8px;
@@ -27,9 +26,6 @@
     button{
         border-top-right-radius: 8px;
         border-bottom-right-radius: 8px;
-        height: vh(30px);
-        width: vw(52px);
-        padding: 0;
     }
 }
 .profile__posts {
@@ -84,7 +80,6 @@
             color: black;
             border: none;
             border-radius: 10px;
-            font-size: vw(16px);
             box-shadow: none;
         }
     }
@@ -100,7 +95,6 @@
             color: black;
             border: none;
             border-radius: 10px;
-            font-size: vw(16px);
             box-shadow: none;
         }
     }
@@ -112,12 +106,7 @@
         margin-top: mobile_vh(10px);
         textarea{
             min-height: mobile_vh(70px);
-            font-size: mobile_vw(16px);
             padding: mobile_vh(10px) mobile_vw(10px);
-        }
-        button{
-            height: mobile_vh(30px);
-            width: mobile_vw(52px);
         }
     }
     .profile__posts{
@@ -144,13 +133,11 @@
         &Like{
             padding-top: mobile_vh(3px);
             button{
-                font-size: mobile_vw(16px);
             }
         }
         &Unlike{
             padding-top: mobile_vh(3px);
             button{
-                font-size: mobile_vw(16px);
             }
         }
     }

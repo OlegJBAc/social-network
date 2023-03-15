@@ -17,13 +17,13 @@ const InfoInput: React.FC<propsType> = ({setEditMode, profile, isOwner, editMode
     const infoHeadMapped = Object.keys(profile).map(item => {
         if(!['userId', 'contacts', 'photos'].includes(item)){
             return <div key={v1()} className={s.info__item}>
-                        <span className={s.info__key}>{item + ':'}</span>
+                        <div className={s.info__key}>{item + ':'}</div>
                         <Field type='text' name={item}/>
                     </div>
         }})
     const infoContactsMapped = Object.keys(profile.contacts).map(contact => {
         return <div key={v1()} className={s.info__item}>
-                    <span className={s.info__key}>{contact + ':'}</span>
+                    <div className={s.info__key}>{contact + ':'}</div>
                     <Field type='text' name={'contacts.' + contact}/>
                 </div>
         })

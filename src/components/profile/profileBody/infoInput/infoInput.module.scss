@@ -1,19 +1,23 @@
 @import "../../../../adaptive-tools";
 
 .info__input{
+    form{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
     .info__item{
         display: flex;
+        width: 100%;
         line-height: 180%;
-        span{
-            width: 50%;
-        }
         input{
             width: 43%;
-            height: vh(25px);
             border-radius: 10px;
-            padding: 0px 0px 0px vh(5px);
-            font-size: vw(15px);
+            padding: vh(8px) vw(8px);
         }
+    }
+    .info__showed {
+        width: 100%;
     }
     .info__save{
         margin-top: vh(10px);
@@ -22,6 +26,7 @@
         padding-left: vw(8px);
         font-weight: 500;
         word-break: break-all;
+        width: 50%;
     }
     .info__hidden{
         display: none;
@@ -29,22 +34,22 @@
     .show__buttonWrap{
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content: flex-start;
+        padding-left: 5px;
+        width: 98%;
+
         #show__button{
             width: 95%;
             height: vh(37px);
             border-radius: 10px;
-            font-size: vw(16px);
             background: rgb(234, 226, 226);
             color: rgb(0, 0, 0);
             border: none;
             margin: vh(10px) 0px;
         }
         #show__button:hover{
-            width: 100%;
             height: vh(37px);
             border-radius: 10px;
-            font-size: vw(17px);
             background: rgb(207, 203, 232);
             color: rgb(0, 0, 0);
             transition-duration: 1s;
@@ -56,28 +61,34 @@
 
 @media screen and (max-width: $mobile-screen-vw) {
     .info__input{
+        form{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
         .info__item{
+            width: 100%;
+            margin: 8px 0;
+
             input{
-                height: mobile_vh(25px);
-                padding: 0px 0px 0px mobile_vh(5px);
-                font-size: mobile_vw(15px);
+                padding: mobile_vh(5px) mobile_vw(5px);
             }
         }
-        .info__save{
-            margin-top: mobile_vh(10px);
-        }
+
         .info__key{
             padding-left: mobile_vw(8px);
         }
+        .info__showed {
+            width: 100%;
+        }
         .show__buttonWrap{
+            width: 98%;
             #show__button{
-                height: mobile_vh(37px);
-                font-size: mobile_vw(16px);
+                height: mobile_vw(40px);
                 margin: mobile_vh(10px) 0;
             }
             #show__button:hover{
-                height: mobile_vh(37px);
-                font-size: mobile_vw(17px);
+                height: mobile_vw(40px);
             }
         }
     }

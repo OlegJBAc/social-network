@@ -4,7 +4,7 @@
 .users {
     box-sizing: border-box;
     width: 100%;
-    padding: vh(10px) vw(10px) vh(50px) vw(10px);
+    padding: vh(30px) vw(10px) vh(50px) vw(10px);
     height: auto;
     margin-top: vh(10px);
     border-radius: 1rem;
@@ -40,6 +40,7 @@
 
 @media screen and (max-width: $mobile-screen-vw) {
     .users {
+        padding-top: mobile_vh(30px);
         &__view {
             padding: mobile_vh(10px) mobile_vw(12px) 0 mobile_vh(12px);
             margin-bottom: mobile_vh(10px);

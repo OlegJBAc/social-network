@@ -29,7 +29,6 @@
         }
     }
     .classic__name{
-        font-size: vw(18px);
         font-style: italic;
         margin-bottom: vh(10px);
         word-wrap: wrap;
@@ -78,7 +77,6 @@
     .flexible__name{
         margin-bottom: vh(14px);
         font-style: italic;
-        font-size: vw(18px);
         span{
             word-break: break-all;
         }
@@ -138,7 +136,6 @@
             }
         }
         .classic__name{
-            font-size: mobile_vw(18px);
             margin-bottom: mobile_vh(10px);
         }
         .classic__nameWrapper{
@@ -151,7 +148,7 @@
 
     .user__flexible{
         padding: mobile_vh(5px) mobile_vw(5px);
-        min-height: mobile_vh(200px);
+        min-height: mobile_vw(280px);
         margin-top: mobile_vh(10px);
         width: 40%;
         .flexible__img {
@@ -162,7 +159,6 @@
         }
         .flexible__name{
             margin-bottom: mobile_vh(14px);
-            font-size: mobile_vw(18px);
         }
         .flexible__following{
             margin-bottom: mobile_vh(14px);

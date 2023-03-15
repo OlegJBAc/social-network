@@ -11,11 +11,9 @@
         margin-bottom: vh(10px);
     }
     #message__time{
-        font-size: vw(12px);
         padding-left: vw(10px);
     }
     #message__text{
-        font-size: vw(18px);
         padding-left: vw(5px);
         word-break: break-all;
     }
@@ -33,7 +31,6 @@
         border-radius: 10px;
         padding: vh(5px) vw(5px);
         span{
-            font-size: vw(14px);
         }
     }
     &__friend{
@@ -50,7 +47,6 @@
         background: rgb(18, 113, 197);
     }
     #message__viewed{
-        font-size: vw(12px);
         margin-left: vw(10px);
     }
 }
@@ -66,11 +62,9 @@
             margin-bottom: mobile_vh(10px);
         }
         #message__time{
-            font-size: mobile_vw(12px);
             padding-left: mobile_vw(10px);
         }
         #message__text{
-            font-size: mobile_vw(18px);
             padding-left: mobile_vw(5px);
         }
         .my__wrapper{
@@ -79,7 +73,6 @@
         .friend__wrapper{
             padding: mobile_vh(5px) mobile_vw(5px);
             span{
-                font-size: mobile_vw(14px);
             }
         }
         &__friend{
@@ -89,7 +82,6 @@
             }
         }
         #message__viewed{
-            font-size: mobile_vw(12px);
             margin-left: mobile_vw(10px);
         }
     }

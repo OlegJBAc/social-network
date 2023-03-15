@@ -30,7 +30,6 @@
         }
     }
     textarea{
-        font-size: vw(16px);
         box-sizing: border-box;
         min-height: vh(70px);
         max-height: vh(150px);
@@ -56,7 +55,6 @@
             }
         }
         textarea{
-            font-size: mobile_vw(16px);
             min-height: mobile_vh(70px);
             max-height: mobile_vh(150px);
             padding: mobile_vh(10px) mobile_vw(10px);

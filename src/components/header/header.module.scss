@@ -37,12 +37,9 @@
     &__authorized{
         display: flex;
         justify-content: space-between;
-        span{
-            font-size: vw(22px);
-        }
+
     }
     &__notauthorized{
-        font-size: vw(22px);
         margin: vh(10px) 0 0 vh(23px);
     }
     &__login{
@@ -54,13 +51,12 @@
     height: vh(35px);
     width: vw(150px);
     span{
-        font-size: vw(16px);
         padding-top: vh(8px);
     }
 }
 #theme__toggle{
-    width: vw(80px);
-    height: vh(32px);
+    width: 80px;
+    height: 32px;
     margin-top: vh(5px);
     padding: 0;
     border-radius: 30px;
@@ -71,8 +67,8 @@
     border: 2px solid gray;
     &:before{
         content: '';
-        width: vw(30px);
-        height: vh(29px);
+        width: 30px;
+        height: 28px;
         background-color: white;
         border-radius: 50%;
         display: flex;
@@ -91,7 +87,6 @@
     &.dark{
         &:before{
             transform: translateX(153%);
-            height: vh(28px);
             background-color: white;
             transition-duration: 1s;
         }
@@ -104,23 +99,22 @@
 @media screen and (max-width: $mobile-screen-vw) {
     .header{
         img{
-            height: mobile_vh(40px);
-            width: mobile_vw(40px);
+            min-height: 40px;
+            width: 40px;
         }
         &__content{
             height: mobile_vh(50px);
         }
         &__authorized {
             span {
-                font-size: mobile_vw(22px);
+                display: none;
             }
         }
         &__notauthorized {
-            font-size: mobile_vw(22px);
             margin: mobile_vh(10px) 0 0 mobile_vh(23px);
         }
         &__login {
-            width: 50%;
+            width: 20%;
             margin: mobile_vh(10px) 0;
         }
     }
@@ -128,23 +122,22 @@
         height: mobile_vh(35px);
         width: mobile_vw(120px);
         span{
-            font-size: mobile_vw(14px);
             padding-top: mobile_vh(8px);
         }
     }
     #theme__toggle{
-        width: mobile_vw(80px);
-        height: mobile_vh(32px);
+        width: 80px;
+        height: 32px;
         margin-top: mobile_vh(5px);
         &:before{
             content: '';
-            width: mobile_vw(30px);
-            height: mobile_vh(29px);
+            width: 30px;
+            height: 29px;
 
         }
         &.dark{
             &:before{
-                height: mobile_vh(28px);
+                height: 28px;
             }
         }
     }
