@@ -3,7 +3,7 @@
 
 .header{
     display: flex;
-    padding: 0 vh(10px) vw(15px) 0;
+    padding: vh(10px) vh(10px) vw(15px) 0;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid gray;
@@ -74,7 +74,7 @@
 
 @media screen and (max-width: $mobile-screen-vw) {
     .header{
-        padding: 0 mobile_vh(10px) mobile_vw(15px) 0;
+        padding: mobile_vh(10px) mobile_vh(10px) mobile_vw(15px) 0;
         &__name{
             a{
                 margin-bottom: mobile_vh(10px);

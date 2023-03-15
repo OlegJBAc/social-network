@@ -17,7 +17,8 @@
 
 @media screen and (max-width: $mobile-screen-vw) {
     .container{
+        padding-top: 35px;
+        height: calc(100vh - mobile_vh(80px) - 40px);
         width: 100%;
-        padding: mobile_vh(70px) 0 mobile_vh(90px) 0;
     }
 }

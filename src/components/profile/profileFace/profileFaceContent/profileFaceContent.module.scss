@@ -70,6 +70,7 @@
     .content {
         padding: 10px 15px 40px 15px;
         min-height: 100%;
+        width: 70%;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -88,6 +89,7 @@
                 height: mobile_vw(40px);
                 padding: mobile_vh(4px) 0 mobile_vh(5px) 0;
                 margin-top: vh(100px);
+                border-radius: 5px;
             }
         }
     }

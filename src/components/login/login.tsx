@@ -43,6 +43,9 @@ const Login = () => {
                         <div className={cx('login__email', {
                             error: errors.email && touched.email,
                         })}>
+                            <div className={s['login__email-header']}>
+                                <span>Email:</span>
+                            </div>
                             <Field type='email' name='email' validate={maxLength30}/>
                             { errors.email && touched.email
                                 ? <span>{errors.email}</span>
@@ -52,6 +55,9 @@ const Login = () => {
                         <div className={cx('login__password', {
                             error: errors.password && touched.password,
                         })}>
+                            <div className={s['login__password-header']}>
+                                <span>Password:</span>
+                            </div>
                             <Field type='password' name='password' validate={maxLength30}/>
                             {errors.password && touched.password
                                 ? <span>{errors.password}</span>

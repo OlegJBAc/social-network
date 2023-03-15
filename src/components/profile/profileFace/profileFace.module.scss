@@ -22,7 +22,7 @@
     .profileFace{
         display: flex;
         width: 100%;
-        margin: 0 mobile_vw(8px) mobile_vh(8px) mobile_vw(8px);
+        border-radius: 0;
         padding: mobile_vh(16px) mobile_vw(16px) mobile_vh(16px) mobile_vw(32px);
     }
 }

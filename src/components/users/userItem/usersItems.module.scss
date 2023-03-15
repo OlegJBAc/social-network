@@ -15,7 +15,7 @@
     .classic__img{
         img{
             width: vw(70px);
-            height: vh(70px);
+            height: vw(70px);
             border-radius: 50%;
         }
     }
@@ -24,14 +24,21 @@
         justify-content: space-between;
         flex-wrap: wrap;
         button{
-            height: vh(30px);
             margin-right: vw(10px);
+            &:hover{
+                background: #3aea8d;
+                color: white;
+                transition-duration: 0.2s;
+            }
         }
     }
     .classic__name{
         font-style: italic;
         margin-bottom: vh(10px);
-        word-wrap: wrap;
+        word-wrap: break-word;
+        span{
+            font-size: vw(24px);
+        }
     }
     .classic__nameWrapper{
         padding-left: vw(20px);
@@ -40,7 +47,6 @@
         background: rgb(28, 250, 165);
         color: black;
         font-weight: 600;
-        padding: vh(5px) vw(10px);
     }
 }
 
@@ -54,7 +60,6 @@
     padding: 5px vw(5px);
     width: 27%;
     min-height: vh(190px);
-
     border-radius: 15px;
     margin-top: vh(10px);
     &.light{
@@ -69,8 +74,8 @@
     }
     .flexible__img{
         img{
-            width: vw(70px);
-            height: vh(70px);
+            width: vw(90px);
+            height: vw(90px);
             border-radius: 50%;
         }
     }
@@ -98,6 +103,11 @@
             color: #3b0c5d;
             letter-spacing: 0.1ch;
             font-weight: 600;
+            &:hover{
+                background: #3aea8d;
+                color: white;
+                transition-duration: 0.2s;
+            }
         }
     }
     .flexible__write-button{
@@ -109,7 +119,11 @@
 .user__unfollow{
     background: rgb(52, 253, 159);
     color: black;
-    padding: 0;
+    &:hover{
+        background: #a97ce1;
+        color: white;
+        transition-duration: 0.2s;
+    }
 }
 
 .flexible__follow-button {
@@ -125,24 +139,29 @@
         border-bottom: mobile_vh(1px) solid gray;
         .classic__img{
             img{
-                width: mobile_vw(70px);
-                height: mobile_vh(70px);
+                width: mobile_vw(100px);
+                height: mobile_vw(100px);
             }
         }
         .classic__following{
             button{
-                height: mobile_vh(30px);
                 margin-right: mobile_vw(10px);
+                span{
+                    font-size: mobile_vw(18px);
+                }
             }
         }
         .classic__name{
             margin-bottom: mobile_vh(10px);
+            span{
+                font-size: mobile_vw(24px);
+            }
         }
         .classic__nameWrapper{
             padding-left: mobile_vw(20px);
         }
         .classic__write-button{
-            padding: mobile_vh(5px) mobile_vw(10px);
+
         }
     }
 
@@ -153,8 +172,8 @@
         width: 40%;
         .flexible__img {
             img{
-                width: mobile_vw(70px);
-                height: mobile_vh(70px);
+                width: mobile_vw(100px);
+                height: mobile_vw(100px);
             }
         }
         .flexible__name{

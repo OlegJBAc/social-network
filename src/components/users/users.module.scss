@@ -40,7 +40,8 @@
 
 @media screen and (max-width: $mobile-screen-vw) {
     .users {
-        padding-top: mobile_vh(30px);
+        height: 100%;
+        overflow-y: scroll;
         &__view {
             padding: mobile_vh(10px) mobile_vw(12px) 0 mobile_vh(12px);
             margin-bottom: mobile_vh(10px);

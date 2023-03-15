@@ -17,7 +17,6 @@ $input-side-padding: vw(8px);
     box-sizing: border-box;
     width: 50%;
     padding: 2%;
-    margin-top: vh(10px);
     border-radius: 1rem;
     &.light{
         background: white;
@@ -37,11 +36,13 @@ $input-side-padding: vw(8px);
         width: 90%;
         input{
             box-sizing: border-box;
-            height: vh(35px);
+            padding: vh(10px) vw(10px);
             width: 100%;
             border-radius: 10px;
             font-size: vw(18px);
-            padding-left: vw(8px);
+        }
+        &-header {
+            margin-bottom: vh(15px);
         }
         &.error{
             input{
@@ -59,12 +60,14 @@ $input-side-padding: vw(8px);
         box-sizing: border-box;
         margin: vh(10px) 0;
         width: 90%;
+        &-header {
+            margin-bottom: vh(15px);
+        }
         input{
             box-sizing: border-box;
-            height: vh(33px);
+            padding: vh(10px) vw(10px);
             width: 100%;
             border-radius: 10px;
-            padding-left: vw(8px);
             font-size: vw(16px);
         }
     }
@@ -110,10 +113,9 @@ $input-side-padding: vw(8px);
         &__email{
             margin: 0;
             input{
-                height: mobile_vh(35px);
+                padding: mobile_vh(10px) mobile_vw(10px);
                 width: calc(100% - $input-side-padding * 2);
                 font-size: mobile_vw(18px);
-                padding-left: mobile_vw(8px);
                 margin: 0;
                 border-radius: 0;
             }
@@ -130,10 +132,9 @@ $input-side-padding: vw(8px);
         &__password{
             margin: 0;
             input{
-                height: mobile_vh(33px);
+                padding: mobile_vh(10px) mobile_vw(10px);
                 width: calc(100% - $input-side-padding * 2);
                 font-size: mobile_vw(18px);
-                padding-left: mobile_vw(8px);
                 margin: 0;
                 border-radius: 0;
             }

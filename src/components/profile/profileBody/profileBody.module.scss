@@ -23,6 +23,8 @@
 @media screen and (max-width: $mobile-screen-vw) {
     .profileBody{
         width: 100%;
+        border-radius: 0;
+
     }
     .profile__posts_wrapper {
         margin: mobile_vh(20px) 0;

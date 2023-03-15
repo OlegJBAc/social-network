@@ -5,11 +5,12 @@ $selecting-height: vh(40px);
 
 .dialogs__messages{
     position: relative;
-    height: vh(400px);
+    height: vh(650px);
     overflow-y: auto;
     padding: vh(10px) vw(10px);
     &Zero{
         display: flex;
+        height: vh(650px);
         padding: vh(178px) 0 vh(178px) 0;
         justify-content: center;
         align-items: center;
@@ -31,11 +32,14 @@ $selecting-height: vh(40px);
     }
 }
 
+
 @media screen and (max-width: $mobile-screen-vw) {
     .dialogs__messages{
-        height: mobiel_vh(400px);
+        height: calc(100% - mobile_vh(180px));
+        border-radius: 0;
         padding: mobiel_vh(10px) mobiel_vw(10px);
         &Zero{
+            height: 75%;
             padding: mobiel_vh(178px) 0 mobiel_vh(178px) 0;
         }
     }

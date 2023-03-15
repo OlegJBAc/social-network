@@ -94,10 +94,11 @@
 
 @media screen and (max-width: $mobile-screen-vw) {
     .chat{
-        height: calc(100vh - 80px - 80px);
-        margin-top: mobile_vh(10px);
+        height: 100%;
+        margin: 0;
+        border-radius: 0;
         &__body{
-            height: calc(94vh - 80px - 70px - 90px);
+            height: calc(100vh - mobile_vh(85px) - mobile_vh(70px) - mobile_vh(90px));
             img{
                 height: mobile_vh(80px);
                 width: mobile_vw(80px);

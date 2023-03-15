@@ -4,11 +4,10 @@
 .filter{
     width: 100%;
     &__term{
-        height: vh(30px);
         width: 15vw;
         background: #4d5061;
         border: none;
-        padding: vh(1px) vw(32px) 0 vh(7px);
+        padding: vh(10px) vw(32px) vh(10px) vh(7px);
         border-bottom-left-radius: 10px;
         border-top-left-radius: 10px;
         color: white;
@@ -18,9 +17,10 @@
         display: inline-block;
     }
     &__select{
-        height: vh(30px);
+        display: flex;
+        align-items: center;
         width: vw(180px);
-        padding: 0 vh(32px) 0 vh(7px);
+        padding: vh(6px) vw(32px) vh(6px) vh(7px);
         margin-left: 10px;
         background: #4d5061;
         color: white;
@@ -63,8 +63,7 @@
         top: 70%;
     }
     &__button{
-        height: vh(30px);
-        padding: 0 vw(10px);
+        padding: vh(10px) vw(10px);
         letter-spacing: 0.2ch;
         margin-left: vw(10px);
         background: #4d5061;
@@ -88,18 +87,16 @@ form{
     .filter {
         &__term {
             width: 25vw; //Don't delete this line !
-            height: mobile_vh(30px);
-            padding: vh(1px) vw(32px) 0 vh(7px);
+            padding: mobile_vh(3px) mobile_vw(32px) mobile_vh(3px) mobile_vh(7px);
         }
         &__select {
-            height: mobile_vh(30px);
             width: mobile_vw(180px);
-            padding: 0 mobile_vh(32px) 0 mobile_vh(7px);
+            padding: mobile_vh(6px) mobile_vh(32px) mobile_vh(6px) mobile_vh(7px);
             margin-left: 10px;
         }
 
         &__arrow {
-            top: 4px;
+            top: 0px;
             padding-left: mobile_vw(7px);
             width: mobile_vw(22px);
         }

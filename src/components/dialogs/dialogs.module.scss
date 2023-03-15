@@ -43,14 +43,15 @@
 
 @media screen and (max-width: $mobile-screen-vw) {
     .dialogs{
-        min-height: mobile_vh(550px);
+        height: 100%;
         margin-top: mobile_vh(10px);
 
         &__own{
             padding: 0 mobile_vw(28px);
         }
         &__myself{
-            height: mobile_vh(290px);
+            height: 100%;
+            border-radius: 0;
             padding-bottom: mobile_vh(30px);
             span{
                 font-size: mobile_vw(28px);

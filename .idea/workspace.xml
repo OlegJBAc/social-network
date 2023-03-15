@@ -4,27 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74058480-daec-45f8-a196-1467dae2df0a" name="Changes" comment="adaptive update and login bugs fix">
+    <list default="true" id="74058480-daec-45f8-a196-1467dae2df0a" name="Changes" comment="adaptive update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/chat/chat.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/chat/chat.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dialogs/dialogs.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialogs/dialogs.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/dialogs/dialogsHeader/dialogsHeader.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialogs/dialogsHeader/dialogsHeader.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/dialogs/dialogsInput/dialogsInput.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialogs/dialogsInput/dialogsInput.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/dialogs/dialogsMessages/dialogsMessages.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialogs/dialogsMessages/dialogsMessages.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/dialogs/dialogsMessages/message/message.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialogs/dialogsMessages/message/message.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/header.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/header.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navBar/navBar.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navBar/navBar.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/profileBody/infoInput/infoInput.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profileBody/infoInput/infoInput.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/profileBody/infoInput/infoInput.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profileBody/infoInput/infoInput.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/profileBody/infoText/infoText.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profileBody/infoText/infoText.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/login/login.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/login/login.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/login/login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/login/login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/mainLayout/mainLayout.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainLayout/mainLayout.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pageContainer/pageContainer.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pageContainer/pageContainer.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/profile/profileBody/profileBody.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profileBody/profileBody.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/profileBody/profileBody.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profileBody/profileBody.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/profileBody/profileDataPosts/profileDataPosts.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profileBody/profileDataPosts/profileDataPosts.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profileFace/profileFace.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profileFace/profileFace.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/profile/profileFace/profileFaceContent/profileFaceContent.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profileFace/profileFaceContent/profileFaceContent.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/users/paginator/paginator.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/paginator/paginator.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/users/userItem/usersItems.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/userItem/usersItems.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/users/users.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/users.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/users/usersFilter/usersFilter.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/usersFilter/usersFilter.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +47,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Programming/JS/FinalPreparation/FinishedProjects/my-portfolio",
+    "last_opened_file_path": "C:/Programming/JS/FinalPreparation/FinishedProjects/social-network",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -109,6 +106,8 @@
       <workItem from="1678797891949" duration="24000" />
       <workItem from="1678867568369" duration="600000" />
       <workItem from="1678869494125" duration="5327000" />
+      <workItem from="1678875512741" duration="352000" />
+      <workItem from="1678893772017" duration="5991000" />
     </task>
     <task id="LOCAL-00001" summary="routing fixes and message parse">
       <created>1678105639003</created>
@@ -124,7 +123,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678794273930</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="adaptive update">
+      <created>1678875537452</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1678875537452</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,6 +150,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="routing fixes and message parse" />
     <MESSAGE value="adaptive update and login bugs fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="adaptive update and login bugs fix" />
+    <MESSAGE value="adaptive update" />
+    <option name="LAST_COMMIT_MESSAGE" value="adaptive update" />
   </component>
 </project>
