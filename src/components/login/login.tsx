@@ -37,6 +37,7 @@ const Login = () => {
                     light: appTheme === 'Light',
                     dark: appTheme === 'Dark',
                 })}>
+                <h2>Временные сложности при авторизации через Яндекс или Хром браузер.</h2>
                 <Formik initialValues={{email: '', password: '', rememberMe: false}} onSubmit={submit}>
                 {({errors, touched, isValidating, isSubmitting}) => (
                     <Form>

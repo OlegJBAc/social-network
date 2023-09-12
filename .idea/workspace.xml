@@ -6,22 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="74058480-daec-45f8-a196-1467dae2df0a" name="Changes" comment="adaptive update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/chat/chat.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/chat/chat.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/dialogs/dialogs.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialogs/dialogs.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/dialogs/dialogsHeader/dialogsHeader.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialogs/dialogsHeader/dialogsHeader.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/dialogs/dialogsInput/dialogsInput.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialogs/dialogsInput/dialogsInput.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/dialogs/dialogsMessages/dialogsMessages.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialogs/dialogsMessages/dialogsMessages.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/header.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/header.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/login/login.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/login/login.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/login/login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/login/login.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/mainLayout/mainLayout.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainLayout/mainLayout.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pageContainer/pageContainer.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pageContainer/pageContainer.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/profile/profile.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/profileBody/profileBody.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profileBody/profileBody.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/profileFace/profileFace.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profileFace/profileFace.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/profileFace/profileFaceContent/profileFaceContent.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profileFace/profileFaceContent/profileFaceContent.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/users/userItem/usersItems.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/userItem/usersItems.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/users/users.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/users.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/users/usersFilter/usersFilter.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/usersFilter/usersFilter.module.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +42,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "preferences.editor.code.editing",
-    "ts.external.directory.path": "C:\\Programming\\JS\\FinalPreparation\\FinishedProjects\\social-network\\node_modules\\typescript\\lib",
+    "ts.external.directory.path": "C:\\My-other\\social-network\\social-network\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
